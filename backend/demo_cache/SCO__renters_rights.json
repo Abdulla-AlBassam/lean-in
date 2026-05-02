@@ -1,0 +1,62 @@
+{
+  "axisId": "housing",
+  "axisLabel": "Housing & Renting",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes to work with local authorities to give first-time buyers priority over international investors and introduces a permanent mortgage guarantee scheme. On renters specifically, Labour does not address Scotland-specific renter rights in the provided excerpts.",
+      "citations": [
+        {
+          "quote": "Labour will work with local authorities to give first-time buyers the first chance to buy homes and end the farce of entire developments being sold off to international investors before houses are even built.",
+          "source": "Labour Manifesto 2024, p.35"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservative manifesto proposes passing a Renters Reform Bill to deliver fairness for landlords and renters, including abolishing Section 21 once court reforms are in place, but does not address Scotland-specific renter rights.",
+      "citations": [
+        {
+          "quote": "We will pass a Renters Reform Bill that will deliver fairness in the rental market for landlords and renters alike. We will deliver the court reforms necessary to fully abolish Section 21 and strengthen other grounds for landlords to evict private tenants guilty of anti-social behaviour.",
+          "source": "Conservative Manifesto 2024, p.53"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats propose immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords, as well as enforcing clear standards for socially rented homes.",
+      "citations": [
+        {
+          "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
+          "source": "Liberal Democrats Manifesto 2024, p.14"
+        },
+        {
+          "quote": "Proactively enforcing clear standards for homes that are socially rented, including strict time limits for repairs.",
+          "source": "Liberal Democrats Manifesto 2024, p.14"
+        }
+      ]
+    },
+    {
+      "id": "snp",
+      "name": "SNP",
+      "colour": "#FDF38E",
+      "summary": "The SNP manifesto references having introduced temporary rent cap controls in Scotland and mitigating housing costs, and calls for an annual uplift of Local Housing Allowance, but does not set out detailed Scotland-specific renter rights reform in the provided excerpts.",
+      "citations": [
+        {
+          "quote": "Mitigated the UK Government's bedroom tax in full, supported people with housing costs and introduced temporary rent cap controls.",
+          "source": "SNP Manifesto 2024, p.11"
+        },
+        {
+          "quote": "Push for an annual uplift of Local Housing Allowance, whilst ensuring rental costs are taken into account.",
+          "source": "SNP Manifesto 2024, p.11"
+        }
+      ]
+    }
+  ]
+}

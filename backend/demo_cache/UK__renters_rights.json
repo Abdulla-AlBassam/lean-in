@@ -1,0 +1,54 @@
+{
+  "axisId": "housing",
+  "axisLabel": "Housing & Renting",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes to work with local authorities to give first-time buyers priority on new homes and introduces a permanent mortgage guarantee scheme. On renters, Labour commits to ensuring private rented sector homes meet minimum energy efficiency standards by 2030.",
+      "citations": [
+        {
+          "quote": "Labour will work with local authorities to give first-time buyers the first chance to buy homes and end the farce of entire developments being sold off to international investors before houses are even built.",
+          "source": "Labour Manifesto 2024, p.35"
+        },
+        {
+          "quote": "We will ensure homes in the private rented sector meet minimum energy efficiency standards by 2030, saving renters hundreds of pounds per year.",
+          "source": "Labour Manifesto 2024, p.54"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservatives propose passing a Renters Reform Bill to deliver fairness for both landlords and renters, including abolishing Section 21 no-fault evictions once court reforms are in place, while also strengthening grounds for evicting tenants guilty of anti-social behaviour.",
+      "citations": [
+        {
+          "quote": "We will pass a Renters Reform Bill that will deliver fairness in the rental market for landlords and renters alike.",
+          "source": "Conservative Manifesto 2024, p.53"
+        },
+        {
+          "quote": "We will deliver the court reforms necessary to fully abolish Section 21 and strengthen other grounds for landlords to evict private tenants guilty of anti-social behaviour.",
+          "source": "Conservative Manifesto 2024, p.53"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats propose immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords, alongside proactively enforcing clear standards for socially rented homes.",
+      "citations": [
+        {
+          "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
+          "source": "Liberal Democrats Manifesto 2024, p.14"
+        },
+        {
+          "quote": "Proactively enforcing clear standards for homes that are socially rented, including strict time limits for repairs.",
+          "source": "Liberal Democrats Manifesto 2024, p.14"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "axisId": "health",
+  "axisLabel": "Health & NHS",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes cutting NHS waiting times through 40,000 more appointments per week and delivering the NHS long-term workforce plan, though these policies are framed around England's NHS and their impact on Scotland would depend on Barnett consequentials.",
+      "citations": [
+        {
+          "quote": "Cut NHS waiting times with 40,000 more appointments every week",
+          "source": "Labour Manifesto 2024, p.91"
+        },
+        {
+          "quote": "We will deliver the NHS long-term workforce plan to train the staff we need to get patients seen on time.",
+          "source": "Labour Manifesto 2024, p.97"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservative manifesto does not directly address NHS waiting times in Scotland; its commitments on returning NHS performance to constitutional standards are framed around England's NHS.",
+      "citations": [
+        {
+          "quote": "We are committed to accelerating the NHS's recovery from the pandemic, delivering safe and effective services and ongoing improvements in waiting times for primary, elective, cancer and emergency care.",
+          "source": "Conservative Manifesto 2024, p.unspecified"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrat manifesto does not specifically address NHS waiting times in Scotland; its NHS policies are focused on England.",
+      "citations": [
+        {
+          "quote": "investing in public health and early access to community services, including GPs, pharmacists and dentists, so fewer people need to go to hospital in the first place",
+          "source": "Liberal Democrats Manifesto 2024, p.unspecified"
+        }
+      ]
+    },
+    {
+      "id": "snp",
+      "name": "SNP",
+      "colour": "#FDF38E",
+      "summary": "The SNP commits to investing £300 million to drive down waiting times in Scotland's NHS, and calls on the UK Government to boost NHS spending by at least £10 billion extra per year, which would generate additional Barnett funding for Scotland.",
+      "citations": [
+        {
+          "quote": "we're determined to go further ­ including investing £300m to drive down waiting times ­ but we are doing that with one hand tied behind our back by Westminster.",
+          "source": "SNP Manifesto 2024, p.unspecified"
+        },
+        {
+          "quote": "Boost NHS spending by a minimum of £10bn extra each year to address rampant inflationary pressures and improve performance. This investment into NHS England would generate an additional £1bn annually for NHS Scotland to help meet increasing demand.",
+          "source": "SNP Manifesto 2024, p.unspecified"
+        }
+      ]
+    }
+  ]
+}

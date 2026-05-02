@@ -1,0 +1,42 @@
+{
+  "axisId": "education",
+  "axisLabel": "Education & Universities",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "The Labour manifesto acknowledges that the current higher education funding settlement is not working for taxpayers, universities, staff, or students, and commits to acting to create a secure future for higher education, but does not specify a position on tuition fees for Wales.",
+      "citations": [
+        {
+          "quote": "The current higher education funding settlement does not work for the taxpayer, universities, staff, or students. Labour will act to create a secure future for higher education and the opportunities it creates across the UK. We will work with universities to deliver for students and our economy.",
+          "source": "Labour Manifesto 2024, p.38"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservative manifesto addresses tuition fees in the context of England, noting reforms to student loans to make them fairer, but does not address tuition fee policy specific to Wales.",
+      "citations": [
+        {
+          "quote": "We are committed to delivering the best value for students, so have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms.",
+          "source": "Conservative Manifesto 2024, p.28"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrat manifesto proposes a review of higher education finance and commits to no further retrospective raising of rates or selling-off of loans, but does not address Wales-specific tuition fee policy.",
+      "citations": [
+        {
+          "quote": "Establishing a review of higher education finance in the next Parliament to consider any necessary reforms in the light of the latest evidence of the impact of the existing financing system on access, participation and quality, and make sure there are no more retrospective raising of rates or selling-off of loans to private companies.",
+          "source": "Liberal Democrats Manifesto 2024, p.59"
+        }
+      ]
+    }
+  ]
+}
