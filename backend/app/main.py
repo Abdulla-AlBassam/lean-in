@@ -5,9 +5,10 @@ import logging
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from .models import HealthResponse, SearchResponse, Nation
+from .models import HealthResponse, SearchResponse, PersonResponse, Nation
 from .search import search as run_search
 from .classify import load_axes, classify
+from .data import load_people, load_results
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -36,6 +37,17 @@ def search(q: str = Query(..., min_length=1, max_length=200), nation: Nation = "
         raise HTTPException(400, detail="We don't have party positions on that — try a policy area like 'NHS' or 'tuition fees'")
     logger.info("search q=%r nation=%s axis=%s", q, nation, axis_id)
     return run_search(q, nation)
+
+
+@app.get("/api/person/{person_id}", response_model=PersonResponse)
+def get_person(person_id: str):
+    people = load_people()
+    if person_id not in people:
+        raise HTTPException(404, detail="Person not found")
+    person = people[person_id]
+    results = load_results()
+    timeline = results.get("by_person", {}).get(person_id, [])
+    return PersonResponse(**{**person, "timeline": timeline})
 
 
 @app.get("/api/axes")

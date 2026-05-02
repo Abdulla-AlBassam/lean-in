@@ -7,13 +7,13 @@ Nation = Literal["UK", "ENG", "SCO", "WAL", "NIR"]
 
 class Citation(BaseModel):
     quote: str
-    source: str  # e.g. "Labour Manifesto 2024, p.34"
+    source: str
 
 
 class PartyPOV(BaseModel):
-    id: str  # "labour", "conservative", "libdem", "snp", "plaid"
+    id: str
     name: str
-    colour: str  # hex
+    colour: str
     summary: str = Field(..., max_length=400)
     citations: list[Citation] = Field(..., min_length=1, max_length=3)
 
@@ -26,3 +26,31 @@ class SearchResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     status: Literal["ok"] = "ok"
+
+
+class PersonLink(BaseModel):
+    label: str
+    url: str
+
+
+class TimelineEntry(BaseModel):
+    type: str
+    date: str
+    headline: str
+    quote: str
+    source_label: str
+    source_url: str
+
+
+class PersonResponse(BaseModel):
+    id: str
+    name: str
+    party_id: str
+    constituency: str
+    role: str
+    photo_url: str
+    bio: str
+    links: list[PersonLink]
+    person_summary: str
+    citations: list[Citation]
+    timeline: list[TimelineEntry]
