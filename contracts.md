@@ -354,3 +354,46 @@ Returns the full axes definition for the spectrum chart. Optional in v1 — the 
 ```
 
 `x` and `y` are floats in `[-1, 1]`. `x` is economic (left negative, right positive). `y` is social (libertarian positive, authoritarian negative).
+
+---
+
+## `GET /api/consistency/{person_id}?topic=<axis_id>`
+
+Returns a consistency score (0–100) assessing how well an MP's public record aligns with their party's manifesto on a given topic. Powered by GDELT live news + Claude scoring.
+
+**Path param:** `person_id` — one of `lisa-nandy`, `robert-jenrick`, `daisy-cooper`
+**Query param:** `topic` — any axis ID from `GET /api/axes` (e.g. `housing`, `health`, `immigration`)
+
+**Response 200:**
+```json
+{
+  "person_id": "lisa-nandy",
+  "topic": "housing",
+  "score": 78,
+  "rationale": "Nandy's public record consistently echoes Labour's manifesto pledge to end no-fault evictions, with direct quotes matching the manifesto commitment.",
+  "manifesto_quote": "We will end Section 21 no-fault evictions...",
+  "statement_quote": "Decent housing is a foundation, not a privilege.",
+  "articles": [
+    {
+      "title": "Lisa Nandy hints at major BBC change...",
+      "url": "https://...",
+      "domain": "aol.co.uk",
+      "date": "20260318T001500Z",
+      "tone": -1.2
+    }
+  ]
+}
+```
+
+**Response 404:** `{ "detail": "Person not found" }`
+
+**Score bands:**
+- 70–100 (GREEN): public record clearly supports the manifesto position
+- 40–70 (AMBER): mixed or unclear alignment
+- 0–40 (RED): public record contradicts or ignores the manifesto
+
+**Data sources:** GDELT 2.0 Doc API (live news headlines + tone scores) + `results.json[by_person]` (Hansard statements) + party manifesto section extracted via keyword density.
+
+**Builder B note:** `ConsistencyGauge.jsx` is already built on `main` with both `compact` and `full` variants. Call this endpoint and pass `score` to `<ConsistencyGauge value={score} variant="full" />` on the MP detail panel. The component handles colour zones (red/amber/green) automatically.
+
+**Caching:** responses auto-saved to `backend/demo_cache/consistency__{person_id}__{topic}.json`. Set `DEMO_MODE=true` to serve from cache.
