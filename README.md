@@ -1,128 +1,172 @@
 # Lean In
 
-UK politics, plainly. Open the map, click your nation, search any policy topic. See where every major party stands — every claim a verbatim quote from that party's own manifesto.
+> UK politics, plainly. Search any policy topic — see where every major party stands, backed by verbatim quotes from their own manifestos.
 
-- **Repo:** https://github.com/Abdulla-AlBassam/lean-in
-- **Hackathon deadline:** end of day Sunday 2026-05-03
+Built at a hackathon in 48 hours. Designed to cut through political spin so voters can make informed decisions.
 
-## Read these before you write code
+---
 
-1. **`CLAUDE.md`** — project rules. Code style, architectural rules, demo-mode, slop sweep.
-2. **`contracts.md`** — the API shapes Builder A and Builder B agree on. The single source of truth.
-3. Your builder brief in `briefs/`.
-4. The skill docs in `skills/`.
+## What it does
+
+Open the map. Pick a nation. Type any policy topic — *renters rights*, *NHS waiting times*, *tuition fees*. Every major party's position appears as a card, each claim a direct quote from that party's 2024 General Election manifesto with a page number you can verify.
+
+Search an MP's name instead and you get their profile: role, constituency, voting record, and where their party stands.
+
+---
+
+## Why this is not just an LLM wrapper
+
+Three layers, only one of which is an LLM:
+
+**1. Real structured data**
+Five party manifestos (Labour, Conservative, Lib Dem, SNP, Plaid Cymru) versioned as plain text in the repo. Hand-coded political axis positions in `backend/data/axes.json` with verbatim quotes and page citations. MP profiles from Democracy Club (CC BY 4.0).
+
+**2. Deterministic classifier**
+`backend/app/classify.py` does keyword matching against `axes.json` to pick a topic axis. Pure string match. No LLM call. Fast, free, and auditable.
+
+**3. The LLM, used surgically**
+One narrow job: given the topic and the relevant manifesto pages in context, produce a short summary per party with 1–2 verbatim quotes and page citations. Strict pydantic-validated output schema. Manifesto context is prompt-cached so repeat queries cost ~10% of a fresh call.
+
+When a judge asks "how do you know it didn't make that up?" — the answer is: the model only sees the manifesto text we give it. Every quote is a verbatim substring of a file in this repo.
+
+---
+
+## Demo
+
+| Step | Action | What you see |
+|------|--------|--------------|
+| 1 | Page loads | UK 4-nation map, animated search bar |
+| 2 | Type `renters rights` | Labour, Conservative, Lib Dem cards — each with a quoted pledge and page number |
+| 3 | Click Scotland | SNP card joins; their position on devolved housing policy |
+| 4 | Type `lisa nandy` | Person mode — her card, party context, voting timeline |
+| 5 | Click any card | Detail panel: full timeline, photo, bio, links |
+
+---
+
+## Stack
+
+| Layer | Tech |
+|-------|------|
+| Backend | Python 3.11, FastAPI, Anthropic SDK, pydantic |
+| Frontend | React 18 + Vite, plain CSS, Leaflet |
+| LLM | `claude-sonnet-4-6` with prompt caching |
+| Data | ONS GeoJSON, official 2024 manifesto PDFs, Democracy Club |
+
+No database. No vector store. No embeddings. Manifestos sit in the Claude system prompt with `cache_control: ephemeral`.
+
+---
 
 ## Quick start
+
+**Prerequisites:** Python 3.11+, Node 20+, an Anthropic API key.
 
 ```bash
 git clone https://github.com/Abdulla-AlBassam/lean-in
 cd lean-in
-
-# frontend (Builder B)
-cd frontend && npm install && npm run dev      # → http://localhost:5173
-
-# backend (Builder A) — separate terminal
-cd backend
-python3.11 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env                            # paste your key into .env
-uvicorn app.main:app --reload --port 8000      # → http://localhost:8000
 ```
 
-`curl http://localhost:8000/api/health` should return `{"status":"ok"}`.
+**Backend** (Terminal 1):
+```bash
+cd backend
+python3.11 -m venv .venv
 
-## Stack
+# Mac/Linux
+source .venv/bin/activate
 
-- **Backend:** Python 3.11+, FastAPI, anthropic SDK, pydantic. Port 8000.
-- **Frontend:** React 18 + Vite + plain CSS + Leaflet. JS not TS. Port 5173.
-- **LLM:** `claude-sonnet-4-6`. Prompt caching mandatory on the manifesto context.
-- **Data:** ONS GeoJSON (UK nations), curated party manifestos, hand-coded axis positions in `backend/data/axes.json`.
+# Windows
+.\.venv\Scripts\Activate.ps1
 
-No database. No vector store. Manifestos sit in the Claude context with prompt caching — the model sees the full source so citations are guaranteed real.
+pip install -r requirements.txt
+cp .env.example .env          # then add your key: ANTHROPIC_API_KEY_1=sk-ant-...
+uvicorn app.main:app --reload --port 8000
+```
 
-## Roles
+**Frontend** (Terminal 2):
+```bash
+cd frontend
+npm install
+npm run dev                   # → http://localhost:5173
+```
 
-| Role | Builder | Brief |
-|---|---|---|
-| **Builder A — Backend (Python/FastAPI)** | Saliha (saliha006) | `briefs/builder-a-backend.md` |
-| **Builder B — Frontend (React/Leaflet)** | Abdulla (Abdulla-AlBassam) | `briefs/builder-b-frontend.md` |
-| **Builder C — Claude / LLM prompts** | Elya (ElyaRaza) | `briefs/builder-c-claude.md` |
-| **Builder D — Data + demo + presenter** | Maks (maksymkhomitskyi) | `briefs/builder-d-data.md` |
-| **Helper / floater** | Aws (awszaman) | shadows Builders, fills wherever blocked |
+Verify: `curl http://localhost:8000/api/health` → `{"status":"ok"}`
 
-## Git rules
+### Environment variables
 
-- Branch off `main`: `builder-a`, `builder-b`, `builder-c`, `builder-d`.
-- **Only Builder A merges to `main`.** PR or push-then-Saliha-merges.
-- Commits: short, present tense. `add /api/search route`, `wire map to nation selector`. Not `feat: comprehensive ⚡`.
-- Don't edit a file outside your lane — ping the owner.
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `ANTHROPIC_API_KEY_1` | Yes | Anthropic API key. Add more as `_2`, `_3` — the backend round-robins across all of them. |
+| `DEMO_MODE` | No | Set to `true` to serve all responses from `backend/demo_cache/` without hitting the API. |
 
-## Folder structure
+---
+
+## API
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /api/health` | Liveness check |
+| `GET /api/search?q=&nation=` | Topic search or person search. `nation` = `UK` \| `ENG` \| `SCO` \| `WAL` |
+| `GET /api/person/{id}` | Full MP profile + timeline |
+| `GET /api/axes` | Political axis definitions with party positions |
+
+Full request/response shapes in [`contracts.md`](contracts.md).
+
+---
+
+## Bias defence
+
+Every quote shown in the UI is a verbatim substring of the manifesto file in this repo. The topic classifier is deterministic keyword matching — no LLM involved. The LLM only summarises and extracts; it cannot invent positions because it only sees the text we pass it. If a party's manifesto is silent on a topic, the response says so plainly.
+
+---
+
+## Project structure
 
 ```
 /
-├── CLAUDE.md            # project rules — read first
-├── README.md            # this file
-├── contracts.md         # API shapes A and B both honour
-├── briefs/              # one brief per builder
-│   ├── builder-a-backend.md
-│   ├── builder-b-frontend.md
-│   ├── builder-c-claude.md
-│   └── builder-d-data.md
-├── skills/              # reference docs
-│   ├── uk-map.md        # Leaflet + UK nations
-│   └── debug-fast.md    # break the loop when Claude Code spirals
-├── backend/             # FastAPI service (Builder A)
+├── backend/
 │   ├── app/
-│   │   ├── main.py
-│   │   ├── search.py
-│   │   ├── classify.py
-│   │   ├── llm.py
-│   │   └── models.py
+│   │   ├── main.py        routes + person detection
+│   │   ├── search.py      LLM call, page extraction, demo cache
+│   │   ├── classify.py    deterministic keyword → axis (no LLM)
+│   │   ├── data.py        people.json + results.json loaders
+│   │   ├── llm.py         Anthropic client, key round-robin
+│   │   └── models.py      pydantic schemas
 │   ├── data/
-│   │   ├── manifestos/  # one .md per party (Builder D)
-│   │   └── axes.json    # hand-coded axis positions (Builder D)
-│   ├── demo_cache/      # populated by Builder D before submission
-│   ├── requirements.txt
-│   └── .env.example
-└── frontend/            # Vite + React 18 + Leaflet (Builder B)
+│   │   ├── manifestos/    labour.md, conservative.md, libdem.md, snp.md, plaid.md
+│   │   ├── axes.json      6 axes × 5 parties — verbatim quotes + compass positions
+│   │   ├── results.json   timeline entries by topic and by person
+│   │   └── people.json    3 demo MP profiles
+│   └── demo_cache/        15 pre-warmed responses for offline demo
+└── frontend/
     ├── src/
-    │   ├── App.jsx
-    │   ├── Map.jsx
-    │   ├── SearchBar.jsx
-    │   ├── PartyCard.jsx
-    │   ├── SpectrumChart.jsx
-    │   ├── api.js
-    │   └── styles.css
+    │   ├── App.jsx         root layout + search state
+    │   ├── Map.jsx         Leaflet 4-nation interactive map
+    │   ├── PartyCard.jsx   topic card + person empty card
+    │   ├── DetailPanel.jsx right panel — timeline + person profile
+    │   ├── api.js          backend fetch + mock toggle
+    │   └── styles.css      glass aesthetic
     └── public/
-        └── uk-nations.geojson  # Builder D drops this in
+        └── uk-nations.geojson   ONS 4-nation boundaries
 ```
 
-## Demo flow (locked)
+---
 
-1. Page loads — UK 4-nation map centred, search bar with cycling placeholder.
-2. User types `tuition fees`, hits enter — 3 party cards appear (Lab/Con/LD) with cited quotes; spectrum below.
-3. User clicks **Scotland** on the map — same query re-runs, SNP card joins, spectrum updates.
-4. User clears, types `renters rights` — content updates fluidly.
-5. Tagline: *"One search bar. Every party. Real quotes. Your country."*
+## Data sources
 
-If a feature doesn't serve this script, don't build it.
+| Source | Licence | Used for |
+|--------|---------|----------|
+| 2024 UK party manifestos (Labour, Conservative, Lib Dem, SNP, Plaid Cymru) | Public political content | Manifesto text, verbatim citations |
+| [ONS Open Geography Portal](https://geoportal.statistics.gov.uk/) | Open Government Licence | UK nations GeoJSON |
+| [Democracy Club](https://democracyclub.org.uk/) | CC BY 4.0 | MP profiles, candidate data |
+| [UK Parliament](https://members.parliament.uk/) | Open Parliament Licence | Constituency election results |
 
-## Bias defence (you will be asked)
+---
 
-> "Every claim is a verbatim quote from the party's own manifesto, page-cited inline. The classifier is deterministic keyword matching, not an LLM. The LLM only summarises and quotes — it cannot invent positions because it can only see the manifesto we give it."
+## Team
 
-## Sync points
-
-- **Now (Sat morning)** — repo cloned, structure in place, everyone on their branch
-- **+3h** — backend `/api/health` reachable; frontend map renders (with placeholder GeoJSON if needed)
-- **+6h** — first end-to-end search works on one demo topic
-- **+10h** — full integration; all 5 demo queries pre-warmed
-- **Sat evening** — feature freeze, slop sweep, demo cache populated, screen recording captured
-- **Sun morning** — rehearsal, polish, submit
-
-## Risks (read at H+0)
-
-1. **Contract drift between A and B.** Edit `contracts.md` together when shapes change.
-2. **Demo wifi/Anthropic dies.** `DEMO_MODE=true` saves you. Builder D pre-warms cache before submission.
-3. **Bad LLM output on weird phrasings.** Builder D QAs 20+ query variants before submission.
+| Builder | Role |
+|---------|------|
+| Saliha ([@saliha006](https://github.com/saliha006)) | Backend — FastAPI, LLM integration, demo cache |
+| Abdulla ([@Abdulla-AlBassam](https://github.com/Abdulla-AlBassam)) | Frontend — React, Leaflet map, UI |
+| Elya ([@ElyaRaza](https://github.com/ElyaRaza)) | LLM prompts — citation quality, extraction, prompt caching |
+| Maks ([@maksymkhomitskyi](https://github.com/maksymkhomitskyi)) | Data — manifestos, axes, MP profiles, demo script |
+| Aws ([@awszaman](https://github.com/awszaman)) | Floater — paired across all lanes |
