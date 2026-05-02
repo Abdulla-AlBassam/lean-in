@@ -1,7 +1,14 @@
-export function PartyCard({ party }) {
+import { PartyEmblem } from "./PartyEmblem.jsx";
+
+export function PartyCard({ party, onClick }) {
   return (
-    <article className="party-card" style={{ "--party-colour": party.colour }}>
+    <article
+      className="party-card"
+      style={{ "--party-colour": party.colour }}
+      onClick={() => onClick && onClick(party)}
+    >
       <header>
+        <PartyEmblem partyId={party.id} size={32} />
         <h2>{party.name}</h2>
       </header>
       <p className="summary">{party.summary}</p>
