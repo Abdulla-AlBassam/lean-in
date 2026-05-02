@@ -6,7 +6,7 @@ export function SpectrumChart({ axis, parties }) {
       <div className="spectrum-label">{axis}</div>
       <div className="spectrum-mock">
         {parties.map((p) => (
-          <span key={p.id} className="dot" style={{ background: p.colour }}>
+          <span key={p.id} className="dot" style={{ "--dot-colour": p.colour + "55" }}>
             {p.name}
           </span>
         ))}
