@@ -118,7 +118,7 @@ Filenames are fixed — Builder A (`llm.py`) loads them by exact name.
 
 ### `backend/data/axes.json`
 
-**Status:** 🔲 in progress — TODOs being filled
+**Status:** ✅ done — committed on builder-d, all 24 cells filled
 
 6 axes × 4 parties = 24 cells. Each cell: `{ x, y, quote, source }`.
 `x` ∈ [-1, 1]: economic (left negative). `y` ∈ [-1, 1]: social (libertarian positive).
