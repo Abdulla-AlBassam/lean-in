@@ -78,60 +78,60 @@ When `nation=SCO`, an additional `snp` party appears in the array. When `nation=
 
 ---
 
-## Builder D data contracts (Maks / maksymkhomitskyi)
+## Builder D — Maks (maksymkhomitskyi)
 
-These are the static assets and data files Builder D owns. Shapes here are what Builder A (backend) and Builder B (frontend) must match.
+All files below are on branch `builder-d`. Merge that branch into main to make them available to the team.
 
 ### `frontend/public/uk-nations.geojson`
-
 **Status:** ✅ done — committed on builder-d
-
-GeoJSON FeatureCollection, 4 features (England, Scotland, Wales, Northern Ireland).
-Property field: `CTRY23CD` (Map.jsx already falls back `CTRY24CD || CTRY23CD` — compatible).
-
-```
-E92000001 → England
-S92000003 → Scotland
-W92000004 → Wales
-N92000002 → Northern Ireland
-```
-
-Source: ONS Countries (December 2023) Boundaries UK BUC via ArcGIS FeatureServer.
+**What it is:** UK 4-nation boundary map file. Builder B (Abdulla) needs this for the map to render.
+**Property field:** `CTRY23CD` — Map.jsx already handles this with its `CTRY24CD || CTRY23CD` fallback.
+**Source:** ONS Countries (December 2023) Boundaries UK BUC via ArcGIS FeatureServer.
+Nations: E92000001 England, S92000003 Scotland, W92000004 Wales, N92000002 Northern Ireland.
 
 ---
 
-### `backend/data/manifestos/{labour,conservative,libdem,snp}.md`
-
+### `backend/data/manifestos/labour.md`
 **Status:** ✅ done — committed on builder-d
+**What it is:** Full 2024 Labour General Election manifesto as plain text, 132 pages, 193 KB.
+Page markers format: `(p.N)` — e.g. `(p.34)` before every page of content.
+Source: official PDF from labour.org.uk
 
-Plain markdown, page markers preserved as `(p.N)`. One file per party.
-Filenames are fixed — Builder A (`llm.py`) loads them by exact name.
+### `backend/data/manifestos/conservative.md`
+**Status:** ✅ done — committed on builder-d
+**What it is:** Full 2024 Conservative General Election manifesto as plain text, 77 pages, 200 KB.
+Page markers format: `(p.N)`.
+Source: official PDF from conservatives.com
 
-| File | Party |
-|---|---|
-| `labour.md` | Labour |
-| `conservative.md` | Conservative |
-| `libdem.md` | Liberal Democrats |
-| `snp.md` | SNP |
+### `backend/data/manifestos/libdem.md`
+**Status:** ✅ done — committed on builder-d
+**What it is:** Full 2024 Liberal Democrat General Election manifesto as plain text, 116 pages, 153 KB.
+Page markers format: `(p.N)`.
+Source: official PDF from libdems.org.uk
+
+### `backend/data/manifestos/snp.md`
+**Status:** ✅ done — committed on builder-d
+**What it is:** Full 2024 SNP General Election manifesto as plain text, 31 pages, 61 KB.
+Page markers format: `(p.N)`.
+Source: official PDF from snp.org
 
 ---
 
 ### `backend/data/axes.json`
-
-**Status:** ✅ done — committed on builder-d, all 24 cells filled
-
-6 axes × 4 parties = 24 cells. Each cell: `{ x, y, quote, source }`.
-`x` ∈ [-1, 1]: economic (left negative). `y` ∈ [-1, 1]: social (libertarian positive).
-Axis IDs: `economy`, `health`, `education`, `housing`, `immigration`, `environment`.
+**Status:** ✅ done — committed on builder-d, all 24 cells filled, no TODOs remaining
+**What it is:** 6 axes × 4 parties = 24 cells. Each cell has a verbatim quote, page citation, and (x, y) position score.
+`x` ∈ [-1, 1]: economic (left = negative, right = positive).
+`y` ∈ [-1, 1]: social (libertarian = positive, authoritarian = negative).
+Axes: `economy`, `health`, `education`, `housing`, `immigration`, `environment`.
+Parties: `labour`, `conservative`, `libdem`, `snp`.
+Every quote sourced directly from the manifesto files above.
 
 ---
 
 ### `backend/demo_cache/`
-
-**Status:** 🔲 pending — pre-warm after backend is live
-
-One JSON file per query×nation combination. Populated by running all demo queries with `DEMO_MODE=false`.
-`DEMO_MODE=true` in `.env` makes the backend serve from this directory instead of hitting the LLM.
+**Status:** 🔲 pending — blocked on Builder A backend being live
+**What it is:** Pre-saved API responses for all 5 demo queries. Enables `DEMO_MODE=true` fallback if wifi/API fails during demo.
+Will be populated by running all demo queries against `http://localhost:8000/api/search` with `DEMO_MODE=false`.
 
 ---
 
