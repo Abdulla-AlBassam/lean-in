@@ -594,8 +594,8 @@ a.timeline-source:hover {
 }
 .mp-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 4px;
   width: 100%;
   padding: 12px 14px;
   background: rgba(255, 255, 255, 0.03);
@@ -614,10 +614,11 @@ a.timeline-source:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
 }
-.mp-row__main {
+.mp-row__top {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 .mp-row__name {
   font-size: 13.5px;
@@ -631,8 +632,100 @@ a.timeline-source:hover {
 .mp-row__role {
   font-size: 11px;
   color: rgba(245, 245, 245, 0.5);
-  text-align: right;
-  max-width: 160px;
+}
+
+/* ─── Gauges ─────────────────────────────────────────────── */
+
+.gauge {
+  display: inline-flex;
+  align-items: center;
+}
+.gauge--compact {
+  gap: 8px;
+}
+.gauge__pct {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(245, 245, 245, 0.85);
+  font-variant-numeric: tabular-nums;
+}
+.gauge--full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.gauge__readout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -42px;
+  pointer-events: none;
+}
+.gauge__pct--lg {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f5f5f5;
+}
+.gauge__label {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.55);
+}
+
+/* ─── Score cards (in MP detail) ────────────────────────── */
+
+.score-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.score-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+.score-card__gauge {
+  flex-shrink: 0;
+}
+.score-card__gauge .gauge--full {
+  transform: scale(0.7);
+  transform-origin: center;
+  margin: -16px -22px;
+}
+.score-card__body {
+  flex: 1;
+  min-width: 0;
+}
+.score-card__label {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #f5f5f5;
+}
+.score-card__line {
+  margin: 0 0 3px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: rgba(245, 245, 245, 0.65);
+}
+.score-card__line:last-child { margin-bottom: 0; }
+.score-footnote {
+  margin: 4px 0 18px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: rgba(245, 245, 245, 0.4);
+  font-style: italic;
 }
 
 /* ─── Back button (MP detail) + section eyebrow ────────── */

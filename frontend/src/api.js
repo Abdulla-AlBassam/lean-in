@@ -42,6 +42,10 @@ export function getArticles(axisId, partyId) {
   return (ARTICLES[axisId] && ARTICLES[axisId][partyId]) || [];
 }
 
+export function getMpScores(mpId) {
+  return MP_SCORES[mpId] || null;
+}
+
 const PARTY_META = {
   labour:       { name: "Labour",            colour: "#E4003B" },
   conservative: { name: "Conservative",      colour: "#0087DC" },
@@ -477,6 +481,35 @@ const MP_POSITIONS = {
   "kirsty-blackman": {
     economy: [{ type: "statement", date: "2026-03-12", headline: "Blackman backs four-day-week pilot",                            quote: "Early data from the Scottish trial shows productivity gains.",            source_label: "SNP press release, 12 Mar 2026",     source_url: "https://snp.org/news/" }],
   },
+};
+
+// ─── Per-MP accountability scores ───────────────────────────────
+// Three independent scores per MP. For the demo these are hand-coded;
+// production version is documented in PROGRESS.md (sentence-embedding
+// similarity for consistency, raw Hansard counts for voting alignment,
+// and a simple coverage count for record density).
+const MP_SCORES = {
+  "lisa-nandy":         { consistency: { value: 82, statements_aligned: 9, statements_total: 11, votes_aligned: 18, votes_total: 22 }, voting: { value: 96, with_party: 192, total: 200, last_against: "2025-11-08" }, record: { value: 78, statements: 11, votes: 22, press: 6 } },
+  "wes-streeting":      { consistency: { value: 88, statements_aligned: 12, statements_total: 14, votes_aligned: 19, votes_total: 22 }, voting: { value: 95, with_party: 190, total: 200, last_against: "2025-09-22" }, record: { value: 85, statements: 14, votes: 22, press: 9 } },
+  "bridget-phillipson": { consistency: { value: 84, statements_aligned: 10, statements_total: 12, votes_aligned: 20, votes_total: 23 }, voting: { value: 97, with_party: 194, total: 200, last_against: "2025-12-04" }, record: { value: 72, statements: 12, votes: 23, press: 5 } },
+  "yvette-cooper":      { consistency: { value: 79, statements_aligned: 8, statements_total: 11, votes_aligned: 21, votes_total: 24 }, voting: { value: 98, with_party: 196, total: 200, last_against: "2025-07-15" }, record: { value: 88, statements: 11, votes: 24, press: 11 } },
+  "angela-rayner":      { consistency: { value: 86, statements_aligned: 13, statements_total: 15, votes_aligned: 22, votes_total: 24 }, voting: { value: 99, with_party: 198, total: 200, last_against: "2025-05-30" }, record: { value: 91, statements: 15, votes: 24, press: 14 } },
+
+  "robert-jenrick":     { consistency: { value: 71, statements_aligned: 8, statements_total: 12, votes_aligned: 16, votes_total: 22 }, voting: { value: 87, with_party: 174, total: 200, last_against: "2026-03-14" }, record: { value: 76, statements: 12, votes: 22, press: 8 } },
+  "kemi-badenoch":      { consistency: { value: 75, statements_aligned: 11, statements_total: 14, votes_aligned: 21, votes_total: 24 }, voting: { value: 99, with_party: 198, total: 200, last_against: "2024-11-02" }, record: { value: 89, statements: 14, votes: 24, press: 13 } },
+  "priti-patel":        { consistency: { value: 68, statements_aligned: 6, statements_total: 10, votes_aligned: 18, votes_total: 22 }, voting: { value: 91, with_party: 182, total: 200, last_against: "2026-02-08" }, record: { value: 70, statements: 10, votes: 22, press: 6 } },
+  "james-cleverly":     { consistency: { value: 74, statements_aligned: 9, statements_total: 12, votes_aligned: 19, votes_total: 22 }, voting: { value: 93, with_party: 186, total: 200, last_against: "2026-01-19" }, record: { value: 65, statements: 12, votes: 22, press: 4 } },
+  "mel-stride":         { consistency: { value: 80, statements_aligned: 10, statements_total: 13, votes_aligned: 19, votes_total: 22 }, voting: { value: 95, with_party: 190, total: 200, last_against: "2025-10-16" }, record: { value: 72, statements: 13, votes: 22, press: 7 } },
+
+  "daisy-cooper":       { consistency: { value: 88, statements_aligned: 12, statements_total: 14, votes_aligned: 19, votes_total: 22 }, voting: { value: 92, with_party: 184, total: 200, last_against: "2026-02-26" }, record: { value: 68, statements: 14, votes: 22, press: 5 } },
+  "ed-davey":           { consistency: { value: 90, statements_aligned: 13, statements_total: 14, votes_aligned: 20, votes_total: 22 }, voting: { value: 95, with_party: 190, total: 200, last_against: "2025-08-20" }, record: { value: 82, statements: 14, votes: 22, press: 11 } },
+  "layla-moran":        { consistency: { value: 82, statements_aligned: 9, statements_total: 11, votes_aligned: 17, votes_total: 22 }, voting: { value: 88, with_party: 176, total: 200, last_against: "2026-03-04" }, record: { value: 60, statements: 11, votes: 22, press: 4 } },
+  "tim-farron":         { consistency: { value: 76, statements_aligned: 8, statements_total: 11, votes_aligned: 16, votes_total: 22 }, voting: { value: 86, with_party: 172, total: 200, last_against: "2026-01-30" }, record: { value: 55, statements: 11, votes: 22, press: 3 } },
+  "sarah-olney":        { consistency: { value: 78, statements_aligned: 8, statements_total: 11, votes_aligned: 18, votes_total: 22 }, voting: { value: 90, with_party: 180, total: 200, last_against: "2025-12-12" }, record: { value: 50, statements: 11, votes: 22, press: 2 } },
+
+  "stephen-flynn":      { consistency: { value: 84, statements_aligned: 11, statements_total: 13, votes_aligned: 20, votes_total: 22 }, voting: { value: 94, with_party: 188, total: 200, last_against: "2025-11-29" }, record: { value: 70, statements: 13, votes: 22, press: 5 } },
+  "mhairi-black":       { consistency: { value: 72, statements_aligned: 7, statements_total: 11, votes_aligned: 17, votes_total: 22 }, voting: { value: 81, with_party: 162, total: 200, last_against: "2026-04-02" }, record: { value: 58, statements: 11, votes: 22, press: 3 } },
+  "kirsty-blackman":    { consistency: { value: 79, statements_aligned: 9, statements_total: 11, votes_aligned: 18, votes_total: 22 }, voting: { value: 90, with_party: 180, total: 200, last_against: "2026-02-15" }, record: { value: 52, statements: 11, votes: 22, press: 2 } },
 };
 
 // ─── Demo people for the person search ───────────────────────────

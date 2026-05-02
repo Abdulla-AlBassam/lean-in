@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { PartyEmblem } from "./PartyEmblem.jsx";
 import { PersonProfile } from "./PersonProfile.jsx";
-import { getPartyMps, getMp, getMpTopicPositions, getArticles } from "./api.js";
+import { ConsistencyGauge } from "./ConsistencyGauge.jsx";
+import { getPartyMps, getMp, getMpTopicPositions, getArticles, getMpScores } from "./api.js";
 
 const TYPE_LABEL = {
   manifesto: "Manifesto",
@@ -122,6 +123,7 @@ function PersonView({ person, onClose }) {
 function MpDetail({ mp: mpId, axisId, topic, onBack, onClose }) {
   const mp = getMp(mpId) || stubMp(mpId);
   const positions = getMpTopicPositions(mpId, axisId);
+  const scores = getMpScores(mpId);
 
   return (
     <>
@@ -136,10 +138,61 @@ function MpDetail({ mp: mpId, axisId, topic, onBack, onClose }) {
       </header>
       <div className="detail-panel__body">
         <PersonProfile person={mp} />
+
+        {scores && (
+          <>
+            <p className="section-eyebrow">Accountability</p>
+            <div className="score-cards">
+              <ScoreCard
+                value={scores.consistency.value}
+                label="Manifesto Consistency"
+                lines={[
+                  `${scores.consistency.statements_aligned} of ${scores.consistency.statements_total} recent statements aligned with party manifesto`,
+                  `${scores.consistency.votes_aligned} of ${scores.consistency.votes_total} votes aligned with manifesto pledges`,
+                ]}
+              />
+              <ScoreCard
+                value={scores.voting.value}
+                label="Voting Alignment"
+                lines={[
+                  `${scores.voting.with_party} of ${scores.voting.total} votes cast with party whip`,
+                  `Last broke whip: ${formatDate(scores.voting.last_against)}`,
+                ]}
+              />
+              <ScoreCard
+                value={scores.record.value}
+                label="Public Record Density"
+                lines={[
+                  `${scores.record.statements} statements, ${scores.record.votes} recorded votes, ${scores.record.press} press releases on file`,
+                ]}
+              />
+            </div>
+            <p className="score-footnote">
+              Demo data. Production version computes consistency from sentence-embedding similarity against Hansard, voting alignment from the public division record, and record density from primary-source coverage.
+            </p>
+          </>
+        )}
+
         <p className="section-eyebrow">{mp.name.split(" ")[0]}'s positions on {topic}</p>
         <Timeline entries={positions} emptyText={`No public record from ${mp.name} on this topic yet.`} />
       </div>
     </>
+  );
+}
+
+function ScoreCard({ value, label, lines }) {
+  return (
+    <div className="score-card">
+      <div className="score-card__gauge">
+        <ConsistencyGauge variant="full" value={value} />
+      </div>
+      <div className="score-card__body">
+        <p className="score-card__label">{label}</p>
+        {lines.map((l, i) => (
+          <p key={i} className="score-card__line">{l}</p>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -210,17 +263,21 @@ function MpsList({ mps, onClick }) {
   }
   return (
     <ul className="mp-list">
-      {mps.map((mp) => (
-        <li key={mp.id}>
-          <button className="mp-row" onClick={() => onClick(mp.id)}>
-            <div className="mp-row__main">
-              <span className="mp-row__name">{mp.name}</span>
+      {mps.map((mp) => {
+        const scores = getMpScores(mp.id);
+        return (
+          <li key={mp.id}>
+            <button className="mp-row" onClick={() => onClick(mp.id)}>
+              <div className="mp-row__top">
+                <span className="mp-row__name">{mp.name}</span>
+                {scores && <ConsistencyGauge variant="compact" value={scores.consistency.value} />}
+              </div>
               <span className="mp-row__constituency">{mp.constituency}</span>
-            </div>
-            <span className="mp-row__role">{mp.role}</span>
-          </button>
-        </li>
-      ))}
+              <span className="mp-row__role">{mp.role}</span>
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 }
