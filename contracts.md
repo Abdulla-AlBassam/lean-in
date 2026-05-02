@@ -280,6 +280,16 @@ Shape:
 
 ---
 
+### `frontend/public/uk-constituencies.geojson`
+**Status:** ✅ done — on main
+**What it is:** All 650 Westminster Parliamentary Constituencies (July 2024) boundaries, BUC (Ultra Generalised Clipped). 1.4 MB.
+**Source:** ONS Open Geography Portal (Open Government Licence)
+**Fields:** `PCON24CD` (code), `PCON24NM` (name)
+**Nation from code prefix:** `E` = England (543), `S` = Scotland (57), `W` = Wales (32), `N` = Northern Ireland (18)
+**For Builder B:** load alongside `uk-nations.geojson`. On constituency click, derive nation from `PCON24CD[0]` and call `onSelect` with that nation. Constituencies are decorative until the backend supports constituency-scoped queries.
+
+---
+
 ### `backend/data/manifestos/plaid.md`
 **Status:** ✅ done — on main
 **What it is:** Full 2024 Plaid Cymru General Election manifesto as plain text, 72 pages, 113 KB.
