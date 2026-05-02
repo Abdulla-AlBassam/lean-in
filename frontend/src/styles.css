@@ -760,3 +760,102 @@ a.timeline-source:hover {
   box-shadow: none;
 }
 .leaflet-tooltip::before { display: none; }
+
+/* ─── Loading skeleton ─────────────────────────────── */
+
+.skeleton-panel {
+  margin-top: auto;
+  width: 100%;
+  max-width: 1200px;
+  background:
+    linear-gradient(rgba(8, 10, 14, 0.45), rgba(8, 10, 14, 0.45)),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  border-radius: 18px 18px 0 0;
+  padding: 24px 28px;
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 -16px 60px rgba(0, 0, 0, 0.55);
+}
+
+.skeleton-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  background:
+    linear-gradient(rgba(6, 8, 12, 0.82), rgba(6, 8, 12, 0.82)),
+    rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+}
+
+.skeleton-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.skeleton-shimmer {
+  display: block;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.09) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  to { transform: translateX(100%); }
+}
+
+.skeleton-emblem {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+}
+.skeleton-name { height: 14px; width: 120px; }
+.skeleton-line { height: 11px; width: 100%; }
+.skeleton-line-short { width: 62%; }
+.skeleton-line-mid { width: 80%; }
+
+.skeleton-quote {
+  margin-top: 4px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 6px 6px 0;
+}
+
+.skeleton-cite { height: 9px; width: 48%; margin-top: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer::after { animation: none; }
+}

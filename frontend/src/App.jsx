@@ -4,6 +4,7 @@ import { SearchBar } from "./SearchBar.jsx";
 import { PartyCard } from "./PartyCard.jsx";
 import { Logo } from "./Logo.jsx";
 import { DetailPanel } from "./DetailPanel.jsx";
+import { LoadingSkeleton } from "./LoadingSkeleton.jsx";
 import { search } from "./api.js";
 
 export default function App() {
@@ -71,7 +72,7 @@ export default function App() {
         <aside className="cards-rail" aria-hidden={!results}>
           <div className="cards-rail__inner">
             {error && <div className="rail-status rail-status--error">{error}</div>}
-            {loading && <div className="rail-status">Loading…</div>}
+            {loading && <LoadingSkeleton />}
             {results && !loading && (
               <>
                 <div className="rail-header">
