@@ -76,6 +76,47 @@ When `nation=SCO`, an additional `snp` party appears in the array. When `nation=
 
 ---
 
+## Builder C — Elya (builder-c branch)
+
+**Owner:** Elya
+**Primary file:** `backend/app/search.py`
+
+### What's done
+
+- **SYSTEM_PROMPT v4** — strict JSON-only output schema with 6 rules enforced:
+  - Verbatim quote requirement (exact substring from manifesto, no paraphrase)
+  - 1–2 citations per party max
+  - Page citation format: `<Party Name> Manifesto 2024, p.<X>` or `p.unknown`
+  - Silent fallback: if manifesto doesn't cover the topic, `summary = "The manifesto does not directly address this topic."` and `citations = []`
+  - Neutral descriptive language, no partisan framing, no quoted text inside summaries
+  - Return exactly the requested party IDs, no extras
+- **`_normalise(text)`** — joins lines within paragraphs after PDF conversion, so Claude's inline quotes match verbatim substring checks against the file
+- **`_extract_section(text, keywords, top_k=6)`** — ranks manifesto pages by keyword hit density, passes only the top 6 pages to Claude. Keeps per-call input tokens under the 10K/min free-tier rate limit.
+- **`load_manifestos(party_ids, keywords)`** — applies both normalise + extract before building system blocks
+- **Prompt caching** — manifesto blocks use `cache_control: {"type": "ephemeral"}`. System block is stable; user message is `Topic: <q>\nParties: <ids>`. From call 2 onwards `usage.cache_read_input_tokens` is non-zero.
+- **Off-topic guard in `main.py`** — `classify()` runs before the LLM call. If `axis_id == "unknown"`, returns 400 with a helpful message. LLM is never called for off-topic queries.
+- **`llm.py` key filtering** — filters `ANTHROPIC_API_KEY_*` env vars to `len(v) > 20` so placeholder strings don't get sent to the API.
+- **`classify.py` tuple** — now returns `(axis_id, axis_label, keywords)` so `search.py` can pass keywords to `_extract_section`.
+- **`briefs/prompt-log.md`** — prompt iteration history v1→v4 with what changed and what the test result was.
+
+### Citation guarantees
+
+- Every `citation.quote` is a verbatim substring of the manifesto text passed to the model.
+- `citations` per party: 1 or 2 entries. Never more than 2.
+- Fewer citations is correct; invented citations are not.
+- Page citation format: `<Party Name> Manifesto 2024, p.<X>`. Fallback: `p.unknown`.
+
+### Prompt caching
+
+- System block: `[SYSTEM_PROMPT, ...manifesto blocks]`. Each manifesto block has `cache_control: {"type": "ephemeral"}`.
+- User message only: `Topic: <query>\nParties: <comma-separated ids>`.
+- Confirm caching: `usage.cache_read_input_tokens` non-zero from call 2 onward.
+
+### Demo cache
+
+- `search()` auto-saves every response to `backend/demo_cache/<NATION>__<query>.json` via `save_demo_cache()`.
+- `DEMO_MODE=true` reads from cache instead of hitting the API.
+
 ---
 
 ## Builder D — Maks (maksymkhomitskyi)
