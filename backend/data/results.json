@@ -55,6 +55,15 @@
           "source_label": "SNP Manifesto 2024, p.4",
           "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
         }
+      ],
+      "plaid": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru demands needs-based funding to replace Barnett Formula",
+          "quote": "Plaid Cymru believes that Wales should be funded according to our needs, not the out-dated Barnett Formula which instead provides funding proportionate to spending on England's needs.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.8",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
+        }
       ]
     },
     "health": {
@@ -92,6 +101,15 @@
           "quote": "We have the best performing core A&E units in the UK.",
           "source_label": "SNP Manifesto 2024, p.4",
           "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ],
+      "plaid": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru: healthcare free at the point of delivery, oppose privatisation",
+          "quote": "Plaid Cymru strongly believes in the principle of healthcare free at the point of delivery, funded through general taxation. We oppose the privatisation of services by stealth through out-sourcing.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.12",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
         }
       ]
     },
@@ -159,6 +177,15 @@
           "source_label": "Hansard, 18 Mar 2026 — Dave Doogan (SNP)",
           "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=tuition+fees+scotland&startDate=2026-03-18&endDate=2026-03-18"
         }
+      ],
+      "plaid": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru: no child should struggle with the cost of education",
+          "quote": "No child or family should struggle with the cost of education. No child should be hungry at school. It is only because of Plaid Cymru that all primary school children in Wales receive free school meals.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.19",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
+        }
       ]
     },
     "housing": {
@@ -211,6 +238,15 @@
           "source_label": "SNP Manifesto 2024, p.4",
           "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
         }
+      ],
+      "plaid": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru: right to a safe and affordable home, with rent controls",
+          "quote": "Plaid Cymru believes that everybody has the right to a safe and affordable home in their community, and this should be the purpose of the housing system. We will introduce a Right to Adequate Housing which will underpin this.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.30",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
+        }
       ]
     },
     "immigration": {
@@ -255,6 +291,15 @@
           "quote": "Devolve powers to create a bespoke migration system for Scotland.",
           "source_label": "SNP Manifesto 2024, p.6",
           "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ],
+      "plaid": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru opposes Rwanda deportations and demands UK uphold Refugee Treaty",
+          "quote": "Plaid Cymru strongly oppose the Conservative UK Government's proposals and attitudes towards asylum seekers and refugees, including deportation to Rwanda and the general hostile environment created. We believe that the UK should uphold the commitments made when it signed up to the Refugee Treaty in 1951.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.54",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
         }
       ]
     },
@@ -307,6 +352,15 @@
           "quote": "Deliver a fair and managed transition to net zero.",
           "source_label": "SNP Manifesto 2024, p.6",
           "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ],
+      "plaid": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru commits to net zero in Wales by 2035 and reversing biodiversity decline by 2030",
+          "quote": "Plaid Cymru recognises that the climate and nature emergencies are the biggest threat to mankind on a global scale, and reaffirms our commitment to reaching net-zero targets in Wales by 2035 and reversing biodiversity decline by 2030.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.34",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
         }
       ]
     }

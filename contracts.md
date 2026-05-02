@@ -192,7 +192,7 @@ Shape:
 }
 ```
 Topic IDs: `economy`, `health`, `education`, `housing`, `immigration`, `environment`.
-Party IDs: `labour`, `conservative`, `libdem`, `snp`.
+Party IDs: `labour`, `conservative`, `libdem`, `snp`, `plaid`.
 Person IDs: `lisa-nandy`, `robert-jenrick`, `daisy-cooper`.
 **Needs from Builder A:** Endpoint to serve results — either `GET /api/results?topic=<id>&party=<id>` and `GET /api/results?person=<id>`, or attach `results` array to existing `/api/search` and `/api/person/{id}` responses.
 
@@ -225,6 +225,14 @@ Shape:
 }
 ```
 **Needs from Builder A:** `GET /api/person/{id}` should read this file to populate person metadata, then merge in `results.json.by_person[id]` for the timeline.
+
+---
+
+### `backend/data/manifestos/plaid.md`
+**Status:** ✅ done — on main
+**What it is:** Full 2024 Plaid Cymru General Election manifesto as plain text, 72 pages, 113 KB.
+Page markers format: `(p.N)`.
+Source: official PDF from partyof.wales
 
 ---
 
