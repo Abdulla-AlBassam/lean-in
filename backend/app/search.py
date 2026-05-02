@@ -10,6 +10,7 @@ import anthropic
 from .llm import client
 from .models import SearchResponse, PartyPOV, Citation
 from .classify import classify
+from .data import load_results
 
 logger = logging.getLogger(__name__)
 
@@ -146,6 +147,8 @@ def search(query: str, nation: str) -> SearchResponse:
     end = raw.rfind("}") + 1
     parsed = json.loads(raw[start:end])
 
+    by_topic = load_results().get("by_topic", {}).get(axis_id, {})
+
     parties = []
     for p in parsed["parties"]:
         pid = p["id"].lower()
@@ -157,6 +160,7 @@ def search(query: str, nation: str) -> SearchResponse:
             colour=PARTY_META[pid]["colour"],
             summary=p["summary"],
             citations=[Citation(**c) for c in p["citations"]],
+            results=by_topic.get(pid, []),
         ))
 
     response = SearchResponse(axisId=axis_id, axisLabel=axis_label, parties=parties)

@@ -16,6 +16,7 @@ class PartyPOV(BaseModel):
     colour: str
     summary: str = Field(..., max_length=400)
     citations: list[Citation] = Field(..., min_length=1, max_length=3)
+    results: list = Field(default_factory=list)
 
 
 class SearchResponse(BaseModel):
