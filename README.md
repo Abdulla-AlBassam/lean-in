@@ -1,105 +1,128 @@
 # Lean In
 
-UK politics, plainly. Search any topic, see where every party stands. Every claim is a quote from the party's own manifesto.
+UK politics, plainly. Open the map, click your nation, search any policy topic. See where every major party stands — every claim a verbatim quote from that party's own manifesto.
 
-- **Production:** https://lean-in-ten.vercel.app
 - **Repo:** https://github.com/Abdulla-AlBassam/lean-in
-- **Hackathon deadline:** end of day tomorrow
+- **Hackathon deadline:** end of day Sunday 2026-05-03
+
+## Read these before you write code
+
+1. **`CLAUDE.md`** — project rules. Code style, architectural rules, demo-mode, slop sweep.
+2. **`contracts.md`** — the API shapes Builder A and Builder B agree on. The single source of truth.
+3. Your builder brief in `briefs/`.
+4. The skill docs in `skills/`.
 
 ## Quick start
 
 ```bash
 git clone https://github.com/Abdulla-AlBassam/lean-in
 cd lean-in
-npm install
-npm run dev
+
+# frontend (Builder B)
+cd frontend && npm install && npm run dev      # → http://localhost:5173
+
+# backend (Builder A) — separate terminal
+cd backend
+python3.11 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env                            # paste your key into .env
+uvicorn app.main:app --reload --port 8000      # → http://localhost:8000
 ```
 
-Open http://localhost:3000.
+`curl http://localhost:8000/api/health` should return `{"status":"ok"}`.
 
-You will need the `ANTHROPIC_API_KEY` env var. Ask Abdulla for `.env.local` (do not commit it). Or pull from Vercel if you have access:
+## Stack
 
-```bash
-npx vercel link    # link to lean-in
-npx vercel env pull .env.local
-```
+- **Backend:** Python 3.11+, FastAPI, anthropic SDK, pydantic. Port 8000.
+- **Frontend:** React 18 + Vite + plain CSS + Leaflet. JS not TS. Port 5173.
+- **LLM:** `claude-sonnet-4-6`. Prompt caching mandatory on the manifesto context.
+- **Data:** ONS GeoJSON (UK nations), curated party manifestos, hand-coded axis positions in `backend/data/axes.json`.
 
-## How we work in one repo (read this)
+No database. No vector store. Manifestos sit in the Claude context with prompt caching — the model sees the full source so citations are guaranteed real.
 
-- **Branches per person.** `f1-frontend`, `b1-rag`, `b2-infra`, `j1-content`, `j2-viz`. Push often, merge to `main` whenever your slice works.
-- **No PR reviews.** It's 24h. Just merge.
-- **Vercel auto-deploys** `main` to production and every branch to a preview URL. Watch `#deploys` in our chat.
-- **One person owns each file or directory.** If you need a change in someone else's, ping them — don't edit directly. The conflict-prone file is `app/page.tsx` (F1 owns).
+## Roles
 
-### File ownership
-
-| Path | Owner | Role |
+| Role | Builder | Brief |
 |---|---|---|
-| `app/page.tsx`, `components/{search,map,cards,ui}/`, layout | F1 — frontend | Search bar, UK map (4 nations as inline SVG paths, NI greyed), party cards, page state |
-| `app/api/search/route.ts`, `lib/{rag,llm}/` | B1 — backend / LLM | Loads manifestos, calls Claude with prompt-cached context, returns party POVs with citations |
-| `app/api/classify/route.ts`, `lib/{db,cache}/`, infra config | B2 — backend / classifier | Query → axis classifier, off-topic detection, response cache (Vercel KV if needed), helps F1 |
-| `data/manifestos/*.md`, `data/axes.json`, `data/demo-queries.json` | J1 — content / demo | Manifesto cleaning, axis pre-coding (24 cells with quotes), demo script, query QA, dry runs |
-| `components/spectrum/`, design polish, `tailwind.config.ts` | J2 — viz / design / float | Spectrum chart (Recharts), design pass, helps F1 with map polish, fills wherever blocked |
+| **Builder A — Backend (Python/FastAPI)** | Saliha (saliha006) | `briefs/builder-a-backend.md` |
+| **Builder B — Frontend (React/Leaflet)** | Abdulla (Abdulla-AlBassam) | `briefs/builder-b-frontend.md` |
+| **Builder C — Claude / LLM prompts** | Elya (ElyaRaza) | `briefs/builder-c-claude.md` |
+| **Builder D — Data + demo + presenter** | Maks (maksymkhomitskyi) | `briefs/builder-d-data.md` |
+| **Helper / floater** | Aws (awszaman) | shadows Builder D, fills wherever blocked |
 
-### Branch naming
+## Git rules
 
-```bash
-git checkout -b f1-frontend       # F1
-git checkout -b b1-rag            # B1
-git checkout -b b2-infra          # B2
-git checkout -b j1-content        # J1
-git checkout -b j2-viz            # J2
-```
+- Branch off `main`: `builder-a`, `builder-b`, `builder-c`, `builder-d`.
+- **Only Builder A merges to `main`.** PR or push-then-Saliha-merges.
+- Commits: short, present tense. `add /api/search route`, `wire map to nation selector`. Not `feat: comprehensive ⚡`.
+- Don't edit a file outside your lane — ping the owner.
 
-## Architecture (decided)
-
-- **Next.js 16 (App Router) + React 19 + Tailwind v4 + TypeScript**
-- **No database.** All 4 manifestos live in `data/manifestos/*.md` and are loaded into the Claude system prompt with **prompt caching** (90% cost discount on cached tokens). Citations are guaranteed real because the model sees the full manifesto, not retrieval chunks.
-- **LLM:** Claude Sonnet 4.6 (`claude-sonnet-4-6`) via `@anthropic-ai/sdk`. Fast enough for live demo, 5x cheaper than Opus.
-- **Map:** four inline SVG paths (England/Scotland/Wales/NI). NI is greyed out with a tooltip — different party system, not in scope.
-- **Spectrum:** Recharts 2D scatter. Per-axis party positions are hand-coded in `data/axes.json` with justifying quotes and source citations.
-- **Deploy:** Vercel, auto on push to `main`.
-
-### API contracts (already stubbed, return 501)
+## Folder structure
 
 ```
-POST /api/search
-  body:  { query: string, nation: "UK"|"ENG"|"SCO"|"WAL"|"NIR" }
-  200:   { axisId: string, parties: Array<{ id, name, summary, citations: [{ quote, source }] }> }
-
-POST /api/classify
-  body:  { query: string }
-  200:   { axisId: string, confidence: number, isOnTopic: boolean }
+/
+├── CLAUDE.md            # project rules — read first
+├── README.md            # this file
+├── contracts.md         # API shapes A and B both honour
+├── briefs/              # one brief per builder
+│   ├── builder-a-backend.md
+│   ├── builder-b-frontend.md
+│   ├── builder-c-claude.md
+│   └── builder-d-data.md
+├── skills/              # reference docs
+│   ├── uk-map.md        # Leaflet + UK nations
+│   └── debug-fast.md    # break the loop when Claude Code spirals
+├── backend/             # FastAPI service (Builder A)
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── search.py
+│   │   ├── classify.py
+│   │   ├── llm.py
+│   │   └── models.py
+│   ├── data/
+│   │   ├── manifestos/  # one .md per party (Builder D)
+│   │   └── axes.json    # hand-coded axis positions (Builder D)
+│   ├── demo_cache/      # populated by Builder D before submission
+│   ├── requirements.txt
+│   └── .env.example
+└── frontend/            # Vite + React 18 + Leaflet (Builder B)
+    ├── src/
+    │   ├── App.jsx
+    │   ├── Map.jsx
+    │   ├── SearchBar.jsx
+    │   ├── PartyCard.jsx
+    │   ├── SpectrumChart.jsx
+    │   ├── api.js
+    │   └── styles.css
+    └── public/
+        └── uk-nations.geojson  # Builder D drops this in
 ```
 
-F1 can wire against these shapes immediately — they return `501 not implemented` until B1/B2 ship.
+## Demo flow (locked)
 
-## Demo flow (locked, build backwards from this)
-
-1. Page loads — UK map centred, search bar with cycling placeholder ("tuition fees", "NHS waiting times", ...)
-2. User types `tuition fees` — three party cards appear (Lab, Con, LD) with cited quotes; spectrum below
-3. User clicks **Scotland** on the map — same query re-runs, **SNP** card joins, spectrum updates
-4. User clears, types `renters rights` — content updates fluidly
+1. Page loads — UK 4-nation map centred, search bar with cycling placeholder.
+2. User types `tuition fees`, hits enter — 3 party cards appear (Lab/Con/LD) with cited quotes; spectrum below.
+3. User clicks **Scotland** on the map — same query re-runs, SNP card joins, spectrum updates.
+4. User clears, types `renters rights` — content updates fluidly.
 5. Tagline: *"One search bar. Every party. Real quotes. Your country."*
 
 If a feature doesn't serve this script, don't build it.
 
 ## Bias defence (you will be asked)
 
-> "Every claim is a direct quote from the party's own manifesto, linked inline. We summarise tone, never invent positions. The spectrum is hand-coded from manifesto quotes, not LLM-guessed."
+> "Every claim is a verbatim quote from the party's own manifesto, page-cited inline. The classifier is deterministic keyword matching, not an LLM. The LLM only summarises and quotes — it cannot invent positions because it can only see the manifesto we give it."
 
-Citations are in the UI from the start — do not retrofit at hour 20.
+## Sync points
 
-## Risks
+- **Now (Sat morning)** — repo cloned, structure in place, everyone on their branch
+- **+3h** — backend `/api/health` reachable; frontend map renders (with placeholder GeoJSON if needed)
+- **+6h** — first end-to-end search works on one demo topic
+- **+10h** — full integration; all 5 demo queries pre-warmed
+- **Sat evening** — feature freeze, slop sweep, demo cache populated, screen recording captured
+- **Sun morning** — rehearsal, polish, submit
 
-1. **Demo wifi dies** — record a 2-min backup screen capture at H22.
-2. **API rate limit during demo** — prompt caching is mandatory, pre-warm the 5 demo queries before judging.
-3. **Bad LLM output on weird query phrasings** — J1 owns QA across 20+ phrasings before demo.
+## Risks (read at H+0)
 
-## Stack
-
-- `next@16.2.4`, `react@19`, Tailwind v4, TypeScript
-- `@anthropic-ai/sdk` for Claude
-- `recharts` for the spectrum chart
-- `zod` for input validation
-- `pg` + `pgvector` installed but unused (kept as escape hatch if architecture changes)
+1. **Contract drift between A and B.** Edit `contracts.md` together when shapes change.
+2. **Demo wifi/Anthropic dies.** `DEMO_MODE=true` saves you. Builder D pre-warms cache before submission.
+3. **Bad LLM output on weird phrasings.** Builder D QAs 20+ query variants before submission.
