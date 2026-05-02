@@ -80,10 +80,10 @@ When `nation=SCO`, an additional `snp` party appears in the array. When `nation=
 
 ## Builder D — Maks (maksymkhomitskyi)
 
-All files below are on branch `builder-d`. Merge that branch into main to make them available to the team.
+All files committed to `main`.
 
 ### `frontend/public/uk-nations.geojson`
-**Status:** ✅ done — committed on builder-d
+**Status:** ✅ done — on main
 **What it is:** UK 4-nation boundary map file. Builder B (Abdulla) needs this for the map to render.
 **Property field:** `CTRY23CD` — Map.jsx already handles this with its `CTRY24CD || CTRY23CD` fallback.
 **Source:** ONS Countries (December 2023) Boundaries UK BUC via ArcGIS FeatureServer.
@@ -92,25 +92,25 @@ Nations: E92000001 England, S92000003 Scotland, W92000004 Wales, N92000002 North
 ---
 
 ### `backend/data/manifestos/labour.md`
-**Status:** ✅ done — committed on builder-d
+**Status:** ✅ done — on main
 **What it is:** Full 2024 Labour General Election manifesto as plain text, 132 pages, 193 KB.
 Page markers format: `(p.N)` — e.g. `(p.34)` before every page of content.
 Source: official PDF from labour.org.uk
 
 ### `backend/data/manifestos/conservative.md`
-**Status:** ✅ done — committed on builder-d
+**Status:** ✅ done — on main
 **What it is:** Full 2024 Conservative General Election manifesto as plain text, 77 pages, 200 KB.
 Page markers format: `(p.N)`.
 Source: official PDF from conservatives.com
 
 ### `backend/data/manifestos/libdem.md`
-**Status:** ✅ done — committed on builder-d
+**Status:** ✅ done — on main
 **What it is:** Full 2024 Liberal Democrat General Election manifesto as plain text, 116 pages, 153 KB.
 Page markers format: `(p.N)`.
 Source: official PDF from libdems.org.uk
 
 ### `backend/data/manifestos/snp.md`
-**Status:** ✅ done — committed on builder-d
+**Status:** ✅ done — on main
 **What it is:** Full 2024 SNP General Election manifesto as plain text, 31 pages, 61 KB.
 Page markers format: `(p.N)`.
 Source: official PDF from snp.org
@@ -118,7 +118,7 @@ Source: official PDF from snp.org
 ---
 
 ### `backend/data/axes.json`
-**Status:** ✅ done — committed on builder-d, all 24 cells filled, no TODOs remaining
+**Status:** ✅ done — on main, all 24 cells filled, no TODOs remaining
 **What it is:** 6 axes × 4 parties = 24 cells. Each cell has a verbatim quote, page citation, and (x, y) position score.
 `x` ∈ [-1, 1]: economic (left = negative, right = positive).
 `y` ∈ [-1, 1]: social (libertarian = positive, authoritarian = negative).
@@ -129,23 +129,22 @@ Every quote sourced directly from the manifesto files above.
 ---
 
 ### `backend/data/results.json`
-**Status:** ✅ done — committed on main
-**What it is:** Evidence entries for the detail modal. 6 topics × 4 parties, 3–5 entries each.
+**Status:** ✅ done — on main
+**What it is:** Evidence entries for the detail modal. Two sections: `by_topic` (6 topics × 4 parties, 3–5 entries each) and `by_person` (3 demo MPs, 3 entries each).
 Sources: official 2024 GE manifesto PDFs + Hansard parliamentary speech pages (downloaded 2 May 2026).
-Top-level shape:
+Shape:
 ```json
 {
   "_owner": "builder-d",
+  "by_person": {
+    "<person_id>": [
+      { "type": "statement|vote|press|manifesto", "date": "YYYY-MM-DD", "headline": "≤80 chars", "quote": "verbatim", "source_label": "human-readable", "source_url": "https://..." }
+    ]
+  },
   "by_topic": {
     "<topic_id>": {
       "<party_id>": [
-        {
-          "date": "YYYY-MM-DD",
-          "headline": "≤80 chars",
-          "quote": "verbatim ≤300 chars",
-          "source_label": "human-readable",
-          "source_url": "https://..."
-        }
+        { "date": "YYYY-MM-DD", "headline": "≤80 chars", "quote": "verbatim ≤300 chars", "source_label": "human-readable", "source_url": "https://..." }
       ]
     }
   }
@@ -153,7 +152,38 @@ Top-level shape:
 ```
 Topic IDs: `economy`, `health`, `education`, `housing`, `immigration`, `environment`.
 Party IDs: `labour`, `conservative`, `libdem`, `snp`.
-**Needs from Builder A:** New endpoint `GET /api/results?topic=<id>&party=<id>` that reads this file and returns the matching array. Or attach results array to `/api/search` response under a `results` key. Ping Saliha to agree on shape before she implements.
+Person IDs: `lisa-nandy`, `robert-jenrick`, `daisy-cooper`.
+**Needs from Builder A:** Endpoint to serve results — either `GET /api/results?topic=<id>&party=<id>` and `GET /api/results?person=<id>`, or attach `results` array to existing `/api/search` and `/api/person/{id}` responses.
+
+---
+
+### `backend/data/people.json`
+**Status:** ✅ done — on main
+**What it is:** 3 demo MP profiles for person search (Lisa Nandy/Labour, Robert Jenrick/Conservative, Daisy Cooper/LibDem).
+Each has: `id`, `name`, `aliases` (search terms), `party_id`, `constituency`, `role`, `photo_url` (Wikimedia Commons CC), `bio`, `links` (Wikipedia + Parliament + TheyWorkForYou), `person_summary`, `citations`.
+Results timelines for each person live in `results.json` under `by_person`.
+Shape:
+```json
+{
+  "_owner": "builder-d",
+  "people": {
+    "<person_id>": {
+      "id": "lisa-nandy",
+      "name": "Lisa Nandy",
+      "aliases": ["nandy", "lisa nandy"],
+      "party_id": "labour",
+      "constituency": "Wigan",
+      "role": "Secretary of State for Culture, Media and Sport",
+      "photo_url": "https://upload.wikimedia.org/...",
+      "bio": "...",
+      "links": [{ "label": "Wikipedia", "url": "..." }, { "label": "Parliament profile", "url": "..." }, { "label": "TheyWorkForYou", "url": "..." }],
+      "person_summary": "...",
+      "citations": [{ "quote": "...", "source": "..." }]
+    }
+  }
+}
+```
+**Needs from Builder A:** `GET /api/person/{id}` should read this file to populate person metadata, then merge in `results.json.by_person[id]` for the timeline.
 
 ---
 
