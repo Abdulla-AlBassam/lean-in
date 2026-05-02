@@ -1,0 +1,72 @@
+{
+  "_owner": "J1",
+  "_format": "Six broad policy axes. Each axis places 4 parties on (x: economic left/right -1..1, y: social libertarian/authoritarian -1..1) with a short justifying quote and a source citation (party + manifesto page). Replace TODOs.",
+  "axes": [
+    {
+      "id": "economy",
+      "label": "Economy & Tax",
+      "keywords": ["tax", "economy", "income", "wages", "growth", "spending", "deficit"],
+      "parties": {
+        "labour":       { "x": -0.4, "y":  0.0, "quote": "TODO", "source": "TODO" },
+        "conservative": { "x":  0.5, "y":  0.0, "quote": "TODO", "source": "TODO" },
+        "libdem":       { "x": -0.1, "y":  0.4, "quote": "TODO", "source": "TODO" },
+        "snp":          { "x": -0.3, "y":  0.2, "quote": "TODO", "source": "TODO" }
+      }
+    },
+    {
+      "id": "health",
+      "label": "Health & NHS",
+      "keywords": ["nhs", "health", "hospitals", "doctors", "waiting times", "social care"],
+      "parties": {
+        "labour":       { "x": -0.5, "y":  0.0, "quote": "TODO", "source": "TODO" },
+        "conservative": { "x":  0.2, "y":  0.0, "quote": "TODO", "source": "TODO" },
+        "libdem":       { "x": -0.3, "y":  0.3, "quote": "TODO", "source": "TODO" },
+        "snp":          { "x": -0.5, "y":  0.2, "quote": "TODO", "source": "TODO" }
+      }
+    },
+    {
+      "id": "education",
+      "label": "Education & Universities",
+      "keywords": ["education", "schools", "universities", "tuition", "student", "fees", "loans"],
+      "parties": {
+        "labour":       { "x": -0.4, "y":  0.1, "quote": "TODO", "source": "TODO" },
+        "conservative": { "x":  0.4, "y":  0.0, "quote": "TODO", "source": "TODO" },
+        "libdem":       { "x": -0.2, "y":  0.4, "quote": "TODO", "source": "TODO" },
+        "snp":          { "x": -0.5, "y":  0.3, "quote": "TODO", "source": "TODO" }
+      }
+    },
+    {
+      "id": "housing",
+      "label": "Housing & Renting",
+      "keywords": ["housing", "rent", "renters", "landlords", "homes", "mortgage", "planning"],
+      "parties": {
+        "labour":       { "x": -0.3, "y":  0.1, "quote": "TODO", "source": "TODO" },
+        "conservative": { "x":  0.4, "y": -0.1, "quote": "TODO", "source": "TODO" },
+        "libdem":       { "x": -0.2, "y":  0.3, "quote": "TODO", "source": "TODO" },
+        "snp":          { "x": -0.3, "y":  0.2, "quote": "TODO", "source": "TODO" }
+      }
+    },
+    {
+      "id": "immigration",
+      "label": "Immigration & Borders",
+      "keywords": ["immigration", "borders", "asylum", "refugees", "visas", "migrants"],
+      "parties": {
+        "labour":       { "x":  0.0, "y": -0.1, "quote": "TODO", "source": "TODO" },
+        "conservative": { "x":  0.3, "y": -0.5, "quote": "TODO", "source": "TODO" },
+        "libdem":       { "x": -0.2, "y":  0.5, "quote": "TODO", "source": "TODO" },
+        "snp":          { "x": -0.3, "y":  0.4, "quote": "TODO", "source": "TODO" }
+      }
+    },
+    {
+      "id": "environment",
+      "label": "Environment & Climate",
+      "keywords": ["climate", "environment", "energy", "net zero", "green", "emissions"],
+      "parties": {
+        "labour":       { "x": -0.2, "y":  0.2, "quote": "TODO", "source": "TODO" },
+        "conservative": { "x":  0.3, "y": -0.1, "quote": "TODO", "source": "TODO" },
+        "libdem":       { "x": -0.3, "y":  0.4, "quote": "TODO", "source": "TODO" },
+        "snp":          { "x": -0.4, "y":  0.3, "quote": "TODO", "source": "TODO" }
+      }
+    }
+  ]
+}

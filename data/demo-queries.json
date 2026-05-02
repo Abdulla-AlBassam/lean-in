@@ -1,0 +1,11 @@
+{
+  "_owner": "J1",
+  "_format": "Queries shown in the search bar's cycling placeholder. Also pre-warmed before demo so the cache is hot.",
+  "queries": [
+    "tuition fees",
+    "NHS waiting times",
+    "renters rights",
+    "immigration",
+    "climate policy"
+  ]
+}
