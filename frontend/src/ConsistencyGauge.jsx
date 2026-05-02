@@ -51,7 +51,7 @@ function CompactGauge({ value }) {
   );
 }
 
-function FullGauge({ value, label }) {
+function FullGauge({ value }) {
   const radius = 70;
   const cx = 100;
   const cy = 90;
@@ -63,19 +63,13 @@ function FullGauge({ value, label }) {
   const needleY = cy - needleLen * Math.sin(angleRad);
 
   return (
-    <div className="gauge gauge--full">
-      <svg viewBox="0 0 200 110" width="200" height="110" aria-label={`${value}%`}>
-        <path d={zoneArc(0, 40, radius, cx, cy)}   stroke={RED}   strokeWidth="12" fill="none" strokeLinecap="butt" />
-        <path d={zoneArc(40, 70, radius, cx, cy)}  stroke={AMBER} strokeWidth="12" fill="none" strokeLinecap="butt" />
-        <path d={zoneArc(70, 100, radius, cx, cy)} stroke={GREEN} strokeWidth="12" fill="none" strokeLinecap="butt" />
-        <line x1={cx} y1={cy} x2={needleX} y2={needleY} stroke="#f5f5f5" strokeWidth="2.4" strokeLinecap="round" />
-        <circle cx={cx} cy={cy} r="5" fill="#f5f5f5" />
-      </svg>
-      <div className="gauge__readout">
-        <span className="gauge__pct gauge__pct--lg">{value}%</span>
-        {label && <span className="gauge__label">{label}</span>}
-      </div>
-    </div>
+    <svg viewBox="0 0 200 100" width="200" height="100" aria-label={`${value}%`} className="gauge gauge--full">
+      <path d={zoneArc(0, 40, radius, cx, cy)}   stroke={RED}   strokeWidth="12" fill="none" strokeLinecap="butt" />
+      <path d={zoneArc(40, 70, radius, cx, cy)}  stroke={AMBER} strokeWidth="12" fill="none" strokeLinecap="butt" />
+      <path d={zoneArc(70, 100, radius, cx, cy)} stroke={GREEN} strokeWidth="12" fill="none" strokeLinecap="butt" />
+      <line x1={cx} y1={cy} x2={needleX} y2={needleY} stroke="#f5f5f5" strokeWidth="2.4" strokeLinecap="round" />
+      <circle cx={cx} cy={cy} r="5" fill="#f5f5f5" />
+    </svg>
   );
 }
 

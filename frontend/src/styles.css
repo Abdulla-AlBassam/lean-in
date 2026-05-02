@@ -651,28 +651,7 @@ a.timeline-source:hover {
   font-variant-numeric: tabular-nums;
 }
 .gauge--full {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-.gauge__readout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -42px;
-  pointer-events: none;
-}
-.gauge__pct--lg {
-  font-size: 20px;
-  font-weight: 600;
-  color: #f5f5f5;
-}
-.gauge__label {
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(245, 245, 245, 0.55);
+  display: block;
 }
 
 /* ─── Score cards (in MP detail) ────────────────────────── */
@@ -696,22 +675,32 @@ a.timeline-source:hover {
 }
 .score-card__gauge {
   flex-shrink: 0;
+  width: 110px;
 }
 .score-card__gauge .gauge--full {
-  transform: scale(0.7);
-  transform-origin: center;
-  margin: -16px -22px;
+  width: 110px;
+  height: auto;
 }
 .score-card__body {
   flex: 1;
   min-width: 0;
 }
 .score-card__label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
   margin: 0 0 6px;
   font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #f5f5f5;
+}
+.score-card__pct {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f5f5f5;
+  font-variant-numeric: tabular-nums;
 }
 .score-card__line {
   margin: 0 0 3px;

@@ -187,7 +187,10 @@ function ScoreCard({ value, label, lines }) {
         <ConsistencyGauge variant="full" value={value} />
       </div>
       <div className="score-card__body">
-        <p className="score-card__label">{label}</p>
+        <p className="score-card__label">
+          <span>{label}</span>
+          <span className="score-card__pct">{value}%</span>
+        </p>
         {lines.map((l, i) => (
           <p key={i} className="score-card__line">{l}</p>
         ))}
