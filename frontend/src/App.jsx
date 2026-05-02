@@ -4,6 +4,7 @@ import { SearchBar } from "./SearchBar.jsx";
 import { PartyCard } from "./PartyCard.jsx";
 import { Logo } from "./Logo.jsx";
 import { DetailModal } from "./DetailModal.jsx";
+import { LoadingSkeleton } from "./LoadingSkeleton.jsx";
 import { search } from "./api.js";
 
 export default function App() {
@@ -54,7 +55,7 @@ export default function App() {
           onSubmit={() => runSearch(query, nation)}
         />
 
-        {loading && <div className="status">Loading…</div>}
+        {loading && <LoadingSkeleton />}
         {error && <div className="status error">{error}</div>}
 
         {results && !loading && (
