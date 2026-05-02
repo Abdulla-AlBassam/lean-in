@@ -280,6 +280,31 @@ Shape:
 
 ---
 
+### `frontend/public/uk-constituency-results.json`
+**Status:** ✅ done — on main
+**What it is:** 2024 General Election winning result for all 650 constituencies. 105 KB.
+**Source:** UK Parliament election results API (Open Parliament Licence)
+**Shape:**
+```json
+{
+  "results": {
+    "E14001063": {
+      "name": "Aldershot",
+      "party_id": "conservative",
+      "party_name": "Conservative",
+      "colour": "#0087DC",
+      "mp": "Alex Baker",
+      "majority": 2503,
+      "vote_share": 0.35
+    }
+  }
+}
+```
+**Party IDs in this file:** `labour` (411), `conservative` (121), `libdem` (72), `snp` (9), `sf` (7), `independent` (6), `reform` (5), `dup` (5), `green` (4), `plaid` (4), `sdlp` (2), `speaker` (1), `alliance` (1), `tuv` (1), `uup` (1).
+**For Builder B:** load this alongside the constituencies GeoJSON. Use `results[PCON24CD].colour` to fill each polygon. Clicking a constituency calls `onSelect` with the nation from `PCON24CD[0]` as before.
+
+---
+
 ### `frontend/public/uk-constituencies.geojson`
 **Status:** ✅ done — on main
 **What it is:** All 650 Westminster Parliamentary Constituencies (July 2024) boundaries, BUC (Ultra Generalised Clipped). 1.4 MB.
