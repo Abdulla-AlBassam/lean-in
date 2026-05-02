@@ -2,19 +2,23 @@
 html, body, #root { margin: 0; padding: 0; height: 100%; }
 body {
   background:
-    /* Warm taupe glow, top-left */
-    radial-gradient(ellipse 65% 55% at 5% 0%,
-      rgba(182, 174, 159, 0.16),
-      transparent 60%),
-    /* Pale cream glow, top-right */
-    radial-gradient(ellipse 60% 50% at 95% 5%,
-      rgba(251, 243, 209, 0.10),
-      transparent 60%),
-    /* Faint sage wash at the bottom */
-    radial-gradient(ellipse 100% 50% at 50% 105%,
-      rgba(197, 199, 188, 0.05),
-      transparent 70%),
-    #0a0908;
+    /* Warm taupe glow, top-left, expanded */
+    radial-gradient(ellipse 110% 95% at 0% 0%,
+      rgba(182, 174, 159, 0.22),
+      transparent 75%),
+    /* Pale cream glow, top-right, expanded */
+    radial-gradient(ellipse 100% 85% at 100% 0%,
+      rgba(251, 243, 209, 0.14),
+      transparent 75%),
+    /* Sage wash bottom, expanded */
+    radial-gradient(ellipse 120% 75% at 50% 105%,
+      rgba(197, 199, 188, 0.10),
+      transparent 80%),
+    /* Faint ambient warmth across the middle so it never drops to pure black */
+    radial-gradient(ellipse 120% 90% at 50% 50%,
+      rgba(182, 174, 159, 0.06),
+      transparent 75%),
+    #14110f;
   color: #f5f5f5;
   font: 16px/1.5 "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   overflow: hidden;
@@ -142,14 +146,14 @@ body {
   bottom: 0;
   width: 420px;
   z-index: 20;
-  /* Top-edge fade from transparent into the dark glass so the panel
+  /* Top-edge fade from transparent into the warm dark glass so the panel
      blends into the body gradient instead of starting on a hard line. */
   background: linear-gradient(
     to bottom,
-    rgba(8, 10, 14, 0)    0px,
-    rgba(8, 10, 14, 0.5)  28px,
-    rgba(8, 10, 14, 0.92) 90px,
-    rgba(8, 10, 14, 0.92) 100%
+    rgba(28, 26, 24, 0)    0px,
+    rgba(28, 26, 24, 0.5)  28px,
+    rgba(28, 26, 24, 0.92) 90px,
+    rgba(28, 26, 24, 0.92) 100%
   );
   backdrop-filter: blur(36px) saturate(180%);
   -webkit-backdrop-filter: blur(36px) saturate(180%);
@@ -350,27 +354,27 @@ body {
 
 .party-card {
   position: relative;
-  background: rgba(8, 10, 14, 0.94);
+  background: rgba(36, 32, 28, 0.92);
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 10px;
   padding: 14px 16px;
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: background 220ms ease, border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
 }
-.party-card * { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55); }
+.party-card * { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45); }
 .party-card:hover:not(.party-card--empty) {
-  background: rgba(12, 14, 18, 0.96);
-  border-top-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55);
+  background: rgba(44, 40, 35, 0.94);
+  border-top-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
 .party-card--active {
-  border-top-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55);
+  border-top-color: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
 }
 .party-card--empty {
   cursor: default;
