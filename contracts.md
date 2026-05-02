@@ -102,7 +102,7 @@ Source: ONS Countries (December 2023) Boundaries UK BUC via ArcGIS FeatureServer
 
 ### `backend/data/manifestos/{labour,conservative,libdem,snp}.md`
 
-**Status:** 🔲 in progress
+**Status:** ✅ done — committed on builder-d
 
 Plain markdown, page markers preserved as `(p.N)`. One file per party.
 Filenames are fixed — Builder A (`llm.py`) loads them by exact name.
