@@ -142,13 +142,18 @@ body {
   bottom: 0;
   width: 420px;
   z-index: 20;
-  background:
-    linear-gradient(rgba(8, 10, 14, 0.92), rgba(8, 10, 14, 0.92)),
-    rgba(255, 255, 255, 0.04);
-  border-left: 1px solid rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  box-shadow: -16px 0 60px rgba(0, 0, 0, 0.55);
+  /* Top-edge fade from transparent into the dark glass so the panel
+     blends into the body gradient instead of starting on a hard line. */
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 10, 14, 0)    0px,
+    rgba(8, 10, 14, 0.5)  28px,
+    rgba(8, 10, 14, 0.92) 90px,
+    rgba(8, 10, 14, 0.92) 100%
+  );
+  backdrop-filter: blur(36px) saturate(180%);
+  -webkit-backdrop-filter: blur(36px) saturate(180%);
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
@@ -162,7 +167,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 22px 22px 18px;
+  padding: 32px 22px 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .detail-panel__title {
