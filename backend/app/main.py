@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .models import HealthResponse, PersonResponse, Nation
 from .search import search as run_search, PARTY_META, NATION_PARTIES
 from .classify import load_axes, classify
-from .data import load_people, load_results
+from .data import load_people, load_results, resolve_person
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -23,14 +23,6 @@ app.add_middleware(
 )
 
 
-def _find_person(query: str) -> dict | None:
-    q = query.lower().strip()
-    for person in load_people().values():
-        if q == person["name"].lower() or q in [a.lower() for a in person.get("aliases", [])]:
-            return person
-    return None
-
-
 @app.get("/api/health", response_model=HealthResponse)
 def health():
     return HealthResponse()
@@ -41,10 +33,11 @@ def search(q: str = Query(..., min_length=1, max_length=200), nation: Nation = "
     if nation == "NIR":
         raise HTTPException(400, detail="Northern Ireland uses a different party system; not supported in v1")
 
-    person = _find_person(q)
-    if person:
+    person_id = resolve_person(q)
+    if person_id:
+        person = load_people()[person_id]
         party_ids = NATION_PARTIES.get(nation, NATION_PARTIES["UK"])
-        timeline = load_results().get("by_person", {}).get(person["id"], [])
+        timeline = load_results().get("by_person", {}).get(person_id, [])
         parties = []
         for pid in party_ids:
             meta = PARTY_META[pid]
@@ -57,7 +50,7 @@ def search(q: str = Query(..., min_length=1, max_length=200), nation: Nation = "
                 })
             else:
                 parties.append({"id": pid, "name": meta["name"], "colour": meta["colour"], "empty": True})
-        logger.info("person search q=%r nation=%s id=%s", q, nation, person["id"])
+        logger.info("person search q=%r nation=%s id=%s", q, nation, person_id)
         return {"query_type": "person", "person": {**person, "results": timeline}, "parties": parties}
 
     axis_id, _, _ = classify(q)
