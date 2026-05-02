@@ -1,0 +1,63 @@
+{
+  "_owner": "builder-d",
+  "_format": "Demo MP profiles for person search. 3 MPs covering Labour, Conservative, and Lib Dem. Each has photo (Wikimedia Commons CC), bio, TheyWorkForYou + Parliament + Wikipedia links. Results timeline lives in results.json under by_person.",
+  "people": {
+    "lisa-nandy": {
+      "id": "lisa-nandy",
+      "name": "Lisa Nandy",
+      "aliases": ["nandy", "lisa nandy", "lisa nandy mp"],
+      "party_id": "labour",
+      "constituency": "Wigan",
+      "role": "Secretary of State for Culture, Media and Sport",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Official_portrait_of_Lisa_Nandy_MP_crop_2.jpg/220px-Official_portrait_of_Lisa_Nandy_MP_crop_2.jpg",
+      "bio": "Labour MP for Wigan since 2010. Secretary of State for Culture, Media and Sport since July 2024.",
+      "links": [
+        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Lisa_Nandy" },
+        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4361/contact" },
+        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/24935/lisa_nandy" }
+      ],
+      "person_summary": "Nandy has consistently centred her recent statements on housing security and renter protection, voting with the Labour front bench on the Renters' Rights Amendment.",
+      "citations": [
+        { "quote": "Decent housing is a foundation, not a privilege.", "source": "Wigan town hall address, Mar 2026" }
+      ]
+    },
+    "robert-jenrick": {
+      "id": "robert-jenrick",
+      "name": "Robert Jenrick",
+      "aliases": ["jenrick", "robert jenrick", "rob jenrick"],
+      "party_id": "conservative",
+      "constituency": "Newark",
+      "role": "Shadow Lord Chancellor and Secretary of State for Justice",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Official_portrait_of_Robert_Jenrick_MP_crop_2.jpg/220px-Official_portrait_of_Robert_Jenrick_MP_crop_2.jpg",
+      "bio": "Conservative MP for Newark since 2014. Shadow Lord Chancellor and Secretary of State for Justice.",
+      "links": [
+        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Robert_Jenrick" },
+        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4320/contact" },
+        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/24893/robert_jenrick" }
+      ],
+      "person_summary": "Jenrick has focused recent statements on immigration enforcement and rental market reform, opposing the Renters' Rights Amendment in March 2026.",
+      "citations": [
+        { "quote": "Reform must work for renters and landlords. Tilting the field destroys both.", "source": "Conservative press release, Apr 2026" }
+      ]
+    },
+    "daisy-cooper": {
+      "id": "daisy-cooper",
+      "name": "Daisy Cooper",
+      "aliases": ["cooper", "daisy cooper"],
+      "party_id": "libdem",
+      "constituency": "St Albans",
+      "role": "Deputy Leader and Health spokesperson",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Official_portrait_of_Daisy_Cooper_MP_crop_2.jpg/220px-Official_portrait_of_Daisy_Cooper_MP_crop_2.jpg",
+      "bio": "Liberal Democrat MP for St Albans since 2019. Deputy Leader and Health spokesperson.",
+      "links": [
+        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Daisy_Cooper" },
+        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4830/contact" },
+        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/25895/daisy_cooper" }
+      ],
+      "person_summary": "Cooper has championed landlord licensing and tabled the Lib Dem amendment to require a national register, while also pressing for NHS waiting-time targets.",
+      "citations": [
+        { "quote": "A national register of landlords is the floor, not the ceiling.", "source": "Hansard, 02 Feb 2026" }
+      ]
+    }
+  }
+}

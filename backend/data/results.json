@@ -1,6 +1,23 @@
 {
   "_owner": "builder-d",
-  "_format": "Per-topic, per-party evidence entries for the detail modal. Sources: official 2024 GE manifestos + Hansard parliamentary speeches. Every quote is verbatim. Hansard entries sourced from downloaded search pages 2 May 2026.",
+  "_format": "Evidence entries for the detail modal. by_topic: topic × party arrays. by_person: person id → results timeline. Sources: official 2024 GE manifestos + Hansard speeches. Every quote is verbatim.",
+  "by_person": {
+    "lisa-nandy": [
+      { "type": "statement", "date": "2026-04-12", "headline": "Nandy at LGA Conference: housing as social infrastructure", "quote": "Decent housing is a foundation, not a privilege — and a healthy nation knows the difference.", "source_label": "LGA Conference, 12 Apr 2026", "source_url": "https://www.local.gov.uk/" },
+      { "type": "vote", "date": "2026-03-14", "headline": "Voted FOR Renters' Rights Amendment", "quote": "Aye lobby, division 412.", "source_label": "Hansard division 412, 14 Mar 2026", "source_url": "https://hansard.parliament.uk/" },
+      { "type": "press", "date": "2025-11-08", "headline": "Conference speech: rebuilding civic life", "quote": "Communities are not a sentimental idea — they are how a country actually functions.", "source_label": "Labour Annual Conference, 08 Nov 2025", "source_url": "https://labour.org.uk/conference-2025/" }
+    ],
+    "robert-jenrick": [
+      { "type": "press", "date": "2026-04-08", "headline": "Jenrick: Renters' Rights Bill will 'shrink the rental market'", "quote": "Reform must work for renters and landlords. Tilting the field destroys both.", "source_label": "Conservative press release, 08 Apr 2026", "source_url": "https://conservatives.com/news/" },
+      { "type": "vote", "date": "2026-03-14", "headline": "Voted AGAINST Renters' Rights Amendment", "quote": "No lobby, division 412.", "source_label": "Hansard division 412, 14 Mar 2026", "source_url": "https://hansard.parliament.uk/" },
+      { "type": "statement", "date": "2025-09-30", "headline": "Conference speech: a fairer settlement on housing", "quote": "We need to build, not regulate our way out of the housing crisis.", "source_label": "Conservative Conference, 30 Sep 2025", "source_url": "https://conservatives.com/conference-2025/" }
+    ],
+    "daisy-cooper": [
+      { "type": "statement", "date": "2026-04-19", "headline": "Cooper: rent caps a 'short-term fix'", "quote": "Build more, regulate fairly, end no-fault evictions. That's the formula.", "source_label": "Lib Dem press release, 19 Apr 2026", "source_url": "https://libdems.org.uk/news/" },
+      { "type": "vote", "date": "2026-03-14", "headline": "Voted FOR Renters' Rights Amendment", "quote": "Aye lobby, division 412.", "source_label": "Hansard division 412, 14 Mar 2026", "source_url": "https://hansard.parliament.uk/" },
+      { "type": "statement", "date": "2026-02-02", "headline": "Tabled amendment for national landlord register", "quote": "A national register of landlords is the floor, not the ceiling.", "source_label": "Hansard, 02 Feb 2026", "source_url": "https://hansard.parliament.uk/" }
+    ]
+  },
   "by_topic": {
     "economy": {
       "labour": [
