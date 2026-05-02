@@ -109,6 +109,7 @@ export default function App() {
           party={selectedParty}
           person={isPerson ? results?.person : null}
           topic={detailTopic}
+          axisId={results?.axisId}
           results={detailResults}
           onClose={() => setSelectedParty(null)}
         />

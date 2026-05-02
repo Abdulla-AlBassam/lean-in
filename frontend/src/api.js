@@ -26,6 +26,22 @@ export async function getPerson(id) {
   return r.json();
 }
 
+export function getPartyMps(partyId) {
+  return PARTY_MPS[partyId] || [];
+}
+
+export function getMp(mpId) {
+  return MOCK_PEOPLE[mpId] || null;
+}
+
+export function getMpTopicPositions(mpId, axisId) {
+  return (MP_POSITIONS[mpId] && MP_POSITIONS[mpId][axisId]) || [];
+}
+
+export function getArticles(axisId, partyId) {
+  return (ARTICLES[axisId] && ARTICLES[axisId][partyId]) || [];
+}
+
 const PARTY_META = {
   labour:       { name: "Labour",            colour: "#E4003B" },
   conservative: { name: "Conservative",      colour: "#0087DC" },
@@ -67,16 +83,12 @@ const TOPIC_DATA = {
     },
     timelines: {
       labour: [
-        { type: "press", date: "2026-04-22", headline: "Phillipson commits to capping rent rises", quote: "We will not allow renters to be priced out.", source_label: "Labour press release, 22 Apr 2026", source_url: "https://labour.org.uk/press/2026/04/22/" },
-        { type: "vote", date: "2026-03-14", headline: "Labour MPs back the Renters' Rights Amendment", quote: "Labour voted in favour by 198 to 0 (front-bench whip).", source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" },
         { type: "manifesto", date: "2024-06-13", headline: "Manifesto pledge: end Section 21 no-fault evictions", quote: "We will end no-fault evictions and cap rent increases.", source_label: "Labour Manifesto 2024, p.34", source_url: "https://labour.org.uk/manifesto-2024/" },
       ],
       conservative: [
-        { type: "press", date: "2026-04-15", headline: "Stamp-duty relief for first-time landlords", quote: "Backing those who invest in housing is backing those who house Britain.", source_label: "Conservative press release, 15 Apr 2026", source_url: "https://conservatives.com/news/" },
         { type: "manifesto", date: "2024-06-11", headline: "Balanced reform of the rental market", quote: "We will support landlords and renters through fair, balanced reform.", source_label: "Conservative Manifesto 2024, p.21", source_url: "https://conservatives.com/manifesto-2024/" },
       ],
       libdem: [
-        { type: "press", date: "2026-04-19", headline: "Cooper: 'rent caps create long-term shortages'", quote: "Build more, regulate fairly, end no-fault evictions.", source_label: "Lib Dem press release, 19 Apr 2026", source_url: "https://libdems.org.uk/news/" },
         { type: "manifesto", date: "2024-06-10", headline: "National register of landlords", quote: "We will introduce a national register of landlords and ban no-fault evictions.", source_label: "Lib Dem Manifesto 2024, p.18", source_url: "https://libdems.org.uk/manifesto-2024" },
       ],
       snp: [
@@ -94,7 +106,6 @@ const TOPIC_DATA = {
     },
     timelines: {
       labour: [
-        { type: "press", date: "2026-03-05", headline: "Phillipson outlines progressive student-finance reform", quote: "Working-class graduates should not pay the highest effective marginal tax rate in the country.", source_label: "Labour press release, 05 Mar 2026", source_url: "https://labour.org.uk/press/" },
         { type: "manifesto", date: "2024-06-13", headline: "Manifesto: reform tuition fees", quote: "We will reform tuition fees and tackle student debt for working-class graduates.", source_label: "Labour Manifesto 2024, p.62", source_url: "https://labour.org.uk/manifesto-2024/" },
       ],
       conservative: [
@@ -118,7 +129,6 @@ const TOPIC_DATA = {
     },
     timelines: {
       labour: [
-        { type: "vote", date: "2026-02-20", headline: "Labour MPs vote against NHS reorganisation bill", quote: "We will not let the NHS be carved up by stealth.", source_label: "Hansard division 287, 20 Feb 2026", source_url: "https://hansard.parliament.uk/" },
         { type: "manifesto", date: "2024-06-13", headline: "40,000 extra appointments a week", quote: "We will deliver an extra 40,000 appointments every week.", source_label: "Labour Manifesto 2024, p.45", source_url: "https://labour.org.uk/manifesto-2024/" },
       ],
       conservative: [
@@ -263,6 +273,213 @@ function mockTopicResult(query, nation) {
   };
 }
 
+// ─── MPs by party ─────────────────────────────────────────────────
+const PARTY_MPS = {
+  labour: [
+    { id: "lisa-nandy",         name: "Lisa Nandy",         constituency: "Wigan",                          role: "Sec. of State for Culture, Media and Sport" },
+    { id: "wes-streeting",      name: "Wes Streeting",      constituency: "Ilford North",                   role: "Sec. of State for Health and Social Care" },
+    { id: "bridget-phillipson", name: "Bridget Phillipson", constituency: "Houghton and Sunderland South",  role: "Sec. of State for Education" },
+    { id: "yvette-cooper",      name: "Yvette Cooper",      constituency: "Pontefract, Castleford & Knottingley", role: "Home Secretary" },
+    { id: "angela-rayner",      name: "Angela Rayner",      constituency: "Ashton-under-Lyne",              role: "Deputy Prime Minister" },
+  ],
+  conservative: [
+    { id: "robert-jenrick",     name: "Robert Jenrick",     constituency: "Newark",                         role: "Shadow Lord Chancellor" },
+    { id: "kemi-badenoch",      name: "Kemi Badenoch",      constituency: "North West Essex",               role: "Leader of the Opposition" },
+    { id: "priti-patel",        name: "Priti Patel",        constituency: "Witham",                         role: "Shadow Foreign Secretary" },
+    { id: "james-cleverly",     name: "James Cleverly",     constituency: "Braintree",                      role: "Shadow Home Secretary" },
+    { id: "mel-stride",         name: "Mel Stride",         constituency: "Central Devon",                  role: "Shadow Chancellor" },
+  ],
+  libdem: [
+    { id: "daisy-cooper",       name: "Daisy Cooper",       constituency: "St Albans",                      role: "Deputy Leader, Health spokesperson" },
+    { id: "ed-davey",           name: "Ed Davey",           constituency: "Kingston and Surbiton",          role: "Leader of the Liberal Democrats" },
+    { id: "layla-moran",        name: "Layla Moran",        constituency: "Oxford West and Abingdon",       role: "Foreign Affairs spokesperson" },
+    { id: "tim-farron",         name: "Tim Farron",         constituency: "Westmorland and Lonsdale",       role: "Environment spokesperson" },
+    { id: "sarah-olney",        name: "Sarah Olney",        constituency: "Richmond Park",                  role: "Treasury spokesperson" },
+  ],
+  snp: [
+    { id: "stephen-flynn",      name: "Stephen Flynn",      constituency: "Aberdeen South",                 role: "Westminster Leader" },
+    { id: "mhairi-black",       name: "Mhairi Black",       constituency: "Paisley and Renfrewshire South", role: "Deputy Westminster Leader" },
+    { id: "kirsty-blackman",    name: "Kirsty Blackman",    constituency: "Aberdeen North",                 role: "Treasury spokesperson" },
+  ],
+};
+
+// ─── Articles per (topic × party) ─────────────────────────────────
+const ARTICLES = {
+  housing: {
+    labour: [
+      { source: "The Guardian", date: "2026-04-25", headline: "Labour vows to deliver on rental reform 'within first 100 days'", excerpt: "Bridget Phillipson and Lisa Nandy laid out the party's housing programme at a joint press conference, focusing on Section 21 reform and a renewed Decent Homes standard.", url: "https://www.theguardian.com/politics" },
+      { source: "BBC News",      date: "2026-04-18", headline: "Renters' Rights Bill clears Commons by big margin",                                       excerpt: "The bill passed second reading 412 to 96, with Labour MPs voting unanimously in favour. Cooper described the result as 'long overdue'.",                                                          url: "https://www.bbc.co.uk/news/uk-politics" },
+      { source: "Financial Times", date: "2026-03-22", headline: "Labour plans rent cap 'tied to local wages'",                                         excerpt: "Treasury sources tell the FT the cap could vary by region, with London likely to see a different formula from the rest of England.",                                                              url: "https://www.ft.com/uk-politics" },
+    ],
+    conservative: [
+      { source: "The Telegraph", date: "2026-04-21", headline: "Conservatives warn Labour rent cap 'will shrink supply'",                                excerpt: "Jenrick and Badenoch issued a joint statement claiming the policy would drive small landlords out of the market within two years.",                                                              url: "https://www.telegraph.co.uk/politics/" },
+      { source: "BBC News",      date: "2026-04-09", headline: "Tory MPs split on Renters' Rights Amendment",                                            excerpt: "Despite a three-line whip against, 53 Conservative backbenchers voted with Labour. Mel Stride called it 'a healthy debate'.",                                                                  url: "https://www.bbc.co.uk/news/uk-politics" },
+      { source: "The Times",     date: "2026-03-15", headline: "Stamp-duty relief plan 'tilted to landlords', critics say",                              excerpt: "The Conservative proposal would offer first-time landlords a stamp-duty discount, mirroring the existing first-time buyer scheme.",                                                              url: "https://www.thetimes.co.uk/" },
+    ],
+    libdem: [
+      { source: "The Guardian", date: "2026-04-19", headline: "Lib Dems table amendment for national landlord register",                                 excerpt: "Daisy Cooper led the cross-party amendment requiring all landlords to register before letting any property. The amendment was accepted on the second reading.",                                  url: "https://www.theguardian.com/politics" },
+      { source: "The Independent", date: "2026-03-30", headline: "Cooper: 'rent caps without supply reform are a recipe for shortages'",                 excerpt: "The Lib Dem deputy leader called for a balanced approach combining renter protections with major housebuilding investment.",                                                                       url: "https://www.independent.co.uk/news/uk/politics" },
+    ],
+    snp: [
+      { source: "The Herald",    date: "2026-04-12", headline: "Scottish Government extends emergency rent freeze",                                      excerpt: "First Minister announced the cap will continue through 2027 alongside new tenant-eviction protections.",                                                                                          url: "https://www.heraldscotland.com/" },
+      { source: "BBC Scotland",  date: "2026-03-08", headline: "SNP MPs call for devolved housing benefit",                                              excerpt: "Stephen Flynn told Westminster that Scotland needs full control over Universal Credit's housing element to meet local rent levels.",                                                                url: "https://www.bbc.co.uk/news/scotland-politics" },
+    ],
+  },
+  education: {
+    labour: [
+      { source: "The Guardian", date: "2026-04-12", headline: "Phillipson outlines progressive student-finance reform", excerpt: "The Education Secretary signalled a shift to graduate-contribution payments tied to lifetime earnings, replacing the current loan model.", url: "https://www.theguardian.com/education" },
+      { source: "BBC News",      date: "2026-03-28", headline: "Labour boosts further-education funding by £1.4bn",     excerpt: "Funding for FE colleges to be increased over three years to deliver the manifesto pledge on adult skills.",                                  url: "https://www.bbc.co.uk/news/education" },
+      { source: "TES",           date: "2026-02-19", headline: "Teacher recruitment campaign sees 18% uplift",          excerpt: "Bridget Phillipson hailed the figures as proof the new bursary scheme is working.",                                                       url: "https://www.tes.com/" },
+    ],
+    conservative: [
+      { source: "The Telegraph", date: "2026-04-08", headline: "Tories pledge return to 'rigorous' grammar pathway",    excerpt: "Kemi Badenoch announced plans to expand selective schooling and protect academy autonomy.",                                                  url: "https://www.telegraph.co.uk/politics/" },
+      { source: "TES",           date: "2026-03-12", headline: "Stride defends apprenticeship levy as 'jobs-first'",     excerpt: "The Shadow Chancellor said the levy redirected toward higher-value courses would expand opportunities for under-25s.",                       url: "https://www.tes.com/" },
+    ],
+    libdem: [
+      { source: "BBC News",      date: "2026-04-15", headline: "Davey: 'Restore maintenance grants now'",               excerpt: "The Lib Dem leader called for an immediate reversal of the 2016 maintenance-grant abolition.",                                                  url: "https://www.bbc.co.uk/news/education" },
+      { source: "The Guardian", date: "2026-03-02", headline: "Lib Dems table amendment to cap interest on student loans", excerpt: "The amendment proposes pegging interest to RPI rather than RPI+3%, saving graduates an average £1,200 per year.",                          url: "https://www.theguardian.com/education" },
+    ],
+    snp: [
+      { source: "The Herald",    date: "2026-03-25", headline: "Scottish Government confirms free tuition will continue", excerpt: "John Swinney reiterated the long-standing pledge despite pressure on the Scottish budget.",                                                  url: "https://www.heraldscotland.com/" },
+    ],
+  },
+  health: {
+    labour: [
+      { source: "The Guardian", date: "2026-04-22", headline: "Streeting sets 18-week NHS waiting target",              excerpt: "The Health Secretary committed to returning the NHS to constitutional waiting-time standards by the end of the parliament.",                  url: "https://www.theguardian.com/society/nhs" },
+      { source: "BBC News",      date: "2026-03-19", headline: "40,000 extra NHS appointments added since November",     excerpt: "Department of Health figures show the new evening and weekend slots have cut some waiting lists by 12%.",                                  url: "https://www.bbc.co.uk/news/health" },
+    ],
+    conservative: [
+      { source: "The Telegraph", date: "2026-04-11", headline: "Conservatives warn NHS reform 'risks postcode lottery'", excerpt: "Shadow Health Secretary said Labour's regional commissioning plan would entrench inequality.",                                                  url: "https://www.telegraph.co.uk/politics/" },
+    ],
+    libdem: [
+      { source: "BBC News",      date: "2026-04-05", headline: "Cooper: 'GP shortage is a national emergency'",          excerpt: "The Lib Dem health spokesperson called for emergency funding to recruit 8,000 more GPs over the next two years.",                              url: "https://www.bbc.co.uk/news/health" },
+    ],
+    snp: [
+      { source: "The Herald",    date: "2026-03-30", headline: "Scottish NHS pay rise agreed for 2026-27",               excerpt: "The Scottish Government announced an above-inflation pay deal for nurses, midwives and porters.",                                                url: "https://www.heraldscotland.com/" },
+    ],
+  },
+  immigration: {
+    labour: [
+      { source: "The Guardian", date: "2026-04-18", headline: "Cooper announces Border Security Command leadership",     excerpt: "The Home Secretary appointed a former Crown Prosecution Service head to lead the new unit targeting people-smuggling networks.",            url: "https://www.theguardian.com/uk/immigration" },
+    ],
+    conservative: [
+      { source: "The Telegraph", date: "2026-04-02", headline: "Patel: 'Migration cap must have legal force'",            excerpt: "The Shadow Foreign Secretary called for the proposed migration cap to be enshrined in primary legislation.",                                  url: "https://www.telegraph.co.uk/politics/" },
+    ],
+    libdem: [
+      { source: "BBC News",      date: "2026-03-22", headline: "Moran proposes safe routes for asylum seekers",          excerpt: "The Lib Dem foreign affairs spokesperson called for resettlement targets matched to UN Refugee Agency need assessments.",                       url: "https://www.bbc.co.uk/news/uk" },
+    ],
+    snp: [
+      { source: "The Herald",    date: "2026-03-15", headline: "Flynn: 'Scotland needs migration powers to grow'",       excerpt: "The SNP Westminster Leader said Scotland's labour shortages cannot be addressed without devolved control over visas.",                          url: "https://www.heraldscotland.com/" },
+    ],
+  },
+  environment: {
+    labour: [
+      { source: "The Guardian", date: "2026-04-20", headline: "GB Energy clears parliamentary stages",                    excerpt: "The publicly owned clean-energy company is now a legal entity, with first investments expected in offshore wind and tidal.",                  url: "https://www.theguardian.com/environment" },
+    ],
+    conservative: [
+      { source: "The Telegraph", date: "2026-04-04", headline: "Conservatives push 'pragmatic' net-zero approach",        excerpt: "Shadow Energy Secretary said the 2050 target should be retained but interim deadlines reviewed for affordability.",                              url: "https://www.telegraph.co.uk/politics/" },
+    ],
+    libdem: [
+      { source: "BBC News",      date: "2026-03-28", headline: "Farron tables amendment to ban new oil licences",         excerpt: "The Lib Dem environment spokesperson said new exploration is incompatible with the 2045 net-zero target.",                                       url: "https://www.bbc.co.uk/news/uk" },
+    ],
+    snp: [
+      { source: "The Herald",    date: "2026-04-01", headline: "Scotland on track for 2045 net-zero target",              excerpt: "The Scottish Government's annual emissions report shows the 2024 target was met for the first time in three years.",                                url: "https://www.heraldscotland.com/" },
+    ],
+  },
+  economy: {
+    labour: [
+      { source: "The Guardian", date: "2026-04-16", headline: "Reeves rules out income-tax rise in autumn statement",     excerpt: "The Chancellor reiterated Labour's manifesto commitment to no rises in income tax, NI, or VAT.",                                                url: "https://www.theguardian.com/business" },
+    ],
+    conservative: [
+      { source: "The Telegraph", date: "2026-04-08", headline: "Stride: 'Further NI cut would boost wages'",              excerpt: "The Shadow Chancellor said a 2p cut would put around £450 in the pocket of the average worker.",                                                  url: "https://www.telegraph.co.uk/business/" },
+    ],
+    libdem: [
+      { source: "BBC News",      date: "2026-03-30", headline: "Olney calls for windfall tax extension",                  excerpt: "The Lib Dem treasury spokesperson said extending the tax to other sectors could raise £4bn for the NHS.",                                       url: "https://www.bbc.co.uk/news/business" },
+    ],
+    snp: [
+      { source: "The Herald",    date: "2026-03-12", headline: "Blackman backs four-day-week pilot",                      excerpt: "The SNP treasury spokesperson said early data from the Scottish trial showed productivity gains.",                                                  url: "https://www.heraldscotland.com/" },
+    ],
+  },
+};
+
+// ─── Per-MP per-topic positions ─────────────────────────────────
+const MP_POSITIONS = {
+  "lisa-nandy": {
+    housing:  [{ type: "statement", date: "2026-04-12", headline: "Nandy at LGA Conference: housing as social infrastructure", quote: "Decent housing is a foundation, not a privilege.",                       source_label: "LGA Conference, 12 Apr 2026", source_url: "https://www.local.gov.uk/" }],
+    education: [{ type: "statement", date: "2026-02-08", headline: "Backs creative-arts funding in state schools",                quote: "Cutting arts education narrows the country in ways we don't measure.", source_label: "DCMS press release, 08 Feb 2026", source_url: "https://www.gov.uk/dcms" }],
+  },
+  "wes-streeting": {
+    health:   [{ type: "statement", date: "2026-04-22", headline: "Streeting commits to 18-week NHS target",                       quote: "We will return the NHS to its constitutional waiting standards.",       source_label: "DHSC briefing, 22 Apr 2026",  source_url: "https://www.gov.uk/dhsc" }],
+    economy:  [{ type: "vote",      date: "2026-03-08", headline: "Voted for Health and Social Care levy reform",                   quote: "Aye lobby, division 408.",                                              source_label: "Hansard division 408, 08 Mar 2026", source_url: "https://hansard.parliament.uk/" }],
+  },
+  "bridget-phillipson": {
+    education: [
+      { type: "statement", date: "2026-03-05", headline: "Phillipson outlines progressive student-finance reform",  quote: "Working-class graduates should not pay the highest effective marginal tax rate in the country.", source_label: "Labour press release, 05 Mar 2026", source_url: "https://labour.org.uk/press/" },
+      { type: "vote",      date: "2026-02-14", headline: "Voted for Schools Funding Equalisation Bill",            quote: "Aye lobby, division 392.",                                                                       source_label: "Hansard division 392, 14 Feb 2026", source_url: "https://hansard.parliament.uk/" },
+    ],
+  },
+  "yvette-cooper": {
+    immigration: [{ type: "statement", date: "2026-04-18", headline: "Cooper appoints Border Security Command lead",            quote: "We will dismantle the gangs profiting from human misery.",               source_label: "Home Office briefing, 18 Apr 2026", source_url: "https://www.gov.uk/home-office" }],
+    housing:    [{ type: "vote",      date: "2026-03-14", headline: "Voted FOR Renters' Rights Amendment",                       quote: "Aye lobby, division 412.",                                                source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" }],
+  },
+  "angela-rayner": {
+    housing:  [{ type: "statement", date: "2026-04-08", headline: "Rayner sets 1.5 million homes target as central mission",   quote: "We will build 1.5 million new homes — and they will be where people need them.", source_label: "MHCLG briefing, 08 Apr 2026", source_url: "https://www.gov.uk/mhclg" }],
+    economy:  [{ type: "vote",      date: "2026-03-21", headline: "Voted for Workers' Rights Bill",                              quote: "Aye lobby, division 415.",                                                source_label: "Hansard division 415, 21 Mar 2026", source_url: "https://hansard.parliament.uk/" }],
+  },
+  "robert-jenrick": {
+    housing:    [
+      { type: "press", date: "2026-04-08", headline: "Jenrick: Renters' Rights Bill will 'shrink the rental market'",  quote: "Reform must work for renters and landlords. Tilting the field destroys both.", source_label: "Conservative press release, 08 Apr 2026", source_url: "https://conservatives.com/news/" },
+      { type: "vote", date: "2026-03-14", headline: "Voted AGAINST Renters' Rights Amendment",                          quote: "No lobby, division 412.",                                                       source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" },
+    ],
+    immigration: [{ type: "statement", date: "2026-02-19", headline: "Jenrick calls for ECHR opt-out",                            quote: "We need to be able to act in our national interest without external oversight.", source_label: "Conservative press release, 19 Feb 2026", source_url: "https://conservatives.com/news/" }],
+  },
+  "kemi-badenoch": {
+    education: [{ type: "statement", date: "2026-04-08", headline: "Badenoch backs grammar-school expansion",                    quote: "Selective education, where parents want it, should be defended.",        source_label: "Conservative press release, 08 Apr 2026", source_url: "https://conservatives.com/news/" }],
+    economy:   [{ type: "statement", date: "2026-03-25", headline: "Critique of Labour fiscal stance",                            quote: "Borrowing for current spending is mortgaging tomorrow.",                  source_label: "Conservative press release, 25 Mar 2026", source_url: "https://conservatives.com/news/" }],
+  },
+  "priti-patel": {
+    immigration: [{ type: "statement", date: "2026-04-02", headline: "Patel calls for binding migration cap",                     quote: "A cap with legal teeth is the only way to restore public trust.",         source_label: "Conservative press release, 02 Apr 2026", source_url: "https://conservatives.com/news/" }],
+  },
+  "james-cleverly": {
+    immigration: [{ type: "statement", date: "2026-03-18", headline: "Cleverly defends offshore-processing model",                quote: "Removing the pull factors is the only way to break the gangs.",            source_label: "Conservative press release, 18 Mar 2026", source_url: "https://conservatives.com/news/" }],
+    housing:    [{ type: "vote",      date: "2026-03-14", headline: "Voted AGAINST Renters' Rights Amendment",                    quote: "No lobby, division 412.",                                                source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" }],
+  },
+  "mel-stride": {
+    economy: [
+      { type: "statement", date: "2026-04-08", headline: "Stride: Further NI cut would boost wages",                              quote: "A 2p cut puts £450 in the pocket of the average worker.",                  source_label: "Conservative press release, 08 Apr 2026", source_url: "https://conservatives.com/news/" },
+      { type: "vote",      date: "2026-03-22", headline: "Voted against Labour Budget",                                            quote: "No lobby, division 416.",                                                source_label: "Hansard division 416, 22 Mar 2026", source_url: "https://hansard.parliament.uk/" },
+    ],
+  },
+  "daisy-cooper": {
+    housing:  [{ type: "statement", date: "2026-04-19", headline: "Cooper: rent caps a 'short-term fix'",                         quote: "Build more, regulate fairly, end no-fault evictions. That's the formula.", source_label: "Lib Dem press release, 19 Apr 2026", source_url: "https://libdems.org.uk/news/" }],
+    health:   [{ type: "statement", date: "2026-04-05", headline: "Cooper: 'GP shortage is a national emergency'",               quote: "We need 8,000 more GPs in the next two years, not the next decade.",    source_label: "Lib Dem press release, 05 Apr 2026", source_url: "https://libdems.org.uk/news/" }],
+  },
+  "ed-davey": {
+    education: [{ type: "statement", date: "2026-04-15", headline: "Davey: 'Restore maintenance grants now'",                     quote: "Living costs should not be a class barrier to going to university.",     source_label: "Lib Dem press release, 15 Apr 2026", source_url: "https://libdems.org.uk/news/" }],
+    economy:   [{ type: "vote",      date: "2026-03-22", headline: "Voted against Labour Budget on banking provisions",            quote: "No lobby, division 416.",                                                source_label: "Hansard division 416, 22 Mar 2026", source_url: "https://hansard.parliament.uk/" }],
+  },
+  "layla-moran": {
+    immigration: [{ type: "statement", date: "2026-03-22", headline: "Moran proposes safe routes for asylum seekers",             quote: "The asylum system should match resettlement targets to UN need assessments.", source_label: "Lib Dem press release, 22 Mar 2026", source_url: "https://libdems.org.uk/news/" }],
+  },
+  "tim-farron": {
+    environment: [{ type: "statement", date: "2026-03-28", headline: "Farron tables ban on new oil and gas licences",             quote: "New exploration is incompatible with our 2045 net-zero target.",         source_label: "Lib Dem press release, 28 Mar 2026", source_url: "https://libdems.org.uk/news/" }],
+  },
+  "sarah-olney": {
+    economy: [{ type: "statement", date: "2026-03-30", headline: "Olney calls for windfall-tax extension",                        quote: "Extending it to other sectors could raise £4bn for the NHS.",            source_label: "Lib Dem press release, 30 Mar 2026", source_url: "https://libdems.org.uk/news/" }],
+  },
+  "stephen-flynn": {
+    immigration: [{ type: "statement", date: "2026-03-15", headline: "Flynn: 'Scotland needs migration powers to grow'",          quote: "Scotland's labour shortages cannot be addressed without devolved visas.", source_label: "SNP press release, 15 Mar 2026",     source_url: "https://snp.org/news/" }],
+    economy:    [{ type: "statement", date: "2026-04-02", headline: "Flynn: Westminster austerity is choking Scottish public services", quote: "Devolved budgets are being squeezed by decisions taken without Scotland's consent.", source_label: "SNP press release, 02 Apr 2026", source_url: "https://snp.org/news/" }],
+  },
+  "mhairi-black": {
+    housing: [{ type: "vote", date: "2026-03-14", headline: "Voted FOR Renters' Rights Amendment", quote: "Aye lobby, division 412.", source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" }],
+  },
+  "kirsty-blackman": {
+    economy: [{ type: "statement", date: "2026-03-12", headline: "Blackman backs four-day-week pilot",                            quote: "Early data from the Scottish trial shows productivity gains.",            source_label: "SNP press release, 12 Mar 2026",     source_url: "https://snp.org/news/" }],
+  },
+};
+
+// ─── Demo people for the person search ───────────────────────────
 const MOCK_PEOPLE = {
   "lisa-nandy": {
     id: "lisa-nandy",
@@ -278,12 +495,11 @@ const MOCK_PEOPLE = {
       { label: "Parliament profile", url: "https://members.parliament.uk/member/4361/contact" },
       { label: "TheyWorkForYou", url: "https://www.theyworkforyou.com/mp/24935/lisa_nandy" },
     ],
-    person_summary: "Nandy has consistently centred her recent statements on housing security and renter protection, voting with the Labour front bench on the Renters' Rights Amendment.",
+    person_summary: "Nandy has consistently centred her recent statements on housing security and renter protection.",
     citations: [{ quote: "Decent housing is a foundation, not a privilege.", source: "Wigan town hall address, Mar 2026" }],
     results: [
       { type: "statement", date: "2026-04-12", headline: "Nandy at LGA Conference: housing as social infrastructure", quote: "Decent housing is a foundation, not a privilege — and a healthy nation knows the difference.", source_label: "LGA Conference, 12 Apr 2026", source_url: "https://www.local.gov.uk/" },
       { type: "vote", date: "2026-03-14", headline: "Voted FOR Renters' Rights Amendment", quote: "Aye lobby, division 412.", source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" },
-      { type: "press", date: "2025-11-08", headline: "Conference speech: rebuilding civic life", quote: "Communities are not a sentimental idea — they are how a country actually functions.", source_label: "Labour Annual Conference, 08 Nov 2025", source_url: "https://labour.org.uk/conference-2025/" },
     ],
   },
   "robert-jenrick": {
@@ -300,12 +516,11 @@ const MOCK_PEOPLE = {
       { label: "Parliament profile", url: "https://members.parliament.uk/member/4320/contact" },
       { label: "TheyWorkForYou", url: "https://www.theyworkforyou.com/mp/24893/robert_jenrick" },
     ],
-    person_summary: "Jenrick has focused recent statements on immigration enforcement and rental market reform, opposing the Renters' Rights Amendment in March 2026.",
+    person_summary: "Jenrick has focused recent statements on immigration enforcement and rental market reform.",
     citations: [{ quote: "Reform must work for renters and landlords. Tilting the field destroys both.", source: "Conservative press release, Apr 2026" }],
     results: [
       { type: "press", date: "2026-04-08", headline: "Jenrick: Renters' Rights Bill will 'shrink the rental market'", quote: "Reform must work for renters and landlords. Tilting the field destroys both.", source_label: "Conservative press release, 08 Apr 2026", source_url: "https://conservatives.com/news/" },
       { type: "vote", date: "2026-03-14", headline: "Voted AGAINST Renters' Rights Amendment", quote: "No lobby, division 412.", source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" },
-      { type: "statement", date: "2025-09-30", headline: "Conference speech: a fairer settlement on housing", quote: "We need to build, not regulate our way out of the housing crisis.", source_label: "Conservative Conference, 30 Sep 2025", source_url: "https://conservatives.com/conference-2025/" },
     ],
   },
   "daisy-cooper": {
@@ -322,12 +537,10 @@ const MOCK_PEOPLE = {
       { label: "Parliament profile", url: "https://members.parliament.uk/member/4830/contact" },
       { label: "TheyWorkForYou", url: "https://www.theyworkforyou.com/mp/25895/daisy_cooper" },
     ],
-    person_summary: "Cooper has championed landlord licensing and tabled the Lib Dem amendment to require a national register, while also pressing for NHS waiting-time targets.",
+    person_summary: "Cooper has championed landlord licensing and tabled the Lib Dem amendment to require a national register.",
     citations: [{ quote: "A national register of landlords is the floor, not the ceiling.", source: "Hansard, 02 Feb 2026" }],
     results: [
       { type: "statement", date: "2026-04-19", headline: "Cooper: rent caps a 'short-term fix'", quote: "Build more, regulate fairly, end no-fault evictions. That's the formula.", source_label: "Lib Dem press release, 19 Apr 2026", source_url: "https://libdems.org.uk/news/" },
-      { type: "vote", date: "2026-03-14", headline: "Voted FOR Renters' Rights Amendment", quote: "Aye lobby, division 412.", source_label: "Hansard division 412, 14 Mar 2026", source_url: "https://hansard.parliament.uk/" },
-      { type: "statement", date: "2026-02-02", headline: "Tabled amendment for national landlord register", quote: "A national register of landlords is the floor, not the ceiling.", source_label: "Hansard, 02 Feb 2026", source_url: "https://hansard.parliament.uk/" },
     ],
   },
 };
