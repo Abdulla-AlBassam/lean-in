@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import re
 import time
 from pathlib import Path
 
@@ -8,7 +9,7 @@ import anthropic
 
 from .llm import client
 from .models import SearchResponse, PartyPOV, Citation
-from .classify import classify, load_axes
+from .classify import classify
 
 logger = logging.getLogger(__name__)
 
@@ -31,50 +32,75 @@ NATION_PARTIES = {
     "NIR": [],
 }
 
-SYSTEM_PROMPT = """You are a neutral political analyst. You will be given relevant excerpts from UK party manifestos. The user asks about a topic. For each party, return a 1-2 sentence summary of their position plus 1-2 direct verbatim quotes with page citations.
+SYSTEM_PROMPT = """You are a neutral political analyst. You will be given the full text of UK party manifestos, each labelled with the party name. The user will give you a policy topic and a list of party IDs to cover.
 
-Rules:
-- Every quote must be verbatim text from the excerpt provided. Do not paraphrase.
-- Use neutral descriptive language. Do not editorialise.
-- If the excerpt does not address the topic, say the manifesto does not address it. Do not invent positions.
-- Output strict JSON. No markdown fences, no prose outside the JSON."""
+Output strict JSON only. Your entire response must begin with `{` and end with `}`. No markdown fences, no explanation, no preamble, no prose of any kind before or after the JSON object.
 
+Schema:
+{
+  "parties": [
+    {
+      "id": "<party_id as given>",
+      "summary": "<1-2 sentences, max 400 chars, neutral descriptive language, no quoted text inline>",
+      "citations": [
+        {
+          "quote": "<exact verbatim substring copied from the manifesto>",
+          "source": "<Party Name> Manifesto 2024, p.<X>"
+        }
+      ]
+    }
+  ]
+}
 
-def _axis_keywords(axis_id: str) -> list[str]:
-    for ax in load_axes():
-        if ax["id"] == axis_id:
-            return ax["keywords"]
-    return []
-
-
-def extract_relevant(text: str, keywords: list[str], max_words: int = 800) -> str:
-    """Return the highest-scoring paragraphs from text by keyword overlap, up to max_words."""
-    paras = [p.strip() for p in text.split("\n\n") if p.strip()]
-    kw_lower = [k.lower() for k in keywords]
-
-    def score(para: str) -> int:
-        pl = para.lower()
-        return sum(1 for k in kw_lower if k in pl)
-
-    scored = sorted(paras, key=score, reverse=True)
-    out, word_count = [], 0
-    for para in scored:
-        words = para.split()
-        if word_count + len(words) > max_words:
-            break
-        out.append(para)
-        word_count += len(words)
-    return "\n\n".join(out) if out else text[:max_words * 6]
+Rules — follow these without exception:
+1. Every quote must be a verbatim substring of the manifesto sections provided below. Copy the exact words as they appear. Do not use any prior knowledge of party manifestos — only quote text present in the sections provided to you right now.
+2. If you cannot find the exact words in the manifesto, do not include that citation. Return fewer citations rather than invented ones. Return 1 or 2 citations per party — never more than 2.
+3. Page numbers: use the nearest (p.X) marker in the manifesto text. If none is nearby, write "page unknown".
+4. If a party's manifesto does not address the topic at all, return summary "The manifesto does not directly address this topic." and citations [].
+5. Summaries must be neutral and descriptive. No editorial language, no partisan framing, no quoted text inline.
+6. Return exactly the party IDs requested, in the order given. No extra parties."""
 
 
-def load_manifestos(party_ids: list[str]) -> list[dict]:
+def _normalise(text: str) -> str:
+    # Join lines within paragraphs so verbatim quote checks match continuous text.
+    # PDF-converted manifestos split sentences across lines.
+    paragraphs = text.split("\n\n")
+    return "\n\n".join(" ".join(p.splitlines()) for p in paragraphs)
+
+
+def _extract_section(text: str, keywords: list[str], top_k: int = 6) -> str:
+    # Rank each page by keyword density and return the top_k most relevant pages.
+    # Page-level ranking beats paragraph-level for manifesto PDFs — policy sections
+    # cluster on whole pages so we capture both the claim and its surrounding context.
+    pages = re.split(r'(\(p\.\d+\))', text)
+    scored = []
+    i = 0
+    while i < len(pages):
+        if not re.match(r'\(p\.\d+\)', pages[i]):
+            i += 1
+            continue
+        marker = pages[i]
+        content = pages[i + 1] if i + 1 < len(pages) else ""
+        combined = (marker + " " + content).lower()
+        score = sum(combined.count(kw) for kw in keywords)
+        scored.append((score, marker + content))
+        i += 2
+    scored.sort(key=lambda x: x[0], reverse=True)
+    top = [chunk for _, chunk in scored[:top_k]]
+    return "\n\n".join(top) if top else text[:2000]
+
+
+def load_manifestos(party_ids: list[str], keywords: list[str] | None = None) -> list[dict]:
     out = []
     for pid in party_ids:
         path = MANIFESTO_DIR / f"{pid}.md"
         if not path.exists():
             logger.warning("manifesto missing: %s", pid)
             continue
-        out.append({"id": pid, "text": path.read_text()})
+        text = _normalise(path.read_text())
+        if keywords:
+            text = _extract_section(text, keywords)
+        out.append({"id": pid, "text": text})
     return out
 
 
@@ -82,28 +108,19 @@ def search(query: str, nation: str) -> SearchResponse:
     if os.environ.get("DEMO_MODE", "").lower() == "true":
         return load_demo_cached(query, nation)
 
-    axis_id, axis_label = classify(query)
-    keywords = _axis_keywords(axis_id)
+    axis_id, axis_label, keywords = classify(query)
     party_ids = NATION_PARTIES.get(nation, [])
-    manifestos = load_manifestos(party_ids)
+    manifestos = load_manifestos(party_ids, keywords)
 
     system_blocks = [{"type": "text", "text": SYSTEM_PROMPT}]
     for m in manifestos:
-        excerpt = extract_relevant(m["text"], keywords)
         system_blocks.append({
             "type": "text",
-            "text": f"=== {PARTY_META[m['id']]['name']} Manifesto (relevant excerpts) ===\n\n{excerpt}",
+            "text": f"=== {PARTY_META[m['id']]['name']} Manifesto (relevant sections) ===\n\n{m['text']}",
             "cache_control": {"type": "ephemeral"},
         })
 
-    ids_list = ", ".join(f'"{pid}"' for pid in party_ids)
-    user_msg = (
-        f"Topic: {query}\n"
-        f"Return a response for EVERY party listed below, even if their position is UK-wide. "
-        f"Use exactly these id strings (lowercase): {ids_list}\n"
-        f'Return JSON: {{"parties": [{{"id": "<one of the ids above>", "summary": "...", '
-        f'"citations": [{{"quote": "...", "source": "<Party> Manifesto 2024, p.X"}}]}}]}}'
-    )
+    user_msg = f"Topic: {query}\nParties: {', '.join(party_ids)}"
 
     try:
         msg = client().messages.create(
@@ -125,7 +142,9 @@ def search(query: str, nation: str) -> SearchResponse:
     raw = msg.content[0].text.strip()
     if raw.startswith("```"):
         raw = raw.split("```")[1].lstrip("json").strip()
-    parsed = json.loads(raw)
+    start = raw.find("{")
+    end = raw.rfind("}") + 1
+    parsed = json.loads(raw[start:end])
 
     parties = []
     for p in parsed["parties"]:

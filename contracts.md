@@ -76,6 +76,53 @@ When `nation=SCO`, an additional `snp` party appears in the array. When `nation=
 
 ---
 
+## `GET /api/person/{id}`
+
+Returns a full person profile plus their activity timeline. Frontend calls this when a person-query card is clicked.
+
+**Path param:** `id` — one of `lisa-nandy`, `robert-jenrick`, `daisy-cooper`.
+
+**Response 200:**
+```json
+{
+  "id": "lisa-nandy",
+  "name": "Lisa Nandy",
+  "party_id": "labour",
+  "constituency": "Wigan",
+  "role": "Secretary of State for Culture, Media and Sport",
+  "photo_url": "https://upload.wikimedia.org/...",
+  "bio": "Labour MP for Wigan since 2010...",
+  "links": [
+    { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Lisa_Nandy" },
+    { "label": "Parliament profile", "url": "https://members.parliament.uk/..." },
+    { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/..." }
+  ],
+  "person_summary": "Nandy has consistently centred her recent statements on housing security...",
+  "citations": [
+    { "quote": "Decent housing is a foundation, not a privilege.", "source": "Wigan town hall address, Mar 2026" }
+  ],
+  "timeline": [
+    {
+      "type": "statement",
+      "date": "2026-04-12",
+      "headline": "Nandy at LGA Conference: housing as social infrastructure",
+      "quote": "Decent housing is a foundation, not a privilege...",
+      "source_label": "LGA Conference, 12 Apr 2026",
+      "source_url": "https://www.local.gov.uk/"
+    }
+  ]
+}
+```
+
+**Response 404:** `{ "detail": "Person not found" }`
+
+**Field rules:**
+- `timeline` entries: `type` is one of `statement`, `vote`, `press`, `manifesto`.
+- `citations` on the top-level profile are the person's defining quotes (from `people.json`).
+- Data source: `backend/data/people.json` merged with `backend/data/results.json[by_person][id]`.
+
+---
+
 ## Builder C — Elya (builder-c branch)
 
 **Owner:** Elya
@@ -116,6 +163,8 @@ When `nation=SCO`, an additional `snp` party appears in the array. When `nation=
 
 - `search()` auto-saves every response to `backend/demo_cache/<NATION>__<query>.json` via `save_demo_cache()`.
 - `DEMO_MODE=true` reads from cache instead of hitting the API.
+
+---
 
 ---
 

@@ -11,7 +11,8 @@ def _keys() -> list[str]:
     global _KEYS
     if _KEYS:
         return _KEYS
-    _KEYS = [v for k, v in os.environ.items() if k.startswith("ANTHROPIC_API_KEY") and v]
+    # Only accept keys long enough to be real — filters out placeholder "sk-ant-..." values
+    _KEYS = [v for k, v in os.environ.items() if k.startswith("ANTHROPIC_API_KEY") and len(v) > 20]
     if not _KEYS:
         raise RuntimeError("No ANTHROPIC_API_KEY_* env vars found")
     return _KEYS
