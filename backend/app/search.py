@@ -98,8 +98,9 @@ def search(query: str, nation: str) -> SearchResponse:
 
     ids_list = ", ".join(f'"{pid}"' for pid in party_ids)
     user_msg = (
-        f"Topic: {query}\nNation scope: {nation}\n"
-        f"Use exactly these party id strings (lowercase): {ids_list}\n"
+        f"Topic: {query}\n"
+        f"Return a response for EVERY party listed below, even if their position is UK-wide. "
+        f"Use exactly these id strings (lowercase): {ids_list}\n"
         f'Return JSON: {{"parties": [{{"id": "<one of the ids above>", "summary": "...", '
         f'"citations": [{{"quote": "...", "source": "<Party> Manifesto 2024, p.X"}}]}}]}}'
     )

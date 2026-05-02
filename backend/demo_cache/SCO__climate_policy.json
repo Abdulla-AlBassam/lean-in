@@ -1,0 +1,70 @@
+{
+  "axisId": "environment",
+  "axisLabel": "Environment & Climate",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes to reverse Conservative climate policy decisions, including restoring climate considerations to the Bank of England's mandate, and commits to mandating financial institutions and FTSE 100 companies to develop transition plans aligned with the 1.5°C Paris Agreement goal.",
+      "citations": [
+        {
+          "quote": "The Conservatives' decision to prevent the Bank of England giving due consideration to climate change in its mandates will be reversed.",
+          "source": "Labour Manifesto 2024, p.55"
+        },
+        {
+          "quote": "mandating UK-regulated financial institutions ­ including banks, asset managers, pension funds, and insurers ­ and FTSE 100 companies to develop and implement credible transition plans that align with the 1.5°C goal of the Paris Agreement.",
+          "source": "Labour Manifesto 2024, p.55"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservatives propose a 'pragmatic and proportionate' path to net zero by 2050, emphasising reducing costs for households and leveraging private sector innovation, while rejecting what they characterise as Labour's top-down approach.",
+      "citations": [
+        {
+          "quote": "We will get to net zero on the fairest possible path and in a way that brings people with us.",
+          "source": "Conservative Manifesto 2024, p.49"
+        },
+        {
+          "quote": "We will cut the cost of tackling climate change for households and business, and deliver net zero by 2050.",
+          "source": "Conservative Manifesto 2024, p.49"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats commit to achieving net zero by 2045, including a target to reduce emissions by at least 68% from 1990 levels by 2030, and propose a range of industrial, infrastructure and nature-based measures to support the transition.",
+      "citations": [
+        {
+          "quote": "Liberal Democrats are committed to cutting greenhouse gas emissions to net zero by 2045 at the latest.",
+          "source": "Liberal Democrats Manifesto 2024, p.9"
+        },
+        {
+          "quote": "Meeting the UK's commitment under the Paris Agreement to reduce emissions by at least 68% from 1990 levels by 2030.",
+          "source": "Liberal Democrats Manifesto 2024, p.9"
+        }
+      ]
+    },
+    {
+      "id": "snp",
+      "name": "SNP",
+      "colour": "#FDF38E",
+      "summary": "The SNP asserts an unwavering commitment to tackling climate change alongside economic prosperity, demanding the UK Government invest at least £28bn a year in the green economy and devolve energy regulation powers to Scotland, while supporting a just transition for oil and gas workers.",
+      "citations": [
+        {
+          "quote": "Our commitment to tackling the twin crises of climate change and nature loss is unwavering and we believe emissions reduction and economic prosperity go hand in hand.",
+          "source": "SNP Manifesto 2024, p.21"
+        },
+        {
+          "quote": "The UK Government must invest at least £28bn a year in the green economy to deliver a step change in public and private investment in net zero and major investment in the domestic supply chain.",
+          "source": "SNP Manifesto 2024, p.21"
+        }
+      ]
+    }
+  ]
+}

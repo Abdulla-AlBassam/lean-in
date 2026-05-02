@@ -1,0 +1,54 @@
+{
+  "axisId": "environment",
+  "axisLabel": "Environment & Climate",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes a Warm Homes Plan with £6.6 billion investment to upgrade five million homes, aims to mandate financial institutions to align with the 1.5°C Paris Agreement goal, and commits to reversing Conservative changes to the Bank of England's climate mandate.",
+      "citations": [
+        {
+          "quote": "Labour will invest an extra £6.6 billion over the next parliament, doubling the existing planned government investment, to upgrade five million homes to cut bills for families.",
+          "source": "Labour Manifesto 2024, p.54"
+        },
+        {
+          "quote": "mandating UK-regulated financial institutions ­ including banks, asset managers, pension funds, and insurers ­ and FTSE 100 companies to develop and implement credible transition plans that align with the 1.5°C goal of the Paris Agreement.",
+          "source": "Labour Manifesto 2024, p.55"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservatives advocate a pragmatic and proportionate path to net zero by 2050, emphasising cutting costs for households and businesses, scaling up nuclear power, and rejecting what they characterise as Labour's top-down approach.",
+      "citations": [
+        {
+          "quote": "We will cut the cost of tackling climate change for households and business, and deliver net zero by 2050, by: Sticking to our pragmatic, proportionate and realistic approach that eases the burdens on working people.",
+          "source": "Conservative Manifesto 2024, p.49"
+        },
+        {
+          "quote": "We reject Labour's dogmatic, top-down approach that will burden households with higher bills.",
+          "source": "Conservative Manifesto 2024, p.49"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats commit to achieving net zero by 2045, propose an emergency Home Energy Upgrade programme, and support British industry through measures including a Carbon Border Adjustment Mechanism and a clear stable roadmap to net zero.",
+      "citations": [
+        {
+          "quote": "Liberal Democrats are committed to cutting greenhouse gas emissions to net zero by 2045 at the latest.",
+          "source": "Liberal Democrats Manifesto 2024, p.9"
+        },
+        {
+          "quote": "Setting out a clear and stable roadmap to net zero, repairing the damage done by Conservative U-turns and giving businesses the confidence to invest.",
+          "source": "Liberal Democrats Manifesto 2024, p.9"
+        }
+      ]
+    }
+  ]
+}

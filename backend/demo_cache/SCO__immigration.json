@@ -1,0 +1,70 @@
+{
+  "axisId": "immigration",
+  "axisLabel": "Immigration & Borders",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes reducing net migration and overhauling the points-based immigration system, while also pledging to clear the asylum backlog, dismantle criminal smuggling gangs, and end the use of asylum hotels.",
+      "citations": [
+        {
+          "quote": "Labour will reduce net migration. We will reform the points-based immigration system so that it is fair and properly managed, with appropriate restrictions on visas, and by linking immigration and skills policy.",
+          "source": "Labour Manifesto 2024, p.11"
+        },
+        {
+          "quote": "Labour will stop the chaos and go after the criminal gangs who trade in driving this crisis.",
+          "source": "Labour Manifesto 2024, p.39"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservatives propose deterring illegal migration through a programme of removals to Rwanda and tightening legal migration by raising salary thresholds, while seeking to reduce overall migration to sustainable levels.",
+      "citations": [
+        {
+          "quote": "We will run a relentless, continual process of permanently removing illegal migrants to Rwanda with a regular rhythm of flights every month, starting this July, until the boats are stopped.",
+          "source": "Conservative Manifesto 2024, p.36"
+        },
+        {
+          "quote": "Immigration is too high. We want to attract the brightest and best skilled migrants to the UK to contribute to our businesses and public services. We must bring migration numbers down to sustainable levels to reduce the impacts on public services and housing and to restore public confidence in the system.",
+          "source": "Conservative Manifesto 2024, p.36"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats propose scrapping the Rwanda scheme and the Illegal Migration Act, expanding safe and legal routes for refugees, replacing the salary threshold with a merit-based work visa system, and tackling the asylum backlog through a dedicated decision-making unit.",
+      "citations": [
+        {
+          "quote": "Scrap the Conservatives' Illegal Migration Act and their Rwanda scheme, uphold the Refugee Convention, and provide safe and legal routes to sanctuary for refugees, helping to prevent dangerous Channel crossings.",
+          "source": "Liberal Democrats Manifesto 2024, p.87"
+        },
+        {
+          "quote": "Replace the Conservatives' arbitrary salary threshold with a more flexible merit-based system for work visas, with the relevant department working with employers in each sector to address specific needs as part of a long-term workforce strategy that also focuses on education and training to address skills gaps from within the UK.",
+          "source": "Liberal Democrats Manifesto 2024, p.87"
+        }
+      ]
+    },
+    {
+      "id": "snp",
+      "name": "SNP",
+      "colour": "#FDF38E",
+      "summary": "The SNP calls for immigration powers to be devolved to Scotland to address its specific demographic and economic needs, and advocates scrapping the Rwanda scheme while opposing what it characterises as the demonisation of migrants.",
+      "citations": [
+        {
+          "quote": "Devolve powers to create a bespoke migration system for Scotland that values those who decide to work, live, study and invest here and allows us to address our specific demographic and economic needs.",
+          "source": "SNP Manifesto 2024, p.11"
+        },
+        {
+          "quote": "Scrap the Rwanda scheme and stand firm against the demonisation of migrants.",
+          "source": "SNP Manifesto 2024, p.11"
+        }
+      ]
+    }
+  ]
+}
