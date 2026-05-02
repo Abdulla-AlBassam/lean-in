@@ -6,15 +6,38 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes to work with local authorities to give first-time buyers priority on new homes and introduces a permanent mortgage guarantee scheme. On renters, Labour commits to ensuring private rented sector homes meet minimum energy efficiency standards by 2030.",
+      "summary": "Labour proposes to abolish no-fault evictions, empower renters to challenge unreasonable rent increases, extend Awaab's Law to the private sector, and raise standards in the private rented sector, while also taking action on building safety and leasehold reform.",
       "citations": [
         {
-          "quote": "Labour will work with local authorities to give first-time buyers the first chance to buy homes and end the farce of entire developments being sold off to international investors before houses are even built.",
-          "source": "Labour Manifesto 2024, p.35"
+          "quote": "We will end `no fault' evictions, prevent private renters being exploited and discriminated against, empower them to challenge unreasonable rent increases, and take steps to decisively raise standards, including extending `Awaab's Law' to the private sector.",
+          "source": "Labour Manifesto 2024, p.78"
         },
         {
-          "quote": "We will ensure homes in the private rented sector meet minimum energy efficiency standards by 2030, saving renters hundreds of pounds per year.",
-          "source": "Labour Manifesto 2024, p.54"
+          "quote": "Labour will also take decisive action to improve building safety, including through regulation, to ensure we never again see a repeat of the Grenfell fire.",
+          "source": "Labour Manifesto 2024, p.78"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges 1.5 million new homes next parliament",
+          "quote": "Labour will get Britain building again, creating jobs across England, with 1.5 million new homes over the next parliament.",
+          "source_label": "Labour Manifesto 2024, p.34",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-04-29",
+          "headline": "Starmer hails biggest renters' rights upgrade in a generation",
+          "quote": "I am very proud — this Government are very proud — of the biggest upgrade in workers' rights in a generation and the biggest upgrade in renters' rights in a generation and of doing the most any Government have ever done to reduce child poverty.",
+          "source_label": "Hansard, 29 Apr 2026 — Sir Keir Starmer (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=renters+rights&startDate=2026-04-29&endDate=2026-04-29"
+        },
+        {
+          "date": "2026-04-29",
+          "headline": "Starmer: upgrading renters' rights and building 1.5 million homes",
+          "quote": "We are going to build 1.5 million homes. We are upgrading the rights of renters, because we know how important it is for everyone to have a safe and secure roof over their head.",
+          "source_label": "Hansard, 29 Apr 2026 — Sir Keir Starmer (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=renters+rights&startDate=2026-04-29&endDate=2026-04-29"
         }
       ]
     },
@@ -22,15 +45,24 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives propose passing a Renters Reform Bill to deliver fairness for both landlords and renters, including abolishing Section 21 no-fault evictions once court reforms are in place, while also strengthening grounds for evicting tenants guilty of anti-social behaviour.",
+      "summary": "The Conservatives propose passing a Renters Reform Bill to deliver fairness for landlords and renters, including fully abolishing Section 21 no-fault evictions once court reforms are in place, while also strengthening grounds for landlords to evict tenants guilty of anti-social behaviour.",
       "citations": [
         {
-          "quote": "We will pass a Renters Reform Bill that will deliver fairness in the rental market for landlords and renters alike.",
-          "source": "Conservative Manifesto 2024, p.53"
+          "quote": "We will pass a Renters Reform Bill that will deliver fairness in the rental market for landlords and renters alike. We will deliver the court reforms necessary to fully abolish Section 21 and strengthen other grounds for landlords behaviour.",
+          "source": "Conservative Manifesto 2024, p.78"
         },
         {
-          "quote": "We will deliver the court reforms necessary to fully abolish Section 21 and strengthen other grounds for landlords to evict private tenants guilty of anti-social behaviour.",
+          "quote": "introduce a two-year temporary Capital Gains Tax relief for landlords who sell to their existing tenants.",
           "source": "Conservative Manifesto 2024, p.53"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge 1.6 million new homes in England",
+          "quote": "We will deliver 1.6 million homes in England in the next Parliament.",
+          "source_label": "Conservative Manifesto 2024, p.52",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
         }
       ]
     },
@@ -38,15 +70,24 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats propose immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords, alongside proactively enforcing clear standards for socially rented homes.",
+      "summary": "The Liberal Democrats propose immediately banning no-fault evictions, making three-year tenancies the default, creating a national register of licensed landlords, and proactively enforcing clear standards for socially rented homes, including strict time limits for repairs.",
       "citations": [
         {
           "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
-          "source": "Liberal Democrats Manifesto 2024, p.14"
+          "source": "Liberal Democrats Manifesto 2024, p.71"
         },
         {
-          "quote": "Proactively enforcing clear standards for homes that are socially rented, including strict time limits for repairs.",
-          "source": "Liberal Democrats Manifesto 2024, p.14"
+          "quote": "Proactively enforcing clear standards for homes that are socially rented, including strict time limits for repairs. Fully recognising tenant panels so that renters have a voice in landlord governance.",
+          "source": "Liberal Democrats Manifesto 2024, p.73"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge to ban no-fault evictions immediately",
+          "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.71",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
         }
       ]
     }

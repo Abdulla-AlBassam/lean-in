@@ -6,15 +6,24 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes to reverse Conservative climate policy decisions, including restoring climate considerations to the Bank of England's mandate, and commits to mandating financial institutions and FTSE 100 companies to develop transition plans aligned with the 1.5°C Paris Agreement goal.",
+      "summary": "Labour proposes a clean power mission targeting clean electricity by 2030, with a new publicly-owned company (Great British Energy), a National Wealth Fund, a windfall tax on oil and gas, no new exploration licences, and a Warm Homes Plan to cut household energy bills and reduce emissions.",
       "citations": [
         {
-          "quote": "The Conservatives' decision to prevent the Bank of England giving due consideration to climate change in its mandates will be reversed.",
-          "source": "Labour Manifesto 2024, p.55"
+          "quote": "clean energy by 2030 is Labour's second mission.",
+          "source": "Labour Manifesto 2024, p.47"
         },
         {
-          "quote": "mandating UK-regulated financial institutions ­ including banks, asset managers, pension funds, and insurers ­ and FTSE 100 companies to develop and implement credible transition plans that align with the 1.5°C goal of the Paris Agreement.",
-          "source": "Labour Manifesto 2024, p.55"
+          "quote": "We will not issue new licences to explore new fields because they will not take a penny off bills, cannot make us energy secure, and will only accelerate the worsening climate crisis.",
+          "source": "Labour Manifesto 2024, p.51"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges clean energy superpower status by 2030",
+          "quote": "Make Britain a clean energy superpower to cut bills, create jobs and deliver security with cheaper, zero-carbon electricity by 2030, accelerating to net zero.",
+          "source_label": "Labour Manifesto 2024, p.11",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
         }
       ]
     },
@@ -22,15 +31,31 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives propose a 'pragmatic and proportionate' path to net zero by 2050, emphasising reducing costs for households and leveraging private sector innovation, while rejecting what they characterise as Labour's top-down approach.",
+      "summary": "The Conservatives commit to reaching net zero by 2050 through a pragmatic approach, including trebling offshore wind, scaling up nuclear power with new Small Modular Reactors, maintaining annual North Sea licensing rounds, and ensuring green levies on household bills are kept lower than 2023 levels.",
       "citations": [
         {
-          "quote": "We will get to net zero on the fairest possible path and in a way that brings people with us.",
-          "source": "Conservative Manifesto 2024, p.49"
+          "quote": "We will deliver net zero by 2050, by: Sticking to our pragmatic, proportionate and realistic approach that eases the burdens on working people.",
+          "source": "Conservative Manifesto 2024, p.50"
         },
         {
-          "quote": "We will cut the cost of tackling climate change for households and business, and deliver net zero by 2050.",
-          "source": "Conservative Manifesto 2024, p.49"
+          "quote": "We will legislate to ensure annual licensing rounds for oil and gas production from our own North Sea",
+          "source": "Conservative Manifesto 2024, p.48"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives promise affordable transition to sustainable energy",
+          "quote": "Delivering an affordable transition to domestic, sustainable energy.",
+          "source_label": "Conservative Manifesto 2024, p.6",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-04-21",
+          "headline": "Conservative MP: decarbonise affordably without harming communities",
+          "quote": "We believe in decarbonisation, but we need to do it in a way that people can afford and that does not trash our country in the process.",
+          "source_label": "Hansard, 21 Apr 2026 — Greg Smith (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=decarbonisation+wind+farms&startDate=2026-04-21&endDate=2026-04-21"
         }
       ]
     },
@@ -38,15 +63,31 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats commit to achieving net zero by 2045, including a target to reduce emissions by at least 68% from 1990 levels by 2030, and propose a range of industrial, infrastructure and nature-based measures to support the transition.",
+      "summary": "The Liberal Democrats propose achieving net zero by 2045, with a ten-year home energy upgrade programme, a rooftop solar revolution, removal of restrictions on wind and solar, a windfall tax on oil and gas super-profits, and restoring the UK's role as a global climate leader including returning development spending to 0.7% of national income.",
       "citations": [
         {
           "quote": "Liberal Democrats are committed to cutting greenhouse gas emissions to net zero by 2045 at the latest.",
-          "source": "Liberal Democrats Manifesto 2024, p.9"
+          "source": "Liberal Democrat Election Manifesto 2024, p.23"
         },
         {
-          "quote": "Meeting the UK's commitment under the Paris Agreement to reduce emissions by at least 68% from 1990 levels by 2030.",
-          "source": "Liberal Democrats Manifesto 2024, p.9"
+          "quote": "Helping people with the cost of living and their energy bills by implementing a proper, one-off windfall tax on the super-profits of oil and gas producers and traders.",
+          "source": "Liberal Democrat Election Manifesto 2024, p.26"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems commit to net zero by 2045",
+          "quote": "Take the action needed now to achieve net zero by 2045.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.24",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        },
+        {
+          "date": "2026-03-26",
+          "headline": "Lib Dem peer: cost of oil crisis exceeds cost of net zero",
+          "quote": "The Climate Change Committee was clear last week that the cost of another oil price crisis would be greater than the cost of reaching net zero by 2050, so these Benches fully support the need to roll out renewables at a faster rate.",
+          "source_label": "Hansard, 26 Mar 2026 — Earl Russell (Liberal Democrat)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=net+zero+oil+price&startDate=2026-03-26&endDate=2026-03-26"
         }
       ]
     },
@@ -54,15 +95,24 @@
       "id": "snp",
       "name": "SNP",
       "colour": "#FDF38E",
-      "summary": "The SNP asserts an unwavering commitment to tackling climate change alongside economic prosperity, demanding the UK Government invest at least £28bn a year in the green economy and devolve energy regulation powers to Scotland, while supporting a just transition for oil and gas workers.",
+      "summary": "The SNP demands devolution of energy powers to Scotland, calls on the UK Government to invest at least £28bn a year in the green economy, advocates an evidence-based case-by-case approach to oil and gas licences consistent with climate obligations, and presses for a Four Nations Climate Response Group to coordinate net zero targets across the UK.",
       "citations": [
         {
-          "quote": "Our commitment to tackling the twin crises of climate change and nature loss is unwavering and we believe emissions reduction and economic prosperity go hand in hand.",
-          "source": "SNP Manifesto 2024, p.21"
+          "quote": "The UK Government must invest at least £28bn a year in the green economy to deliver a step change in public and private investment in net zero and major investment in the domestic supply chain.",
+          "source": "SNP Manifesto 2024, p.20"
         },
         {
-          "quote": "The UK Government must invest at least £28bn a year in the green economy to deliver a step change in public and private investment in net zero and major investment in the domestic supply chain.",
-          "source": "SNP Manifesto 2024, p.21"
+          "quote": "Establish a Four Nations Climate Response Group to agree climate plans across the UK that deliver on our net-zero targets and ensure the UK Government stops backtracking on climate ambition.",
+          "source": "SNP Manifesto 2024, p.22"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP calls for fair and managed transition to net zero",
+          "quote": "Deliver a fair and managed transition to net zero.",
+          "source_label": "SNP Manifesto 2024, p.6",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
         }
       ]
     }

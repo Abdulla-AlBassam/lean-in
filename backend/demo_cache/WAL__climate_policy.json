@@ -6,15 +6,24 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes a Warm Homes Plan investing £6.6 billion to upgrade five million homes, alongside mandating financial institutions to develop transition plans aligned with the Paris Agreement's 1.5°C goal. Labour also commits to reversing the Conservative decision preventing the Bank of England from considering climate change in its mandates.",
+      "summary": "Labour commits to achieving clean power by 2030 as a core mission, establishing a publicly owned Great British Energy company capitalised at £8.3 billion, ending new oil and gas field licences, banning fracking, and investing in home insulation and renewables while managing existing North Sea fields responsibly.",
       "citations": [
         {
-          "quote": "Labour will invest an extra £6.6 billion over the next parliament, doubling the existing planned government investment, to upgrade five million homes to cut bills for families.",
-          "source": "Labour Manifesto 2024, p.54"
+          "quote": "To drive forward investment in clean, next parliament. home-grown energy production, Labour will create a new publicly- owned company, Great British",
+          "source": "Labour Party Manifesto 2024, p.51"
         },
         {
-          "quote": "mandating UK-regulated financial institutions ­ including banks, asset managers, pension funds, and insurers ­ and FTSE 100 companies to develop and implement credible transition plans that align with the 1.5°C goal of the Paris Agreement.",
-          "source": "Labour Manifesto 2024, p.55"
+          "quote": "We will not issue new licences to explore new fields because they will not take a penny off bills, cannot make us energy secure, and will only accelerate the worsening climate crisis.",
+          "source": "Labour Party Manifesto 2024, p.51"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges clean energy superpower status by 2030",
+          "quote": "Make Britain a clean energy superpower to cut bills, create jobs and deliver security with cheaper, zero-carbon electricity by 2030, accelerating to net zero.",
+          "source_label": "Labour Manifesto 2024, p.11",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
         }
       ]
     },
@@ -22,15 +31,31 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives commit to reaching net zero by 2050 via a pragmatic and proportionate approach, emphasising private sector innovation, cost reduction for households, and scaling up nuclear power including Small Modular Reactors. They reject what they describe as Labour's top-down approach.",
+      "summary": "The Conservatives commit to delivering net zero by 2050 via a pragmatic approach, trebling offshore wind capacity, expanding nuclear power including Small Modular Reactors, legislating for annual North Sea licensing rounds, and reducing green levies on household bills while rejecting Labour's 2030 clean power target as unaffordable.",
       "citations": [
         {
-          "quote": "We will cut the cost of tackling climate change for households and business, and deliver net zero by 2050.",
-          "source": "Conservative Manifesto 2024, p.49"
+          "quote": "We are proud of our record and remain committed to delivering net zero by 2050. Today the UK is home to the five largest offshore wind farms in the world.",
+          "source": "Conservative and Unionist Party Manifesto 2024, p.48"
         },
         {
-          "quote": "We reject Labour's dogmatic, top-down approach that will burden households with higher bills.",
-          "source": "Conservative Manifesto 2024, p.49"
+          "quote": "Within the first 100 days of the next Parliament, we will approve two new fleets of Small Modular Reactors to rapidly expand nuclear power, create well-paid, high-skilled jobs and deliver cheaper, cleaner and more secure energy.",
+          "source": "Conservative and Unionist Party Manifesto 2024, p.49"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives promise affordable transition to sustainable energy",
+          "quote": "Delivering an affordable transition to domestic, sustainable energy.",
+          "source_label": "Conservative Manifesto 2024, p.6",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-04-21",
+          "headline": "Conservative MP: decarbonise affordably without harming communities",
+          "quote": "We believe in decarbonisation, but we need to do it in a way that people can afford and that does not trash our country in the process.",
+          "source_label": "Hansard, 21 Apr 2026 — Greg Smith (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=decarbonisation+wind+farms&startDate=2026-04-21&endDate=2026-04-21"
         }
       ]
     },
@@ -38,15 +63,56 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats commit to achieving net zero by 2045 at the latest, proposing an emergency Home Energy Upgrade programme, a rooftop solar revolution, and supporting British industry through measures including a Carbon Border Adjustment Mechanism and investment in low-carbon industrial processes.",
+      "summary": "The Liberal Democrats pledge to achieve net zero by 2045, pursue a 68% emissions reduction by 2030, launch an emergency home energy upgrade programme, remove restrictions on solar and wind, implement a windfall tax on oil and gas super-profits, and restore the UK's global leadership role on climate.",
       "citations": [
         {
           "quote": "Liberal Democrats are committed to cutting greenhouse gas emissions to net zero by 2045 at the latest.",
-          "source": "Liberal Democrats Manifesto 2024, p.9"
+          "source": "Liberal Democrat Election Manifesto 2024, p.23"
         },
         {
-          "quote": "Implementing the Carbon Border Adjustment Mechanism for high-emission products, protecting UK businesses from unfair competition.",
-          "source": "Liberal Democrats Manifesto 2024, p.9"
+          "quote": "Helping people with the cost of living and their energy bills by implementing a proper, one-off windfall tax on the super-profits of oil and gas producers and traders.",
+          "source": "Liberal Democrat Election Manifesto 2024, p.26"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems commit to net zero by 2045",
+          "quote": "Take the action needed now to achieve net zero by 2045.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.24",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        },
+        {
+          "date": "2026-03-26",
+          "headline": "Lib Dem peer: cost of oil crisis exceeds cost of net zero",
+          "quote": "The Climate Change Committee was clear last week that the cost of another oil price crisis would be greater than the cost of reaching net zero by 2050, so these Benches fully support the need to roll out renewables at a faster rate.",
+          "source_label": "Hansard, 26 Mar 2026 — Earl Russell (Liberal Democrat)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=net+zero+oil+price&startDate=2026-03-26&endDate=2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": "plaid",
+      "name": "Plaid Cymru",
+      "colour": "#005B54",
+      "summary": "Plaid Cymru advocates for full Welsh control over energy powers and natural resources, establishing a community energy company Ynni Cymru, opposing new nuclear stations and oil and gas licences, maintaining the fracking ban, and creating a Welsh Green New Deal to transition workers into green jobs.",
+      "citations": [
+        {
+          "quote": "Plaid Cymru has long made the case for the establishment of our own national energy company, Ynni Cymru, which we succeeded in establishing through working with the Welsh Government.",
+          "source": "Plaid Cymru Manifesto 2024, p.36"
+        },
+        {
+          "quote": "We will create a Welsh Green New Deal. This will create rewarding, meaningful and fair work in the emerging green and net-zero sector, and includes re-skilling and supporting Welsh employees and apprentices into these sectors",
+          "source": "Plaid Cymru Manifesto 2024, p.9"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru commits to net zero in Wales by 2035 and reversing biodiversity decline by 2030",
+          "quote": "Plaid Cymru recognises that the climate and nature emergencies are the biggest threat to mankind on a global scale, and reaffirms our commitment to reaching net-zero targets in Wales by 2035 and reversing biodiversity decline by 2030.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.34",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
         }
       ]
     }

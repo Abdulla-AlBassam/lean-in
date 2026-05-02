@@ -6,11 +6,31 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "The Labour manifesto does not directly address tuition fees in Scotland. It states that the current higher education funding settlement does not work and that Labour will act to create a secure future for higher education, but makes no specific commitment on Scottish tuition fees.",
+      "summary": "Labour commits to supporting the aspiration of every person who meets the requirements and wants to go to university, and pledges to act to create a secure future for higher education, while working with universities to deliver for students and the economy, though no specific tuition fee rate is mentioned.",
       "citations": [
         {
+          "quote": "Labour will continue to support the aspiration of every person who meets the requirements and wants to go to university.",
+          "source": "Labour Manifesto 2024, p.84"
+        },
+        {
           "quote": "The current higher education funding settlement does not work for the taxpayer, universities, staff, or students. Labour will act to create a secure future for higher education and the opportunities it creates across the UK.",
-          "source": "Labour Manifesto 2024, p.38"
+          "source": "Labour Manifesto 2024, p.84"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges 6,500 new expert teachers in key subjects",
+          "quote": "Labour will recruit an additional 6,500 new expert teachers.",
+          "source_label": "Labour Manifesto 2024, p.73",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Labour MP challenges Conservatives on tuition fee legacy",
+          "quote": "Given that plan 2 tuition fees were introduced by the Conservatives in 2012, that they froze the repayment thresholds in 2016 and that they abolished the maintenance grants, was that fair then?",
+          "source_label": "Hansard, 18 Mar 2026 — Mr Jonathan Brash (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
         }
       ]
     },
@@ -18,11 +38,38 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservative manifesto does not address tuition fees in Scotland. It focuses on closing poorly performing university courses in England and reforming student loans in England, with no mention of Scottish tuition fee policy.",
+      "summary": "The Conservatives propose to close university courses with poor outcomes — high drop-out rates or graduates worse off than non-graduates — and commit to ensuring students are not repaid more than they borrowed in real terms, while funding 100,000 apprenticeships partly by curbing poor-quality degrees, but do not propose changes to the headline tuition fee rate.",
       "citations": [
         {
-          "quote": "We are committed to delivering the best value for students, so have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms.",
-          "source": "Conservative Manifesto 2024, p.28"
+          "quote": "We will fund this by changing the law to close university courses in England with the worst outcomes for their students. Courses that have excessive drop-out rates or leave students worse off than had they not gone to university will be prevented from recruiting students by the universities regulator.",
+          "source": "Conservative and Unionist Party Manifesto 2024, p.28"
+        },
+        {
+          "quote": "we have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms.",
+          "source": "Conservative and Unionist Party Manifesto 2024, p.28"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives claim children are best readers in the West",
+          "quote": "We recruited record numbers of teachers to help our children become the best readers in the West.",
+          "source_label": "Conservative Manifesto 2024, p.3",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour first introduced tuition fees",
+          "quote": "I must be suffering from some sort of political amnesia, because I was absolutely convinced that it was a Labour Government that introduced tuition fees in the first place. Maybe the Minister will correct me.",
+          "source_label": "Hansard, 18 Mar 2026 — Simon Hoare (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour has now admitted student loans system is broken",
+          "quote": "In January, the Chancellor was saying that the student loans system was 'fair and reasonable'. She now admits 'as of yesterday' that it is broken. In one sense, we have won this debate even before it started.",
+          "source_label": "Hansard, 18 Mar 2026 — Neil O'Brien (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
         }
       ]
     },
@@ -30,11 +77,24 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrat manifesto does not directly address Scottish tuition fees. It proposes a review of higher education finance in the next Parliament and commits to no more retrospective raising of rates or selling-off of loans to private companies, but does not address free tuition in Scotland specifically.",
+      "summary": "The Liberal Democrats propose to reinstate maintenance grants for disadvantaged students immediately and establish a review of higher education finance to consider reforms to the existing financing system, with an explicit commitment against any further retrospective raising of rates or selling off of loans to private companies.",
       "citations": [
         {
+          "quote": "Reinstate maintenance grants for disadvantaged students immediately to make sure that living costs are not a barrier to studying at university.",
+          "source": "Liberal Democrat Election Manifesto 2024, p.41"
+        },
+        {
           "quote": "Establishing a review of higher education finance in the next Parliament to consider any necessary reforms in the light of the latest evidence of the impact of the existing financing system on access, participation and quality, and make sure there are no more retrospective raising of rates or selling-off of loans to private companies.",
-          "source": "Liberal Democrats Manifesto 2024, p.59"
+          "source": "Liberal Democrat Election Manifesto 2024, p.45"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge dedicated mental health professional in every school",
+          "quote": "Putting a dedicated, qualified mental health professional in every school.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.32",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
         }
       ]
     },
@@ -42,11 +102,31 @@
       "id": "snp",
       "name": "SNP",
       "colour": "#FDF38E",
-      "summary": "The SNP explicitly commits to defending free university tuition in Scotland, presenting it as a key policy that saves Scottish graduates thousands of pounds compared to students elsewhere in the UK.",
+      "summary": "The SNP commits to defending free university tuition in Scotland, arguing that graduates in Scotland are thousands of pounds better off as a result, and positions itself as the only party that will protect students and defend free education.",
       "citations": [
         {
-          "quote": "Defend free university tuition in Scotland. The SNP is the only party that will protect students and defend free education, meaning graduates in Scotland are thousands of pounds better off.",
-          "source": "SNP Manifesto 2024, p.N/A"
+          "quote": "The SNP is the only party that will protect students and defend free education, meaning better off.",
+          "source": "SNP Manifesto 2024, p.5"
+        },
+        {
+          "quote": "Defend free university tuition in Scotland.",
+          "source": "SNP Manifesto 2024, p.6"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP pledges to defend free university tuition in Scotland",
+          "quote": "Defend free university tuition in Scotland. The SNP is the only party that will protect students and defend free education.",
+          "source_label": "SNP Manifesto 2024, p.6",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "SNP MP: Scotland's students pay no tuition fees",
+          "quote": "most income tax payers in Scotland pay less tax. Over and above that, her constituents do not have to pay for their tuition fees.",
+          "source_label": "Hansard, 18 Mar 2026 — Dave Doogan (SNP)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=tuition+fees+scotland&startDate=2026-03-18&endDate=2026-03-18"
         }
       ]
     }

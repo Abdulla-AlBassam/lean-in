@@ -6,15 +6,24 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes a Warm Homes Plan with £6.6 billion investment to upgrade five million homes, aims to mandate financial institutions to align with the 1.5°C Paris Agreement goal, and commits to reversing Conservative changes to the Bank of England's climate mandate.",
+      "summary": "Labour proposes making clean energy the UK's second national mission, targeting clean power by 2030 through a new publicly-owned company called Great British Energy capitalised at £8.3 billion, investment in offshore wind, nuclear and local energy, while banning new oil and gas licences and fracking, and supporting decarbonisation of homes and industry.",
       "citations": [
         {
-          "quote": "Labour will invest an extra £6.6 billion over the next parliament, doubling the existing planned government investment, to upgrade five million homes to cut bills for families.",
-          "source": "Labour Manifesto 2024, p.54"
+          "quote": "To drive forward investment in clean, next parliament. home-grown energy production, Labour will create a new publicly- owned company, Great British Energy",
+          "source": "Labour Manifesto 2024, p.51"
         },
         {
-          "quote": "mandating UK-regulated financial institutions ­ including banks, asset managers, pension funds, and insurers ­ and FTSE 100 companies to develop and implement credible transition plans that align with the 1.5°C goal of the Paris Agreement.",
-          "source": "Labour Manifesto 2024, p.55"
+          "quote": "We will not issue new licences to explore new fields because they will not take a penny off bills, cannot make us energy secure, and will only accelerate the worsening climate crisis.",
+          "source": "Labour Manifesto 2024, p.51"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges clean energy superpower status by 2030",
+          "quote": "Make Britain a clean energy superpower to cut bills, create jobs and deliver security with cheaper, zero-carbon electricity by 2030, accelerating to net zero.",
+          "source_label": "Labour Manifesto 2024, p.11",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
         }
       ]
     },
@@ -22,15 +31,31 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives advocate a pragmatic and proportionate path to net zero by 2050, emphasising cutting costs for households and businesses, scaling up nuclear power, and rejecting what they characterise as Labour's top-down approach.",
+      "summary": "The Conservatives commit to delivering net zero by 2050 through a pragmatic approach, including trebling offshore wind capacity, approving new Small Modular Reactors, maintaining annual oil and gas licensing rounds, and reducing household energy costs, while rejecting what they characterise as Labour's top-down approach.",
       "citations": [
         {
-          "quote": "We will cut the cost of tackling climate change for households and business, and deliver net zero by 2050, by: Sticking to our pragmatic, proportionate and realistic approach that eases the burdens on working people.",
-          "source": "Conservative Manifesto 2024, p.49"
+          "quote": "We will deliver net zero by 2050, by: Sticking to our pragmatic, proportionate and realistic approach that eases the burdens on working people.",
+          "source": "Conservative Manifesto 2024, p.50"
         },
         {
-          "quote": "We reject Labour's dogmatic, top-down approach that will burden households with higher bills.",
-          "source": "Conservative Manifesto 2024, p.49"
+          "quote": "We will legislate to ensure annual licensing rounds for oil and gas production from our own North Sea",
+          "source": "Conservative Manifesto 2024, p.48"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives promise affordable transition to sustainable energy",
+          "quote": "Delivering an affordable transition to domestic, sustainable energy.",
+          "source_label": "Conservative Manifesto 2024, p.6",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-04-21",
+          "headline": "Conservative MP: decarbonise affordably without harming communities",
+          "quote": "We believe in decarbonisation, but we need to do it in a way that people can afford and that does not trash our country in the process.",
+          "source_label": "Hansard, 21 Apr 2026 — Greg Smith (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=decarbonisation+wind+farms&startDate=2026-04-21&endDate=2026-04-21"
         }
       ]
     },
@@ -38,15 +63,31 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats commit to achieving net zero by 2045, propose an emergency Home Energy Upgrade programme, and support British industry through measures including a Carbon Border Adjustment Mechanism and a clear stable roadmap to net zero.",
+      "summary": "The Liberal Democrats commit to achieving net zero by 2045 at the latest, proposing a ten-year emergency home energy upgrade programme, a rooftop solar revolution, removal of restrictions on onshore wind and solar, decoupling electricity prices from gas, and restoring the UK's role as a global climate leader through international development spending.",
       "citations": [
         {
           "quote": "Liberal Democrats are committed to cutting greenhouse gas emissions to net zero by 2045 at the latest.",
-          "source": "Liberal Democrats Manifesto 2024, p.9"
+          "source": "Liberal Democrat Election Manifesto 2024, p.23"
         },
         {
-          "quote": "Setting out a clear and stable roadmap to net zero, repairing the damage done by Conservative U-turns and giving businesses the confidence to invest.",
-          "source": "Liberal Democrats Manifesto 2024, p.9"
+          "quote": "Make homes warmer and cheaper to heat with a ten-year emergency upgrade programme, starting with free insulation and heat pumps for those on low incomes, and ensure that all new homes are zero-carbon.",
+          "source": "Liberal Democrat Election Manifesto 2024, p.23"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems commit to net zero by 2045",
+          "quote": "Take the action needed now to achieve net zero by 2045.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.24",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        },
+        {
+          "date": "2026-03-26",
+          "headline": "Lib Dem peer: cost of oil crisis exceeds cost of net zero",
+          "quote": "The Climate Change Committee was clear last week that the cost of another oil price crisis would be greater than the cost of reaching net zero by 2050, so these Benches fully support the need to roll out renewables at a faster rate.",
+          "source_label": "Hansard, 26 Mar 2026 — Earl Russell (Liberal Democrat)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=net+zero+oil+price&startDate=2026-03-26&endDate=2026-03-26"
         }
       ]
     }

@@ -6,11 +6,38 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes to work with local authorities to give first-time buyers priority over international investors and introduces a permanent mortgage guarantee scheme. On renters specifically, Labour does not address Scotland-specific renter rights in the provided excerpts.",
+      "summary": "Labour proposes to abolish no-fault evictions, prevent private landlords from discriminating against renters, empower tenants to challenge unreasonable rent increases, extend Awaab's Law to the private sector, and raise standards in the private rented sector through overhauling its regulation.",
       "citations": [
         {
-          "quote": "Labour will work with local authorities to give first-time buyers the first chance to buy homes and end the farce of entire developments being sold off to international investors before houses are even built.",
-          "source": "Labour Manifesto 2024, p.35"
+          "quote": "We will `no fault' evictions, prevent private",
+          "source": "Labour Manifesto 2024, p.78"
+        },
+        {
+          "quote": "empower them to challenge unreasonable rent increases, and take steps to decisively raise standards, including extending `Awaab's Law' to the private sector.",
+          "source": "Labour Manifesto 2024, p.78"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges 1.5 million new homes next parliament",
+          "quote": "Labour will get Britain building again, creating jobs across England, with 1.5 million new homes over the next parliament.",
+          "source_label": "Labour Manifesto 2024, p.34",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-04-29",
+          "headline": "Starmer hails biggest renters' rights upgrade in a generation",
+          "quote": "I am very proud — this Government are very proud — of the biggest upgrade in workers' rights in a generation and the biggest upgrade in renters' rights in a generation and of doing the most any Government have ever done to reduce child poverty.",
+          "source_label": "Hansard, 29 Apr 2026 — Sir Keir Starmer (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=renters+rights&startDate=2026-04-29&endDate=2026-04-29"
+        },
+        {
+          "date": "2026-04-29",
+          "headline": "Starmer: upgrading renters' rights and building 1.5 million homes",
+          "quote": "We are going to build 1.5 million homes. We are upgrading the rights of renters, because we know how important it is for everyone to have a safe and secure roof over their head.",
+          "source_label": "Hansard, 29 Apr 2026 — Sir Keir Starmer (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=renters+rights&startDate=2026-04-29&endDate=2026-04-29"
         }
       ]
     },
@@ -18,11 +45,24 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservative manifesto proposes passing a Renters Reform Bill to deliver fairness for landlords and renters, including abolishing Section 21 once court reforms are in place, but does not address Scotland-specific renter rights.",
+      "summary": "The Conservatives commit to passing a Renters Reform Bill to deliver fairness for landlords and renters, abolishing Section 21 no-fault evictions once court reforms are in place, and strengthening grounds for landlords to evict tenants guilty of anti-social behaviour.",
       "citations": [
         {
-          "quote": "We will pass a Renters Reform Bill that will deliver fairness in the rental market for landlords and renters alike. We will deliver the court reforms necessary to fully abolish Section 21 and strengthen other grounds for landlords to evict private tenants guilty of anti-social behaviour.",
+          "quote": "We will pass a Renters Reform Bill that will deliver fairness in the rental market for landlords and renters alike. We will deliver the court reforms necessary to fully abolish Section 21 and strengthen other grounds for landlords behaviour.",
           "source": "Conservative Manifesto 2024, p.53"
+        },
+        {
+          "quote": "to evict private tenants guilty of anti-social",
+          "source": "Conservative Manifesto 2024, p.53"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge 1.6 million new homes in England",
+          "quote": "We will deliver 1.6 million homes in England in the next Parliament.",
+          "source_label": "Conservative Manifesto 2024, p.52",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
         }
       ]
     },
@@ -30,15 +70,24 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats propose immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords, as well as enforcing clear standards for socially rented homes.",
+      "summary": "The Liberal Democrats propose to immediately ban no-fault evictions, make three-year tenancies the default, create a national register of licensed landlords, and proactively enforce clear standards for socially rented homes including strict time limits for repairs.",
       "citations": [
         {
           "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
-          "source": "Liberal Democrats Manifesto 2024, p.14"
+          "source": "Liberal Democrat Election Manifesto 2024, p.71"
         },
         {
           "quote": "Proactively enforcing clear standards for homes that are socially rented, including strict time limits for repairs.",
-          "source": "Liberal Democrats Manifesto 2024, p.14"
+          "source": "Liberal Democrat Election Manifesto 2024, p.73"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge to ban no-fault evictions immediately",
+          "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.71",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
         }
       ]
     },
@@ -46,15 +95,24 @@
       "id": "snp",
       "name": "SNP",
       "colour": "#FDF38E",
-      "summary": "The SNP manifesto references having introduced temporary rent cap controls in Scotland and mitigating housing costs, and calls for an annual uplift of Local Housing Allowance, but does not set out detailed Scotland-specific renter rights reform in the provided excerpts.",
+      "summary": "The SNP calls for the devolution of Housing Benefit and Local Housing Allowance to Scotland, and presses the UK Government to restore capital funding to tackle the housing emergency, with a focus on expanding social housing delivery and addressing the impact of Westminster underinvestment on renters.",
       "citations": [
         {
-          "quote": "Mitigated the UK Government's bedroom tax in full, supported people with housing costs and introduced temporary rent cap controls.",
-          "source": "SNP Manifesto 2024, p.11"
+          "quote": "Devolve Housing Benefit and Local Housing to tackle child poverty, expand the delivery of social housing and to help fund and encourage investment in house building.",
+          "source": "SNP Manifesto 2024, p.23"
         },
         {
-          "quote": "Push for an annual uplift of Local Housing Allowance, whilst ensuring rental costs are taken into account.",
-          "source": "SNP Manifesto 2024, p.11"
+          "quote": "Tackle the housing emergency caused by decades of Westminster underinvestment, a hard Brexit and a £1.3bn cut to the Scottish Government's capital budget from the UK Government.",
+          "source": "SNP Manifesto 2024, p.23"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP: built 40% more affordable homes per head than England",
+          "quote": "We've built 40% more affordable homes per head than in England.",
+          "source_label": "SNP Manifesto 2024, p.4",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
         }
       ]
     }

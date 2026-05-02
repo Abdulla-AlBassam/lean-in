@@ -6,15 +6,24 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes to cut NHS waiting times by delivering 40,000 more appointments every week, supported by workforce planning and training commitments under the NHS long-term workforce plan.",
+      "summary": "Labour commits to returning NHS performance to the 18-week referral-to-treatment standard, delivering two million extra appointments per year through incentivised out-of-hours working, and pooling resources across neighbouring hospitals to share waiting lists.",
       "citations": [
         {
-          "quote": "Cut NHS waiting times with 40,000 more appointments every week",
-          "source": "Labour Manifesto 2024, p.91"
+          "quote": "patients should expect to wait no longer than 18 weeks from referral for consultant-led treatment waiting lists and times and of non-urgent health conditions. This standard was achieved with the last Labour government and will be again under the next.",
+          "source": "Labour Manifesto 2024, p.93"
         },
         {
-          "quote": "We will deliver the NHS long-term workforce plan to train the staff we need to get patients seen on time.",
-          "source": "Labour Manifesto 2024, p.97"
+          "quote": "we will deliver an extra two million NHS operations, scans, and appointments every year; that is 40,000 more appointments every week. We will do this by incentivising staff to carry out additional appointments out of hours.",
+          "source": "Labour Manifesto 2024, p.93"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour: mission is to build an NHS fit for the future",
+          "quote": "Labour's mission is to build an NHS fit for the future.",
+          "source_label": "Labour Manifesto 2024, p.91",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
         }
       ]
     },
@@ -22,15 +31,24 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives commit to returning NHS performance to the levels set out in the NHS Constitution by the end of the next Parliament, backed by record funding and a long-term workforce plan.",
+      "summary": "The Conservatives commit to increasing NHS spending above inflation each year, returning performance to NHS Constitution standards by the end of the next Parliament, and backing the NHS Long-Term Workforce Plan to train 92,000 more nurses and 28,000 more doctors.",
       "citations": [
         {
-          "quote": "We will return performance to the levels set out in the NHS Constitution by the end of the next Parliament.",
-          "source": "Conservative Manifesto 2024, p.null"
+          "quote": "We are committed to accelerating the NHS's recovery from the pandemic, delivering safe and effective services and ongoing improvements in waiting times for primary, elective, cancer and emergency care. We will return performance to the levels set out in the NHS Constitution by the end of the next Parliament.",
+          "source": "Conservative Manifesto 2024, p.40"
         },
         {
-          "quote": "We are committed to accelerating the NHS's recovery from the pandemic, delivering safe and effective services and ongoing improvements in waiting times for primary, elective, cancer and emergency care.",
-          "source": "Conservative Manifesto 2024, p.null"
+          "quote": "We will continue to increase NHS spending above inflation in each year of the next Parliament.",
+          "source": "Conservative Manifesto 2024, p.40"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge 92,000 nurses and inflation-busting NHS spend",
+          "quote": "Increase NHS spending above inflation every year, recruiting 92,000 more nurses and 28,000 more doctors.",
+          "source_label": "Conservative Manifesto 2024, p.4",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
         }
       ]
     },
@@ -38,15 +56,24 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats attribute long waiting times to Conservative management of the NHS and propose investment in public health, early access to community services, and fixing social care to reduce pressure on hospitals.",
+      "summary": "The Liberal Democrats propose giving every patient the right to see a GP within seven days, or 24 hours urgently, backed by 8,000 more GPs, and guarantee that 100% of cancer patients start treatment within 62 days of urgent referral.",
       "citations": [
         {
-          "quote": "The Conservatives have plunged the NHS into crisis, failing to deliver the new hospitals they promised and making people wait hours for an ambulance, weeks to see a GP or months for urgent cancer treatment.",
-          "source": "Liberal Democrats Manifesto 2024, p.null"
+          "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.",
+          "source": "Liberal Democrats Manifesto 2024, p.30"
         },
         {
-          "quote": "investing in public health and early access to community services, including GPs, pharmacists and dentists, so fewer people need to go to hospital in the first place, and fixing the crisis in social care to stop so many people being stuck in hospital beds.",
-          "source": "Liberal Democrats Manifesto 2024, p.null"
+          "quote": "Introducing a guarantee that 100% of patients will be able to start treatment within 62 days from urgent referral.",
+          "source": "Liberal Democrats Manifesto 2024, p.33"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge GP appointment within 7 days for everyone",
+          "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.30",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
         }
       ]
     }

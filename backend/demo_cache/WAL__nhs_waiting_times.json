@@ -6,15 +6,24 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes to cut NHS waiting times by delivering 40,000 more appointments every week, alongside broader workforce planning and reforms to shift care outside hospitals.",
+      "summary": "Labour pledges to deliver an extra two million NHS appointments, scans, and operations per year as a first step, aiming to return to the 18-week referral-to-treatment standard achieved under the previous Labour government, using spare independent sector capacity and pooling resources across hospitals.",
       "citations": [
         {
-          "quote": "Cut NHS waiting times with 40,000 more appointments every week",
-          "source": "Labour Manifesto 2024, p.91"
+          "quote": "That means patients should expect to wait no longer than 18 weeks from referral for consultant-led treatment waiting lists and times and of non-urgent health conditions. This standard was achieved with the last Labour government and will be again under the next.",
+          "source": "Labour Manifesto 2024, p.93"
         },
         {
-          "quote": "We will deliver the NHS long-term workforce plan to train the staff we need to get patients seen on time.",
-          "source": "Labour Manifesto 2024, p.97"
+          "quote": "As a first step, in England we will deliver an extra two million NHS operations, scans, and appointments every year; that is 40,000 more appointments every week. We will do this by incentivising staff to carry out additional appointments out of hours.",
+          "source": "Labour Manifesto 2024, p.93"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour: mission is to build an NHS fit for the future",
+          "quote": "Labour's mission is to build an NHS fit for the future.",
+          "source_label": "Labour Manifesto 2024, p.91",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
         }
       ]
     },
@@ -22,15 +31,24 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives commit to returning NHS performance to the levels set out in the NHS Constitution by the end of the next Parliament, backed by record funding and expanded capacity including GP appointments and diagnostic centres.",
+      "summary": "The Conservatives commit to returning NHS performance to the standards set out in the NHS Constitution by the end of the next Parliament, backed by record funding increases, continued delivery of 40 new hospitals, and a productivity plan projected to unlock cumulative savings through technology investment.",
       "citations": [
         {
           "quote": "We are committed to accelerating the NHS's recovery from the pandemic, delivering safe and effective services and ongoing improvements in waiting times for primary, elective, cancer and emergency care. We will return performance to the levels set out in the NHS Constitution by the end of the next Parliament.",
-          "source": "Conservative Manifesto 2024, p.not specified"
+          "source": "Conservative Manifesto 2024, p.40"
         },
         {
-          "quote": "Expand Pharmacy First, including for menopause support, contraception and treatment for chest infections, freeing up 20 million GP appointments a year.",
-          "source": "Conservative Manifesto 2024, p.not specified"
+          "quote": "We will invest £3.4 billion in new technology to transform the NHS for staff and for patients. The NHS Productivity Plan will see NHS productivity grow by 1.9% a year from 2025-26 – unlocking £35 billion of cumulative savings by the end of the decade.",
+          "source": "Conservative Manifesto 2024, p.41"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge 92,000 nurses and inflation-busting NHS spend",
+          "quote": "Increase NHS spending above inflation every year, recruiting 92,000 more nurses and 28,000 more doctors.",
+          "source_label": "Conservative Manifesto 2024, p.4",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
         }
       ]
     },
@@ -38,15 +56,49 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats propose tackling NHS waiting times by investing in community services and social care to reduce demand on hospitals, alongside recruiting and retaining more NHS staff.",
+      "summary": "The Liberal Democrats propose giving everyone the right to see a GP within seven days, or within 24 hours if urgent, backed by 8,000 more GPs, and introduce a guarantee that 100% of cancer patients will start treatment within 62 days from urgent referral.",
       "citations": [
         {
-          "quote": "investing in public health and early access to community services, including GPs, pharmacists and dentists, so fewer people need to go to hospital in the first place, and fixing the crisis in social care to stop so many people being stuck in hospital beds.",
-          "source": "Liberal Democrats Manifesto 2024, p.not specified"
+          "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.",
+          "source": "Liberal Democrats Manifesto 2024, p.30"
         },
         {
-          "quote": "The Conservatives have plunged the NHS into crisis, failing to deliver the new hospitals they promised and making people wait hours for an ambulance, weeks to see a GP or months for urgent cancer treatment.",
-          "source": "Liberal Democrats Manifesto 2024, p.not specified"
+          "quote": "Introducing a guarantee that 100% of patients will be able to start treatment within 62 days from urgent referral.",
+          "source": "Liberal Democrats Manifesto 2024, p.33"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge GP appointment within 7 days for everyone",
+          "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.30",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ]
+    },
+    {
+      "id": "plaid",
+      "name": "Plaid Cymru",
+      "colour": "#005B54",
+      "summary": "Plaid Cymru focuses on reducing NHS waiting times in Wales through better workforce planning, restoring GP funding to 8.7% of the Welsh health budget, recruiting an additional 500 GPs, and ensuring no downgrading of urgent suspected cancer referrals as part of a Stop Cancer Strategy.",
+      "citations": [
+        {
+          "quote": "Plaid Cymru will reverse this trend by restoring funding for GPs to 8.7% of the Welsh health budget, and by recruiting an additional 500 GPs across the country.",
+          "source": "Plaid Cymru Manifesto 2024, p.13"
+        },
+        {
+          "quote": "Plaid Cymru's cancer contract, a Stop Cancer Strategy, would ensure no downgrading of urgent suspected cancer referrals, lower the sensitivity threshold for bowel cancer screening - as has already been done in Scotland and England - and increase rates of lung cancer screening, to ensure that more cancers are caught and treated earlier.",
+          "source": "Plaid Cymru Manifesto 2024, p.16"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru: healthcare free at the point of delivery, oppose privatisation",
+          "quote": "Plaid Cymru strongly believes in the principle of healthcare free at the point of delivery, funded through general taxation. We oppose the privatisation of services by stealth through out-sourcing.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.12",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
         }
       ]
     }

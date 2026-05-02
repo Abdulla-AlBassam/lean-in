@@ -6,11 +6,27 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "The Labour manifesto acknowledges that the current higher education funding settlement is not working for taxpayers, universities, staff, or students, and commits to acting to create a secure future for higher education, but does not specify a position on tuition fees for Wales.",
+      "summary": "Labour acknowledges the current higher education funding settlement does not work for taxpayers, universities, staff, or students, and commits to acting to create a secure future for higher education and the opportunities it creates, working with universities to deliver for students and the economy.",
       "citations": [
         {
-          "quote": "The current higher education funding settlement does not work for the taxpayer, universities, staff, or students. Labour will act to create a secure future for higher education and the opportunities it creates across the UK. We will work with universities to deliver for students and our economy.",
-          "source": "Labour Manifesto 2024, p.38"
+          "quote": "The current higher education funding settlement does not work for the taxpayer, universities, staff, in expanding access to sport. or students. Labour will act to create a secure future for higher education    Labour will improve access and the opportunities it creates across the UK. We will work with universities to deliver for students    and galleries to increase the loans and our economy.",
+          "source": "Labour Manifesto 2024, p.84"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges 6,500 new expert teachers in key subjects",
+          "quote": "Labour will recruit an additional 6,500 new expert teachers.",
+          "source_label": "Labour Manifesto 2024, p.73",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Labour MP challenges Conservatives on tuition fee legacy",
+          "quote": "Given that plan 2 tuition fees were introduced by the Conservatives in 2012, that they froze the repayment thresholds in 2016 and that they abolished the maintenance grants, was that fair then?",
+          "source_label": "Hansard, 18 Mar 2026 — Mr Jonathan Brash (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
         }
       ]
     },
@@ -18,11 +34,38 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservative manifesto addresses tuition fees in the context of England, noting reforms to student loans to make them fairer, but does not address tuition fee policy specific to Wales.",
+      "summary": "The Conservatives commit to delivering the best value for students, having already reformed student loans so no one pays back more than they borrowed in real terms, and propose to close poor-quality university courses with bad graduate outcomes to fund 100,000 apprenticeships.",
       "citations": [
         {
-          "quote": "We are committed to delivering the best value for students, so have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms.",
+          "quote": "We are committed to delivering the best value for students, so have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms. And we will work with universities to ensure students get the contact hours they are promised and their exams get marked.",
           "source": "Conservative Manifesto 2024, p.28"
+        },
+        {
+          "quote": "We will fund this by changing the law to close university courses in England with the worst outcomes for their students. Courses that have excessive drop-out rates or leave students worse off than had they not gone to university will be prevented from recruiting students by the universities regulator.",
+          "source": "Conservative Manifesto 2024, p.28"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives claim children are best readers in the West",
+          "quote": "We recruited record numbers of teachers to help our children become the best readers in the West.",
+          "source_label": "Conservative Manifesto 2024, p.3",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour first introduced tuition fees",
+          "quote": "I must be suffering from some sort of political amnesia, because I was absolutely convinced that it was a Labour Government that introduced tuition fees in the first place. Maybe the Minister will correct me.",
+          "source_label": "Hansard, 18 Mar 2026 — Simon Hoare (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour has now admitted student loans system is broken",
+          "quote": "In January, the Chancellor was saying that the student loans system was 'fair and reasonable'. She now admits 'as of yesterday' that it is broken. In one sense, we have won this debate even before it started.",
+          "source_label": "Hansard, 18 Mar 2026 — Neil O'Brien (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
         }
       ]
     },
@@ -30,11 +73,45 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrat manifesto proposes a review of higher education finance and commits to no further retrospective raising of rates or selling-off of loans, but does not address Wales-specific tuition fee policy.",
+      "summary": "The Liberal Democrats propose reinstating maintenance grants for disadvantaged students immediately and establishing a review of higher education finance to consider necessary reforms, while ruling out any further retrospective raising of rates or selling off of loans to private companies.",
       "citations": [
         {
+          "quote": "Reinstate maintenance grants for disadvantaged students immediately to make sure that living costs are not a barrier to studying at university.",
+          "source": "Liberal Democrat Election Manifesto 2024, p.41"
+        },
+        {
           "quote": "Establishing a review of higher education finance in the next Parliament to consider any necessary reforms in the light of the latest evidence of the impact of the existing financing system on access, participation and quality, and make sure there are no more retrospective raising of rates or selling-off of loans to private companies.",
-          "source": "Liberal Democrats Manifesto 2024, p.59"
+          "source": "Liberal Democrat Election Manifesto 2024, p.45"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge dedicated mental health professional in every school",
+          "quote": "Putting a dedicated, qualified mental health professional in every school.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.32",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ]
+    },
+    {
+      "id": "plaid",
+      "name": "Plaid Cymru",
+      "colour": "#005B54",
+      "summary": "Plaid Cymru's long-term ambition is to make university education free again for all students, committing to work with universities to develop a plan to make them financially viable so that this can become a genuine option.",
+      "citations": [
+        {
+          "quote": "Our ambition remains to make University education free again for all, and we will work with Universities to develop a plan to make them financially viable so that this can become a genuine option.",
+          "source": "Plaid Cymru Manifesto 2024, p.21"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru: no child should struggle with the cost of education",
+          "quote": "No child or family should struggle with the cost of education. No child should be hungry at school. It is only because of Plaid Cymru that all primary school children in Wales receive free school meals.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.19",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
         }
       ]
     }

@@ -6,15 +6,24 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes cutting NHS waiting times through 40,000 more appointments per week and delivering the NHS long-term workforce plan, though these policies are framed around England's NHS and their impact on Scotland would depend on Barnett consequentials.",
+      "summary": "Labour commits to returning the NHS to the 18-week referral-to-treatment standard, delivering two million extra appointments per year through out-of-hours incentives, and pooling hospital resources to reduce waiting lists.",
       "citations": [
         {
-          "quote": "Cut NHS waiting times with 40,000 more appointments every week",
-          "source": "Labour Manifesto 2024, p.91"
+          "quote": "That means patients should expect to wait no longer than 18 weeks from referral for consultant-led treatment waiting lists and times and of non-urgent health conditions. This standard was achieved with the last Labour government and will be again under the next.",
+          "source": "Labour Manifesto 2024, p.93"
         },
         {
-          "quote": "We will deliver the NHS long-term workforce plan to train the staff we need to get patients seen on time.",
-          "source": "Labour Manifesto 2024, p.97"
+          "quote": "we will deliver an extra two million NHS operations, scans, and appointments every year; that is 40,000 more appointments every week. We will do this by incentivising staff to carry out additional appointments out of hours.",
+          "source": "Labour Manifesto 2024, p.93"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour: mission is to build an NHS fit for the future",
+          "quote": "Labour's mission is to build an NHS fit for the future.",
+          "source_label": "Labour Manifesto 2024, p.91",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
         }
       ]
     },
@@ -22,11 +31,24 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservative manifesto does not directly address NHS waiting times in Scotland; its commitments on returning NHS performance to constitutional standards are framed around England's NHS.",
+      "summary": "The Conservatives pledge to return NHS performance to the standards set out in the NHS Constitution by the end of the next Parliament, backed by continued above-inflation spending increases and investment in technology and workforce expansion.",
       "citations": [
         {
-          "quote": "We are committed to accelerating the NHS's recovery from the pandemic, delivering safe and effective services and ongoing improvements in waiting times for primary, elective, cancer and emergency care.",
-          "source": "Conservative Manifesto 2024, p.unspecified"
+          "quote": "We are committed to accelerating the NHS's recovery from the pandemic, delivering safe and effective services and ongoing improvements in waiting times for primary, elective, cancer and emergency care. We will return performance to the levels set out in the NHS Constitution by the end of the next Parliament.",
+          "source": "Conservative Manifesto 2024, p.40"
+        },
+        {
+          "quote": "We will invest £3.4 billion in new technology to transform the NHS for staff and for patients. The NHS Productivity Plan will see NHS productivity grow by 1.9% a year from 2025-26 – unlocking £35 billion of cumulative savings by the end of the decade.",
+          "source": "Conservative Manifesto 2024, p.41"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge 92,000 nurses and inflation-busting NHS spend",
+          "quote": "Increase NHS spending above inflation every year, recruiting 92,000 more nurses and 28,000 more doctors.",
+          "source_label": "Conservative Manifesto 2024, p.4",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
         }
       ]
     },
@@ -34,11 +56,24 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrat manifesto does not specifically address NHS waiting times in Scotland; its NHS policies are focused on England.",
+      "summary": "The Liberal Democrats propose giving everyone the right to see a GP within seven days or within 24 hours if urgent, backed by recruiting 8,000 more GPs, and introduce a guarantee that 100% of cancer patients start treatment within 62 days of urgent referral.",
       "citations": [
         {
-          "quote": "investing in public health and early access to community services, including GPs, pharmacists and dentists, so fewer people need to go to hospital in the first place",
-          "source": "Liberal Democrats Manifesto 2024, p.unspecified"
+          "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.",
+          "source": "Liberal Democrats Manifesto 2024, p.30"
+        },
+        {
+          "quote": "Introducing a guarantee that 100% of patients will be able to start treatment within 62 days from urgent referral.",
+          "source": "Liberal Democrats Manifesto 2024, p.33"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge GP appointment within 7 days for everyone",
+          "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.30",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
         }
       ]
     },
@@ -46,15 +81,24 @@
       "id": "snp",
       "name": "SNP",
       "colour": "#FDF38E",
-      "summary": "The SNP commits to investing £300 million to drive down waiting times in Scotland's NHS, and calls on the UK Government to boost NHS spending by at least £10 billion extra per year, which would generate additional Barnett funding for Scotland.",
+      "summary": "The SNP calls on the UK Government to boost NHS England funding by at least £16 billion per year, which would generate additional consequential funding for NHS Scotland, and demands investment of £300 million to drive down waiting times in Scotland.",
       "citations": [
         {
-          "quote": "we're determined to go further ­ including investing £300m to drive down waiting times ­ but we are doing that with one hand tied behind our back by Westminster.",
-          "source": "SNP Manifesto 2024, p.unspecified"
+          "quote": "Boost NHS spending by a minimum of £10bn extra each year to address rampant inflationary pressures and improve performance. This investment into NHS England would generate an additional £1bn annually for",
+          "source": "SNP Manifesto 2024, p.17"
         },
         {
-          "quote": "Boost NHS spending by a minimum of £10bn extra each year to address rampant inflationary pressures and improve performance. This investment into NHS England would generate an additional £1bn annually for NHS Scotland to help meet increasing demand.",
-          "source": "SNP Manifesto 2024, p.unspecified"
+          "quote": "we are determined to go further – including investing £300m to drive down waiting times – but we are doing that with one hand tied behind our back by Westminster.",
+          "source": "SNP Manifesto 2024, p.19"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP: Scotland has the best-performing A&E units in the UK",
+          "quote": "We have the best performing core A&E units in the UK.",
+          "source_label": "SNP Manifesto 2024, p.4",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
         }
       ]
     }

@@ -6,15 +6,24 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour proposes reducing net migration, reforming the points-based immigration system, and tackling illegal Channel crossings by targeting criminal smuggling gangs. They also commit to clearing the asylum backlog and ending the use of hotels for asylum accommodation.",
+      "summary": "Labour proposes a new Border Security Command to disrupt criminal smuggling gangs, additional caseworkers to clear the asylum backlog, a fast-track returns and enforcement unit, and reforms to the points-based immigration system linking it to skills policy to reduce net migration.",
       "citations": [
         {
-          "quote": "Labour will reduce net migration. We will reform the points-based immigration system so that it is fair and properly managed, with appropriate restrictions on visas, and by linking immigration and skills policy.",
-          "source": "Labour Manifesto 2024, p.11"
+          "quote": "We will create a new Border Security Command, with hundreds of new investigators, intelligence officers, and cross-border police officers.",
+          "source": "Labour Manifesto 2024, p.15"
         },
         {
-          "quote": "Labour will stop the chaos and go after the criminal gangs who trade in driving this crisis.",
+          "quote": "Labour will reduce net migration. We will reform the points-based immigration system so that it is fair and properly managed, with and by linking immigration and skills policy.",
           "source": "Labour Manifesto 2024, p.39"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges swift, firm and fair asylum system",
+          "quote": "Labour will restore order to the asylum system so that it operates swiftly, firmly, and fairly; and the rules are properly enforced.",
+          "source_label": "Labour Manifesto 2024, p.15",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
         }
       ]
     },
@@ -22,15 +31,31 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives propose permanently removing illegal migrants to Rwanda as a deterrent, clearing the asylum backlog within six months, and reducing overall migration levels by raising salary thresholds and restricting visas.",
+      "summary": "The Conservatives propose a legally binding annual cap on migration that falls each year, continued removal of illegal migrants to Rwanda, clearing the asylum backlog within six months, and raising salary thresholds for skilled worker and family visas automatically with inflation.",
       "citations": [
         {
-          "quote": "We will run a relentless, continual process of permanently removing illegal migrants to Rwanda with a regular rhythm of flights every month, starting this July, until the boats are stopped.",
-          "source": "Conservative Manifesto 2024, p.36"
+          "quote": "We will introduce a binding, legal cap on migration, set on work and family visas so public services are protected whilst we bring the skills our businesses and the NHS needs.",
+          "source": "Conservative Manifesto 2024, p.78"
         },
         {
-          "quote": "We have already implemented changes which mean that 300,000 people who were eligible to come the UK last year now couldn't.",
-          "source": "Conservative Manifesto 2024, p.36"
+          "quote": "The cap will fall every year of the next Parliament and cannot be breached.",
+          "source": "Conservative Manifesto 2024, p.37"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge legal migration cap to guarantee falling numbers",
+          "quote": "Introduce a legal cap on migration to guarantee that numbers will fall every year, so public services are protected while bringing in the skills we need.",
+          "source_label": "Conservative Manifesto 2024, p.4",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-02-25",
+          "headline": "Conservative MP credits ETA scheme as Conservative border reform",
+          "quote": "The ETA scheme was introduced by the Conservative Government to secure and modernise Britain's borders.",
+          "source_label": "Hansard, 25 Feb 2026 — Alicia Kearns (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=electronic+travel+authorisation&startDate=2026-02-25&endDate=2026-02-25"
         }
       ]
     },
@@ -38,15 +63,49 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats propose scrapping the Rwanda scheme and Illegal Migration Act, providing safe and legal routes for refugees, replacing the salary threshold with a merit-based work visa system, and establishing a dedicated unit to tackle the asylum backlog.",
+      "summary": "The Liberal Democrats propose scrapping the Rwanda scheme and Illegal Migration Act, ending the Hostile Environment, replacing salary thresholds with a flexible merit-based work visa system, tackling the asylum backlog with a three-month service standard, and expanding safe and legal routes for refugees.",
       "citations": [
         {
           "quote": "Scrap the Conservatives' Illegal Migration Act and their Rwanda scheme, uphold the Refugee Convention, and provide safe and legal routes to sanctuary for refugees, helping to prevent dangerous Channel crossings.",
-          "source": "Liberal Democrats Manifesto 2024, p.87"
+          "source": "Liberal Democrat Election Manifesto 2024, p.87"
         },
         {
           "quote": "Replace the Conservatives' arbitrary salary threshold with a more flexible merit-based system for work visas, with the relevant department working with employers in each sector to address specific needs as part of a long-term workforce strategy that also focuses on education and training to address skills gaps from within the UK.",
-          "source": "Liberal Democrats Manifesto 2024, p.87"
+          "source": "Liberal Democrat Election Manifesto 2024, p.88"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge to scrap Rwanda scheme and uphold Refugee Convention",
+          "quote": "Scrap the Conservatives' Illegal Migration Act and their Rwanda scheme, uphold the Refugee Convention, and provide safe and legal routes to sanctuary for refugees.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.87",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ]
+    },
+    {
+      "id": "plaid",
+      "name": "Plaid Cymru",
+      "colour": "#005B54",
+      "summary": "Plaid Cymru opposes the Rwanda deportation policy and the hostile environment, calls for repeal of the Nationality and Borders Act and Illegal Migration Act, supports safe routes for asylum seekers, and advocates for Wales to have devolved powers over migration including its own shortage occupation list and visa schemes.",
+      "citations": [
+        {
+          "quote": "We would support the repeal of previous punitive legislation which is part of the hostile environment, including the Nationality and Borders Act 2022 and the Illegal Migration Act 2023.",
+          "source": "Plaid Cymru Manifesto 2024, p.56"
+        },
+        {
+          "quote": "Wales should have greater powers over migration - including the ability to determine our own Shortage Occupation List and granting the Welsh Government the ability to manage its own visa schemes.",
+          "source": "Plaid Cymru Manifesto 2024, p.56"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Plaid Cymru opposes Rwanda deportations and demands UK uphold Refugee Treaty",
+          "quote": "Plaid Cymru strongly oppose the Conservative UK Government's proposals and attitudes towards asylum seekers and refugees, including deportation to Rwanda and the general hostile environment created. We believe that the UK should uphold the commitments made when it signed up to the Refugee Treaty in 1951.",
+          "source_label": "Plaid Cymru Manifesto 2024, p.54",
+          "source_url": "https://assets.nationbuilder.com/plaid2016/pages/13170/attachments/original/1721133624/Plaid_Cymru_Maniffesto_2024_ENGLISH.pdf"
         }
       ]
     }
