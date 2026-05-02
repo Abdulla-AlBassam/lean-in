@@ -1,11 +1,13 @@
 """
 Run once with DEMO_MODE=false to populate demo_cache/ for all demo queries.
-Keyword extraction keeps each call under 4k tokens — no rate-limit waits needed.
+Waits 70s between calls to stay within the 10k input-tokens/min free-tier limit.
+15 queries × ~70s = ~17 minutes total. Run this the evening before the demo.
 """
 from dotenv import load_dotenv
 load_dotenv()
 
 import sys
+import time
 sys.path.insert(0, '.')
 from app.search import search, cache_path
 
@@ -25,5 +27,8 @@ for q in QUERIES:
         print(f"[{done}/{total}] Fetching: {nation} / {q!r} ...", end=" ", flush=True)
         result = search(q, nation)
         print(f"OK ({len(result.parties)} parties)")
+        if done < total:
+            print(f"  waiting 70s before next call...")
+            time.sleep(70)
 
 print("\nAll done. demo_cache/ is ready.")
