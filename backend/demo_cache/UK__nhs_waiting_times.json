@@ -1,0 +1,54 @@
+{
+  "axisId": "health",
+  "axisLabel": "Health & NHS",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes to cut NHS waiting times by delivering 40,000 more appointments every week, supported by workforce planning and training commitments under the NHS long-term workforce plan.",
+      "citations": [
+        {
+          "quote": "Cut NHS waiting times with 40,000 more appointments every week",
+          "source": "Labour Manifesto 2024, p.91"
+        },
+        {
+          "quote": "We will deliver the NHS long-term workforce plan to train the staff we need to get patients seen on time.",
+          "source": "Labour Manifesto 2024, p.97"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservatives commit to returning NHS performance to the levels set out in the NHS Constitution by the end of the next Parliament, backed by record funding and a long-term workforce plan.",
+      "citations": [
+        {
+          "quote": "We will return performance to the levels set out in the NHS Constitution by the end of the next Parliament.",
+          "source": "Conservative Manifesto 2024, p.null"
+        },
+        {
+          "quote": "We are committed to accelerating the NHS's recovery from the pandemic, delivering safe and effective services and ongoing improvements in waiting times for primary, elective, cancer and emergency care.",
+          "source": "Conservative Manifesto 2024, p.null"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats attribute long waiting times to Conservative management of the NHS and propose investment in public health, early access to community services, and fixing social care to reduce pressure on hospitals.",
+      "citations": [
+        {
+          "quote": "The Conservatives have plunged the NHS into crisis, failing to deliver the new hospitals they promised and making people wait hours for an ambulance, weeks to see a GP or months for urgent cancer treatment.",
+          "source": "Liberal Democrats Manifesto 2024, p.null"
+        },
+        {
+          "quote": "investing in public health and early access to community services, including GPs, pharmacists and dentists, so fewer people need to go to hospital in the first place, and fixing the crisis in social care to stop so many people being stuck in hospital beds.",
+          "source": "Liberal Democrats Manifesto 2024, p.null"
+        }
+      ]
+    }
+  ]
+}

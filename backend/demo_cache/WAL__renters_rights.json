@@ -1,0 +1,42 @@
+{
+  "axisId": "housing",
+  "axisLabel": "Housing & Renting",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour's manifesto does not specifically address renters' rights in Wales. It does reference reducing Right to Buy discounts and a mortgage guarantee scheme, but these are not targeted at Welsh renter protections.",
+      "citations": [
+        {
+          "quote": "Labour will work with local authorities to give first-time buyers the first chance to buy homes and end the farce of entire developments being sold off to international investors before houses are even built.",
+          "source": "Labour Manifesto 2024, p.35"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservative manifesto proposes a Renters Reform Bill and abolition of Section 21 no-fault evictions, but does not specifically address Wales, where housing is a devolved matter.",
+      "citations": [
+        {
+          "quote": "We will pass a Renters Reform Bill that will deliver fairness in the rental market for landlords and renters alike. We will deliver the court reforms necessary to fully abolish Section 21 and strengthen other grounds for landlords to evict private tenants guilty of anti-social behaviour.",
+          "source": "Conservative Manifesto 2024, p.53"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats propose banning no-fault evictions, introducing default three-year tenancies, and creating a national register of licensed landlords, though these proposals do not specifically reference Wales.",
+      "citations": [
+        {
+          "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
+          "source": "Liberal Democrat Manifesto 2024, p.14"
+        }
+      ]
+    }
+  ]
+}
