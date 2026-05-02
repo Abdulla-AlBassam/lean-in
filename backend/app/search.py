@@ -8,7 +8,7 @@ import anthropic
 
 from .llm import client
 from .models import SearchResponse, PartyPOV, Citation
-from .classify import classify, load_axes
+from .classify import classify
 
 logger = logging.getLogger(__name__)
 
@@ -38,13 +38,6 @@ Rules:
 - Use neutral descriptive language. Do not editorialise.
 - If the excerpt does not address the topic, say the manifesto does not address it. Do not invent positions.
 - Output strict JSON. No markdown fences, no prose outside the JSON."""
-
-
-def _axis_keywords(axis_id: str) -> list[str]:
-    for ax in load_axes():
-        if ax["id"] == axis_id:
-            return ax["keywords"]
-    return []
 
 
 def extract_relevant(text: str, keywords: list[str], max_words: int = 800) -> str:
@@ -82,8 +75,7 @@ def search(query: str, nation: str) -> SearchResponse:
     if os.environ.get("DEMO_MODE", "").lower() == "true":
         return load_demo_cached(query, nation)
 
-    axis_id, axis_label = classify(query)
-    keywords = _axis_keywords(axis_id)
+    axis_id, axis_label, keywords = classify(query)
     party_ids = NATION_PARTIES.get(nation, [])
     manifestos = load_manifestos(party_ids)
 

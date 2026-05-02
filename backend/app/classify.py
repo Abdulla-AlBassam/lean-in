@@ -8,9 +8,9 @@ def load_axes() -> list[dict]:
     return json.loads(AXES_PATH.read_text())["axes"]
 
 
-def classify(query: str) -> tuple[str, str]:
+def classify(query: str) -> tuple[str, str, list[str]]:
     # Deterministic keyword match against axis keywords. No LLM call.
-    # Returns (axisId, axisLabel) or ("unknown", "Off-topic") if nothing matches.
+    # Returns (axisId, axisLabel, keywords) or ("unknown", "Off-topic", []) if nothing matches.
     q = query.lower()
     best, best_score = None, 0
     for axis in load_axes():
@@ -18,5 +18,5 @@ def classify(query: str) -> tuple[str, str]:
         if score > best_score:
             best, best_score = axis, score
     if not best:
-        return "unknown", "Off-topic"
-    return best["id"], best["label"]
+        return "unknown", "Off-topic", []
+    return best["id"], best["label"], best["keywords"]
