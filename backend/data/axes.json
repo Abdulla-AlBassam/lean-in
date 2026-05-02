@@ -1,16 +1,16 @@
 {
-  "_owner": "J1",
-  "_format": "Six broad policy axes. Each axis places 4 parties on (x: economic left/right -1..1, y: social libertarian/authoritarian -1..1) with a short justifying quote and a source citation (party + manifesto page). Replace TODOs.",
+  "_owner": "builder-d",
+  "_format": "Six broad policy axes. Each axis places 4 parties on (x: economic left/right -1..1, y: social libertarian/authoritarian -1..1) with a short justifying quote and a source citation (party + manifesto page). Quotes are verbatim from official 2024 GE manifestos.",
   "axes": [
     {
       "id": "economy",
       "label": "Economy & Tax",
       "keywords": ["tax", "economy", "income", "wages", "growth", "spending", "deficit"],
       "parties": {
-        "labour":       { "x": -0.4, "y":  0.0, "quote": "TODO", "source": "TODO" },
-        "conservative": { "x":  0.5, "y":  0.0, "quote": "TODO", "source": "TODO" },
-        "libdem":       { "x": -0.1, "y":  0.4, "quote": "TODO", "source": "TODO" },
-        "snp":          { "x": -0.3, "y":  0.2, "quote": "TODO", "source": "TODO" }
+        "labour":       { "x": -0.4, "y":  0.0, "quote": "Kickstart economic growth to secure the highest sustained growth in the G7, with good jobs and productivity growth in every part of the country making everyone, not just a few, better off.", "source": "Labour Manifesto 2024, p.11" },
+        "conservative": { "x":  0.5, "y":  0.0, "quote": "The economy is turning a corner because we built strong economic foundations before the pandemic and we have stuck to our plan.", "source": "Conservative Manifesto 2024, p.3" },
+        "libdem":       { "x": -0.1, "y":  0.4, "quote": "Liberal Democrats will build a strong, fair economy that benefits everyone in the UK.", "source": "Liberal Democrat Manifesto 2024, p.11" },
+        "snp":          { "x": -0.3, "y":  0.2, "quote": "We've grown the economy faster, per head, than the UK.", "source": "SNP Manifesto 2024, p.4" }
       }
     },
     {
@@ -18,10 +18,10 @@
       "label": "Health & NHS",
       "keywords": ["nhs", "health", "hospitals", "doctors", "waiting times", "social care"],
       "parties": {
-        "labour":       { "x": -0.5, "y":  0.0, "quote": "TODO", "source": "TODO" },
-        "conservative": { "x":  0.2, "y":  0.0, "quote": "TODO", "source": "TODO" },
-        "libdem":       { "x": -0.3, "y":  0.3, "quote": "TODO", "source": "TODO" },
-        "snp":          { "x": -0.5, "y":  0.2, "quote": "TODO", "source": "TODO" }
+        "labour":       { "x": -0.5, "y":  0.0, "quote": "Labour's mission is to build an NHS fit for the future.", "source": "Labour Manifesto 2024, p.91" },
+        "conservative": { "x":  0.2, "y":  0.0, "quote": "Increase NHS spending above inflation every year, recruiting 92,000 more nurses and 28,000 more doctors.", "source": "Conservative Manifesto 2024, p.4" },
+        "libdem":       { "x": -0.3, "y":  0.3, "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.", "source": "Liberal Democrat Manifesto 2024, p.30" },
+        "snp":          { "x": -0.5, "y":  0.2, "quote": "We have the best performing core A&E units in the UK.", "source": "SNP Manifesto 2024, p.4" }
       }
     },
     {
@@ -29,10 +29,10 @@
       "label": "Education & Universities",
       "keywords": ["education", "schools", "universities", "tuition", "student", "fees", "loans"],
       "parties": {
-        "labour":       { "x": -0.4, "y":  0.1, "quote": "TODO", "source": "TODO" },
-        "conservative": { "x":  0.4, "y":  0.0, "quote": "TODO", "source": "TODO" },
-        "libdem":       { "x": -0.2, "y":  0.4, "quote": "TODO", "source": "TODO" },
-        "snp":          { "x": -0.5, "y":  0.3, "quote": "TODO", "source": "TODO" }
+        "labour":       { "x": -0.4, "y":  0.1, "quote": "Labour will recruit an additional 6,500 new expert teachers.", "source": "Labour Manifesto 2024, p.73" },
+        "conservative": { "x":  0.4, "y":  0.0, "quote": "We recruited record numbers of teachers to help our children become the best readers in the West.", "source": "Conservative Manifesto 2024, p.3" },
+        "libdem":       { "x": -0.2, "y":  0.4, "quote": "Putting a dedicated, qualified mental health professional in every school.", "source": "Liberal Democrat Manifesto 2024, p.32" },
+        "snp":          { "x": -0.5, "y":  0.3, "quote": "Defend free university tuition in Scotland. The SNP is the only party that will protect students and defend free education.", "source": "SNP Manifesto 2024, p.6" }
       }
     },
     {
@@ -40,10 +40,10 @@
       "label": "Housing & Renting",
       "keywords": ["housing", "rent", "renters", "landlords", "homes", "mortgage", "planning"],
       "parties": {
-        "labour":       { "x": -0.3, "y":  0.1, "quote": "TODO", "source": "TODO" },
-        "conservative": { "x":  0.4, "y": -0.1, "quote": "TODO", "source": "TODO" },
-        "libdem":       { "x": -0.2, "y":  0.3, "quote": "TODO", "source": "TODO" },
-        "snp":          { "x": -0.3, "y":  0.2, "quote": "TODO", "source": "TODO" }
+        "labour":       { "x": -0.3, "y":  0.1, "quote": "Labour will get Britain building again, creating jobs across England, with 1.5 million new homes over the next parliament.", "source": "Labour Manifesto 2024, p.34" },
+        "conservative": { "x":  0.4, "y": -0.1, "quote": "We will deliver 1.6 million homes in England in the next Parliament.", "source": "Conservative Manifesto 2024, p.52" },
+        "libdem":       { "x": -0.2, "y":  0.3, "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.", "source": "Liberal Democrat Manifesto 2024, p.71" },
+        "snp":          { "x": -0.3, "y":  0.2, "quote": "We've built 40% more affordable homes per head than in England.", "source": "SNP Manifesto 2024, p.4" }
       }
     },
     {
@@ -51,10 +51,10 @@
       "label": "Immigration & Borders",
       "keywords": ["immigration", "borders", "asylum", "refugees", "visas", "migrants"],
       "parties": {
-        "labour":       { "x":  0.0, "y": -0.1, "quote": "TODO", "source": "TODO" },
-        "conservative": { "x":  0.3, "y": -0.5, "quote": "TODO", "source": "TODO" },
-        "libdem":       { "x": -0.2, "y":  0.5, "quote": "TODO", "source": "TODO" },
-        "snp":          { "x": -0.3, "y":  0.4, "quote": "TODO", "source": "TODO" }
+        "labour":       { "x":  0.0, "y": -0.1, "quote": "Labour will restore order to the asylum system so that it operates swiftly, firmly, and fairly; and the rules are properly enforced.", "source": "Labour Manifesto 2024, p.15" },
+        "conservative": { "x":  0.3, "y": -0.5, "quote": "Introduce a legal cap on migration to guarantee that numbers will fall every year, so public services are protected while bringing in the skills we need.", "source": "Conservative Manifesto 2024, p.4" },
+        "libdem":       { "x": -0.2, "y":  0.5, "quote": "Scrap the Conservatives' Illegal Migration Act and their Rwanda scheme, uphold the Refugee Convention, and provide safe and legal routes to sanctuary for refugees.", "source": "Liberal Democrat Manifesto 2024, p.87" },
+        "snp":          { "x": -0.3, "y":  0.4, "quote": "Devolve powers to create a bespoke migration system for Scotland.", "source": "SNP Manifesto 2024, p.6" }
       }
     },
     {
@@ -62,10 +62,10 @@
       "label": "Environment & Climate",
       "keywords": ["climate", "environment", "energy", "net zero", "green", "emissions"],
       "parties": {
-        "labour":       { "x": -0.2, "y":  0.2, "quote": "TODO", "source": "TODO" },
-        "conservative": { "x":  0.3, "y": -0.1, "quote": "TODO", "source": "TODO" },
-        "libdem":       { "x": -0.3, "y":  0.4, "quote": "TODO", "source": "TODO" },
-        "snp":          { "x": -0.4, "y":  0.3, "quote": "TODO", "source": "TODO" }
+        "labour":       { "x": -0.2, "y":  0.2, "quote": "Make Britain a clean energy superpower to cut bills, create jobs and deliver security with cheaper, zero-carbon electricity by 2030, accelerating to net zero.", "source": "Labour Manifesto 2024, p.11" },
+        "conservative": { "x":  0.3, "y": -0.1, "quote": "Delivering an affordable transition to domestic, sustainable energy.", "source": "Conservative Manifesto 2024, p.6" },
+        "libdem":       { "x": -0.3, "y":  0.4, "quote": "Take the action needed now to achieve net zero by 2045.", "source": "Liberal Democrat Manifesto 2024, p.24" },
+        "snp":          { "x": -0.4, "y":  0.3, "quote": "Deliver a fair and managed transition to net zero.", "source": "SNP Manifesto 2024, p.6" }
       }
     }
   ]
