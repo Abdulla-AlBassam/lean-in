@@ -48,7 +48,7 @@ No database. No vector store. Manifestos sit in the Claude context with prompt c
 | **Builder B — Frontend (React/Leaflet)** | Abdulla (Abdulla-AlBassam) | `briefs/builder-b-frontend.md` |
 | **Builder C — Claude / LLM prompts** | Elya (ElyaRaza) | `briefs/builder-c-claude.md` |
 | **Builder D — Data + demo + presenter** | Maks (maksymkhomitskyi) | `briefs/builder-d-data.md` |
-| **Helper / floater** | Aws (awszaman) | shadows Builder D, fills wherever blocked |
+| **Helper / floater** | Aws (awszaman) | shadows Builders, fills wherever blocked |
 
 ## Git rules
 
