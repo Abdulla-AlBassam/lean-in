@@ -1,0 +1,297 @@
+{
+  "_owner": "builder-d",
+  "_format": "Per-topic, per-party evidence entries for the detail modal. Sources: official 2024 GE manifestos + Hansard parliamentary speeches. Every quote is verbatim. Hansard entries sourced from downloaded search pages 2 May 2026.",
+  "by_topic": {
+    "economy": {
+      "labour": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour: growth must benefit everyone, not just a few",
+          "quote": "Kickstart economic growth to secure the highest sustained growth in the G7, with good jobs and productivity growth in every part of the country making everyone, not just a few, better off.",
+          "source_label": "Labour Manifesto 2024, p.11",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        }
+      ],
+      "conservative": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives: economy is turning a corner on strong foundations",
+          "quote": "The economy is turning a corner because we built strong economic foundations before the pandemic and we have stuck to our plan.",
+          "source_label": "Conservative Manifesto 2024, p.3",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        }
+      ],
+      "libdem": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems: build a strong, fair economy for everyone",
+          "quote": "Liberal Democrats will build a strong, fair economy that benefits everyone in the UK.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.11",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ],
+      "snp": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP: Scotland's economy grows faster per head than UK",
+          "quote": "We've grown the economy faster, per head, than the UK.",
+          "source_label": "SNP Manifesto 2024, p.4",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ]
+    },
+    "health": {
+      "labour": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour: mission is to build an NHS fit for the future",
+          "quote": "Labour's mission is to build an NHS fit for the future.",
+          "source_label": "Labour Manifesto 2024, p.91",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        }
+      ],
+      "conservative": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge 92,000 nurses and inflation-busting NHS spend",
+          "quote": "Increase NHS spending above inflation every year, recruiting 92,000 more nurses and 28,000 more doctors.",
+          "source_label": "Conservative Manifesto 2024, p.4",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        }
+      ],
+      "libdem": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge GP appointment within 7 days for everyone",
+          "quote": "Give everyone the right to see a GP within seven days, or within 24 hours if they urgently need to, with 8,000 more GPs to deliver on it.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.30",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ],
+      "snp": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP: Scotland has the best-performing A&E units in the UK",
+          "quote": "We have the best performing core A&E units in the UK.",
+          "source_label": "SNP Manifesto 2024, p.4",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ]
+    },
+    "education": {
+      "labour": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges 6,500 new expert teachers in key subjects",
+          "quote": "Labour will recruit an additional 6,500 new expert teachers.",
+          "source_label": "Labour Manifesto 2024, p.73",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Labour MP challenges Conservatives on tuition fee legacy",
+          "quote": "Given that plan 2 tuition fees were introduced by the Conservatives in 2012, that they froze the repayment thresholds in 2016 and that they abolished the maintenance grants, was that fair then?",
+          "source_label": "Hansard, 18 Mar 2026 — Mr Jonathan Brash (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        }
+      ],
+      "conservative": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives claim children are best readers in the West",
+          "quote": "We recruited record numbers of teachers to help our children become the best readers in the West.",
+          "source_label": "Conservative Manifesto 2024, p.3",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour first introduced tuition fees",
+          "quote": "I must be suffering from some sort of political amnesia, because I was absolutely convinced that it was a Labour Government that introduced tuition fees in the first place. Maybe the Minister will correct me.",
+          "source_label": "Hansard, 18 Mar 2026 — Simon Hoare (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour has now admitted student loans system is broken",
+          "quote": "In January, the Chancellor was saying that the student loans system was 'fair and reasonable'. She now admits 'as of yesterday' that it is broken. In one sense, we have won this debate even before it started.",
+          "source_label": "Hansard, 18 Mar 2026 — Neil O'Brien (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        }
+      ],
+      "libdem": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge dedicated mental health professional in every school",
+          "quote": "Putting a dedicated, qualified mental health professional in every school.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.32",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ],
+      "snp": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP pledges to defend free university tuition in Scotland",
+          "quote": "Defend free university tuition in Scotland. The SNP is the only party that will protect students and defend free education.",
+          "source_label": "SNP Manifesto 2024, p.6",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "SNP MP: Scotland's students pay no tuition fees",
+          "quote": "most income tax payers in Scotland pay less tax. Over and above that, her constituents do not have to pay for their tuition fees.",
+          "source_label": "Hansard, 18 Mar 2026 — Dave Doogan (SNP)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=tuition+fees+scotland&startDate=2026-03-18&endDate=2026-03-18"
+        }
+      ]
+    },
+    "housing": {
+      "labour": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges 1.5 million new homes next parliament",
+          "quote": "Labour will get Britain building again, creating jobs across England, with 1.5 million new homes over the next parliament.",
+          "source_label": "Labour Manifesto 2024, p.34",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-04-29",
+          "headline": "Starmer hails biggest renters' rights upgrade in a generation",
+          "quote": "I am very proud — this Government are very proud — of the biggest upgrade in workers' rights in a generation and the biggest upgrade in renters' rights in a generation and of doing the most any Government have ever done to reduce child poverty.",
+          "source_label": "Hansard, 29 Apr 2026 — Sir Keir Starmer (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=renters+rights&startDate=2026-04-29&endDate=2026-04-29"
+        },
+        {
+          "date": "2026-04-29",
+          "headline": "Starmer: upgrading renters' rights and building 1.5 million homes",
+          "quote": "We are going to build 1.5 million homes. We are upgrading the rights of renters, because we know how important it is for everyone to have a safe and secure roof over their head.",
+          "source_label": "Hansard, 29 Apr 2026 — Sir Keir Starmer (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=renters+rights&startDate=2026-04-29&endDate=2026-04-29"
+        }
+      ],
+      "conservative": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge 1.6 million new homes in England",
+          "quote": "We will deliver 1.6 million homes in England in the next Parliament.",
+          "source_label": "Conservative Manifesto 2024, p.52",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        }
+      ],
+      "libdem": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge to ban no-fault evictions immediately",
+          "quote": "Delivering a fair deal for renters by immediately banning no-fault evictions, making three-year tenancies the default, and creating a national register of licensed landlords.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.71",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ],
+      "snp": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP: built 40% more affordable homes per head than England",
+          "quote": "We've built 40% more affordable homes per head than in England.",
+          "source_label": "SNP Manifesto 2024, p.4",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ]
+    },
+    "immigration": {
+      "labour": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges swift, firm and fair asylum system",
+          "quote": "Labour will restore order to the asylum system so that it operates swiftly, firmly, and fairly; and the rules are properly enforced.",
+          "source_label": "Labour Manifesto 2024, p.15",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        }
+      ],
+      "conservative": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives pledge legal migration cap to guarantee falling numbers",
+          "quote": "Introduce a legal cap on migration to guarantee that numbers will fall every year, so public services are protected while bringing in the skills we need.",
+          "source_label": "Conservative Manifesto 2024, p.4",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-02-25",
+          "headline": "Conservative MP credits ETA scheme as Conservative border reform",
+          "quote": "The ETA scheme was introduced by the Conservative Government to secure and modernise Britain's borders.",
+          "source_label": "Hansard, 25 Feb 2026 — Alicia Kearns (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=electronic+travel+authorisation&startDate=2026-02-25&endDate=2026-02-25"
+        }
+      ],
+      "libdem": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems pledge to scrap Rwanda scheme and uphold Refugee Convention",
+          "quote": "Scrap the Conservatives' Illegal Migration Act and their Rwanda scheme, uphold the Refugee Convention, and provide safe and legal routes to sanctuary for refugees.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.87",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        }
+      ],
+      "snp": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP demands devolved bespoke migration system for Scotland",
+          "quote": "Devolve powers to create a bespoke migration system for Scotland.",
+          "source_label": "SNP Manifesto 2024, p.6",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ]
+    },
+    "environment": {
+      "labour": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges clean energy superpower status by 2030",
+          "quote": "Make Britain a clean energy superpower to cut bills, create jobs and deliver security with cheaper, zero-carbon electricity by 2030, accelerating to net zero.",
+          "source_label": "Labour Manifesto 2024, p.11",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        }
+      ],
+      "conservative": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives promise affordable transition to sustainable energy",
+          "quote": "Delivering an affordable transition to domestic, sustainable energy.",
+          "source_label": "Conservative Manifesto 2024, p.6",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-04-21",
+          "headline": "Conservative MP: decarbonise affordably without harming communities",
+          "quote": "We believe in decarbonisation, but we need to do it in a way that people can afford and that does not trash our country in the process.",
+          "source_label": "Hansard, 21 Apr 2026 — Greg Smith (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=decarbonisation+wind+farms&startDate=2026-04-21&endDate=2026-04-21"
+        }
+      ],
+      "libdem": [
+        {
+          "date": "2024-06-10",
+          "headline": "Lib Dems commit to net zero by 2045",
+          "quote": "Take the action needed now to achieve net zero by 2045.",
+          "source_label": "Liberal Democrat Manifesto 2024, p.24",
+          "source_url": "https://www.libdems.org.uk/fileadmin/groups/2_Federal_Party/Documents/PolicyPapers/Manifesto_2024/For_a_Fair_Deal_-_Liberal_Democrat_Manifesto_2024.pdf"
+        },
+        {
+          "date": "2026-03-26",
+          "headline": "Lib Dem peer: cost of oil crisis exceeds cost of net zero",
+          "quote": "The Climate Change Committee was clear last week that the cost of another oil price crisis would be greater than the cost of reaching net zero by 2050, so these Benches fully support the need to roll out renewables at a faster rate.",
+          "source_label": "Hansard, 26 Mar 2026 — Earl Russell (Liberal Democrat)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=net+zero+oil+price&startDate=2026-03-26&endDate=2026-03-26"
+        }
+      ],
+      "snp": [
+        {
+          "date": "2024-06-19",
+          "headline": "SNP calls for fair and managed transition to net zero",
+          "quote": "Deliver a fair and managed transition to net zero.",
+          "source_label": "SNP Manifesto 2024, p.6",
+          "source_url": "https://s3-eu-west-2.amazonaws.com/www.snp.org/uploads/2024/06/2024-06-17-SNP-UK-Election-Manifesto-2024.pdf"
+        }
+      ]
+    }
+  }
+}
