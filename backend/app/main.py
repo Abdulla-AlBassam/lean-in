@@ -34,7 +34,7 @@ def search(q: str = Query(..., min_length=1, max_length=200), nation: Nation = "
         raise HTTPException(400, detail="Northern Ireland uses a different party system; not supported in v1")
     axis_id, _, _ = classify(q)
     if axis_id == "unknown":
-        raise HTTPException(400, detail="We don't have party positions on that — try a policy area like 'NHS' or 'tuition fees'")
+        raise HTTPException(400, detail="Query doesn't match any policy topic we cover. Try: NHS, housing, immigration, climate, education, or the economy.")
     logger.info("search q=%r nation=%s axis=%s", q, nation, axis_id)
     return run_search(q, nation)
 
