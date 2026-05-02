@@ -1,10 +1,16 @@
 import json
+import logging
 import os
+import time
 from pathlib import Path
+
+import anthropic
 
 from .llm import client
 from .models import SearchResponse, PartyPOV, Citation
 from .classify import classify
+
+logger = logging.getLogger(__name__)
 
 MANIFESTO_DIR = Path(__file__).parent.parent / "data" / "manifestos"
 DEMO_CACHE = Path(__file__).parent.parent / "demo_cache"
@@ -40,6 +46,8 @@ def load_manifestos(party_ids: list[str]) -> list[dict]:
         path = MANIFESTO_DIR / f"{pid}.md"
         if path.exists():
             out.append({"id": pid, "text": path.read_text()})
+        else:
+            logger.warning("manifesto missing: %s", pid)
     return out
 
 
@@ -62,12 +70,23 @@ def search(query: str, nation: str) -> SearchResponse:
 
     user_msg = f"Topic: {query}\nNation scope: {nation}\nReturn JSON: {{ \"parties\": [{{ \"id\": \"<party_id>\", \"summary\": \"...\", \"citations\": [{{ \"quote\": \"...\", \"source\": \"<party> Manifesto 2024, p.X\" }}] }}, ...] }}"
 
-    msg = client().messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1500,
-        system=system_blocks,
-        messages=[{"role": "user", "content": user_msg}],
-    )
+    try:
+        msg = client().messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=1500,
+            system=system_blocks,
+            messages=[{"role": "user", "content": user_msg}],
+        )
+    except anthropic.RateLimitError:
+        # Free-tier rate limit resets each minute — wait and retry once.
+        logger.warning("rate limit hit, waiting 65s then retrying")
+        time.sleep(65)
+        msg = client().messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=1500,
+            system=system_blocks,
+            messages=[{"role": "user", "content": user_msg}],
+        )
 
     raw = msg.content[0].text.strip()
     if raw.startswith("```"):

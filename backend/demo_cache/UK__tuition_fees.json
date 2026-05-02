@@ -1,0 +1,46 @@
+{
+  "axisId": "education",
+  "axisLabel": "Education & Universities",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour's manifesto does not directly address tuition fees or changes to the higher education funding settlement, though it acknowledges the current settlement 'does not work' and commits to working with universities to deliver for students and the economy.",
+      "citations": [
+        {
+          "quote": "The current higher education funding settlement does not work for the taxpayer, universities, staff, or students. Labour will act to create a secure future for higher education and the opportunities it creates across the UK. We will work with universities to deliver for students and our economy.",
+          "source": "Labour Manifesto 2024, p.86"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservatives do not propose changing tuition fees but commit to ensuring student loans are fair, so graduates repay no more than they borrowed in real terms, and to working with universities on contact hours and exam marking.",
+      "citations": [
+        {
+          "quote": "We are committed to delivering the best value for students, so have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms. And we will work with universities to ensure students get the contact hours they are promised and their exams get marked.",
+          "source": "Conservative Manifesto 2024, p.28"
+        }
+      ]
+    },
+    {
+      "id": "libdem",
+      "name": "Liberal Democrats",
+      "colour": "#FAA61A",
+      "summary": "The Liberal Democrats propose reinstating maintenance grants for disadvantaged students immediately and commit to a review of higher education finance to consider reforms, explicitly ruling out retrospective raising of rates or selling off loans to private companies.",
+      "citations": [
+        {
+          "quote": "Reinstate maintenance grants for disadvantaged students immediately to make sure that living costs are not a barrier to studying at university.",
+          "source": "Liberal Democrat Manifesto 2024, p.41"
+        },
+        {
+          "quote": "Establishing a review of higher education finance in the next Parliament to consider any necessary reforms in the light of the latest evidence of the impact of the existing financing system on access, participation and quality, and make sure there are no more retrospective raising of rates or selling-off of loans to private companies.",
+          "source": "Liberal Democrat Manifesto 2024, p.45"
+        }
+      ]
+    }
+  ]
+}
