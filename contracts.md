@@ -145,6 +145,9 @@ Returns a full person profile plus their activity timeline. Frontend calls this 
 - **`llm.py` key filtering** — filters `ANTHROPIC_API_KEY_*` env vars to `len(v) > 20` so placeholder strings don't get sent to the API.
 - **`classify.py` tuple** — now returns `(axis_id, axis_label, keywords)` so `search.py` can pass keywords to `_extract_section`.
 - **`briefs/prompt-log.md`** — prompt iteration history v1→v4 with what changed and what the test result was.
+- **`backend/app/data.py`** — new file: `load_people()` and `load_results()` with module-level caching. Reads `backend/data/people.json` and `backend/data/results.json`.
+- **`backend/app/models.py`** — added `PersonLink`, `TimelineEntry`, `PersonResponse` pydantic models to support the person endpoint.
+- **`GET /api/person/{person_id}` wired in `main.py`** — loads person from `people.json`, merges timeline from `results.json[by_person]`, returns `PersonResponse`. Returns 404 if person not found. No LLM call — `person_summary` and `citations` are pre-curated in `people.json` by Builder D.
 
 ### Citation guarantees
 
