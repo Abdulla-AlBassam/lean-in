@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { EMBLEMS } from "./PartyEmblem.jsx";
 
-const BACKEND_URL = "http://localhost:8000";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 
 export function SpectrumChart({ axisId, parties }) {
   const [axes, setAxes] = useState(null);
