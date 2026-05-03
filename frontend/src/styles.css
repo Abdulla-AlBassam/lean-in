@@ -859,3 +859,27 @@ a.timeline-source:hover {
 @media (prefers-reduced-motion: reduce) {
   .skeleton-shimmer::after { animation: none; }
 }
+
+/* ─── Spectrum chart (in cards rail, below party cards) ─── */
+
+.spectrum {
+  margin-top: 18px;
+  padding: 14px 12px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.spectrum__title {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.5);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.spectrum__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}

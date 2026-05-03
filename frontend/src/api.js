@@ -1,4 +1,4 @@
-const MOCK = true;
+const MOCK = false;
 const BACKEND_URL = "http://localhost:8000";
 
 export async function search(query, nation) {

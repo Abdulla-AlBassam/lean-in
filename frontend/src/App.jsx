@@ -5,6 +5,7 @@ import { PartyCard } from "./PartyCard.jsx";
 import { Logo } from "./Logo.jsx";
 import { DetailPanel } from "./DetailPanel.jsx";
 import { LoadingSkeleton } from "./LoadingSkeleton.jsx";
+import { SpectrumChart } from "./SpectrumChart.jsx";
 import { search } from "./api.js";
 
 export default function App() {
@@ -95,6 +96,9 @@ export default function App() {
                     />
                   ))}
                 </div>
+                {!isPerson && results.axisId && (
+                  <SpectrumChart axisId={results.axisId} parties={results.parties} />
+                )}
               </>
             )}
           </div>
