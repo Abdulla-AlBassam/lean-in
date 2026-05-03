@@ -6,6 +6,7 @@ import time
 from pathlib import Path
 
 import anthropic
+from fastapi import HTTPException
 
 from .llm import client
 from .models import SearchResponse, PartyPOV, Citation
@@ -180,6 +181,24 @@ def save_demo_cache(query: str, nation: str, response: SearchResponse) -> None:
 
 def load_demo_cached(query: str, nation: str) -> SearchResponse:
     path = cache_path(query, nation)
-    if not path.exists():
-        raise RuntimeError(f"DEMO_MODE on but no cache for {nation}/{query!r}")
-    return SearchResponse.model_validate_json(path.read_text())
+    if not path.exists() and nation == "ENG":
+        path = cache_path(query, "UK")
+    if path.exists():
+        return SearchResponse.model_validate_json(path.read_text())
+
+    # Axis fallback: lets queries like "doctors" or "schools" still serve a
+    # demo response when no cache file matches the exact query string. We
+    # classify, then return any cached file from the same nation (or UK)
+    # whose response is on the same axis.
+    axis_id, axis_label, _ = classify(query)
+    if axis_id == "unknown":
+        raise HTTPException(400, detail="Query doesn't match any policy topic we cover. Try: NHS, housing, immigration, climate, education, or the economy.")
+    for nat in (nation, "UK"):
+        for p in sorted(DEMO_CACHE.glob(f"{nat}__*.json")):
+            try:
+                resp = SearchResponse.model_validate_json(p.read_text())
+            except Exception:
+                continue
+            if resp.axisId == axis_id:
+                return resp
+    raise HTTPException(400, detail=f"No demo data for {axis_label} yet — try NHS, schools, climate, immigration, or renting.")

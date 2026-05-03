@@ -6,11 +6,15 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour acknowledges the current higher education funding settlement does not work for taxpayers, universities, staff, or students, and commits to acting to create a secure future for higher education, working with universities to deliver for students and the economy.",
+      "summary": "Labour proposes recruiting 6,500 new teachers, providing free breakfast clubs in every primary school, placing mental health professionals in every school, reforming the curriculum and assessment system, and ending VAT exemption for private schools to fund state education improvements.",
       "citations": [
         {
-          "quote": "The current higher education funding settlement does not work for the taxpayer, universities, staff, in expanding access to sport. or students. Labour will act to create a secure future for higher education    Labour will improve access and the opportunities it creates across the UK. We will work with universities to deliver for students    and galleries to increase the loans and our economy.",
-          "source": "Labour Manifesto 2024, p.84"
+          "quote": "Labour will provide access to specialist mental health professionals in every school, so every young person has access to early support to address problems before they escalate.",
+          "source": "Labour Manifesto 2024, p.82"
+        },
+        {
+          "quote": "Labour will end the VAT exemption and business rates relief for private schools to invest in our state schools.",
+          "source": "Labour Manifesto 2024, p.80"
         }
       ],
       "results": [
@@ -34,15 +38,15 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives propose to fund 100,000 additional apprenticeships by reducing funding for poor-quality university degrees with poor graduate outcomes, and commit to closing university courses with excessive drop-out rates or poor graduate earnings, while ensuring students are not charged more than they borrowed in real terms.",
+      "summary": "Conservatives highlight that 90% of schools are rated Good or Outstanding and propose protecting per-pupil school spending in real terms, introducing the Advanced British Standard for 16-19 education, expanding free childcare, and lifting the cap on faith schools to offer more places.",
       "citations": [
         {
-          "quote": "We will fund this by changing the law to close university courses in England with the worst outcomes for their students. Courses that have excessive drop-out rates or leave students worse off than had they not gone to university will be prevented from recruiting students by the universities regulator.",
-          "source": "Conservative Manifesto 2024, p.28"
+          "quote": "Today, 90% of schools are Good or Outstanding, up from 68% in 2010. School funding is at its highest ever level in real terms per pupil and there are record numbers of teachers, 27,000 more than 2010.",
+          "source": "Conservative Manifesto 2024, p.26"
         },
         {
-          "quote": "we have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms.",
-          "source": "Conservative Manifesto 2024, p.28"
+          "quote": "We will transform education for children with special educational needs, ending the postcode lottery of support by delivering new free schools for children with special educational needs.",
+          "source": "Conservative Manifesto 2024, p.27"
         }
       ],
       "results": [
@@ -73,15 +77,15 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats propose to reinstate maintenance grants for disadvantaged students immediately and establish a review of higher education finance to consider reforms, explicitly ruling out retrospective raising of rates or selling loans to private companies.",
+      "summary": "Liberal Democrats propose placing a dedicated qualified mental health professional in every primary and secondary school, increasing school and college funding per pupil above inflation, introducing a Tutoring Guarantee for disadvantaged pupils, and giving local authorities strategic education authority powers.",
       "citations": [
         {
-          "quote": "Reinstate maintenance grants for disadvantaged students immediately to make sure that living costs are not a barrier to studying at university.",
+          "quote": "Put a dedicated, qualified mental health professional in every primary and secondary school, making sure all children and parents have someone they can turn to for help, funded by increasing the Digital Services Tax on social media firms and other tech giants.",
           "source": "Liberal Democrat Election Manifesto 2024, p.41"
         },
         {
-          "quote": "Establishing a review of higher education finance in the next Parliament to consider any necessary reforms in the light of the latest evidence of the impact of the existing financing system on access, participation and quality, and make sure there are no more retrospective raising of rates or selling-off of loans to private companies.",
-          "source": "Liberal Democrat Election Manifesto 2024, p.45"
+          "quote": "Increase school and college funding per pupil above the rate of inflation every year, and end the scandal of crumbling school and college buildings by investing in new buildings and clearing the backlog of repairs.",
+          "source": "Liberal Democrat Election Manifesto 2024, p.41"
         }
       ],
       "results": [

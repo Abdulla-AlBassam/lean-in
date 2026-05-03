@@ -5,73 +5,134 @@
     "lisa-nandy": {
       "id": "lisa-nandy",
       "name": "Lisa Nandy",
-      "aliases": ["nandy", "lisa nandy", "lisa nandy mp"],
+      "aliases": [
+        "nandy",
+        "lisa nandy",
+        "lisa nandy mp"
+      ],
       "party_id": "labour",
       "constituency": "Wigan",
       "role": "Secretary of State for Culture, Media and Sport",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Official_portrait_of_Lisa_Nandy_MP_crop_2.jpg/220px-Official_portrait_of_Lisa_Nandy_MP_crop_2.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lisa_Nandy_Official_Cabinet_Portrait%2C_July_2024_%28cropped%29_2.jpg/500px-Lisa_Nandy_Official_Cabinet_Portrait%2C_July_2024_%28cropped%29_2.jpg",
       "bio": "Labour MP for Wigan since 2010. Secretary of State for Culture, Media and Sport since July 2024.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Lisa_Nandy" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4361/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/24935/lisa_nandy" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lisa_Nandy"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4361/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/24935/lisa_nandy"
+        }
       ],
       "person_summary": "Nandy has consistently centred her recent statements on housing security and renter protection, voting with the Labour front bench on the Renters' Rights Amendment.",
       "citations": [
-        { "quote": "Decent housing is a foundation, not a privilege.", "source": "Wigan town hall address, Mar 2026" }
+        {
+          "quote": "Decent housing is a foundation, not a privilege.",
+          "source": "Wigan town hall address, Mar 2026"
+        }
       ]
     },
     "robert-jenrick": {
       "id": "robert-jenrick",
       "name": "Robert Jenrick",
-      "aliases": ["jenrick", "robert jenrick", "rob jenrick"],
+      "aliases": [
+        "jenrick",
+        "robert jenrick",
+        "rob jenrick"
+      ],
       "party_id": "conservative",
       "constituency": "Newark",
       "role": "Shadow Lord Chancellor and Secretary of State for Justice",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Official_portrait_of_Robert_Jenrick_MP_crop_2.jpg/220px-Official_portrait_of_Robert_Jenrick_MP_crop_2.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Official_portrait_of_Robert_Jenrick_MP_crop_2%2C_2024.jpg/500px-Official_portrait_of_Robert_Jenrick_MP_crop_2%2C_2024.jpg",
       "bio": "Conservative MP for Newark since 2014. Shadow Lord Chancellor and Secretary of State for Justice.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Robert_Jenrick" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4320/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/24893/robert_jenrick" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Robert_Jenrick"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4320/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/24893/robert_jenrick"
+        }
       ],
       "person_summary": "Jenrick has focused recent statements on immigration enforcement and rental market reform, opposing the Renters' Rights Amendment in March 2026.",
       "citations": [
-        { "quote": "Reform must work for renters and landlords. Tilting the field destroys both.", "source": "Conservative press release, Apr 2026" }
+        {
+          "quote": "Reform must work for renters and landlords. Tilting the field destroys both.",
+          "source": "Conservative press release, Apr 2026"
+        }
       ]
     },
     "daisy-cooper": {
       "id": "daisy-cooper",
       "name": "Daisy Cooper",
-      "aliases": ["cooper", "daisy cooper"],
+      "aliases": [
+        "cooper",
+        "daisy cooper"
+      ],
       "party_id": "libdem",
       "constituency": "St Albans",
       "role": "Deputy Leader and Health spokesperson",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Official_portrait_of_Daisy_Cooper_MP_crop_2.jpg/220px-Official_portrait_of_Daisy_Cooper_MP_crop_2.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Official_portrait_of_Daisy_Cooper_MP%2C_2025_%28cropped%29.jpg/500px-Official_portrait_of_Daisy_Cooper_MP%2C_2025_%28cropped%29.jpg",
       "bio": "Liberal Democrat MP for St Albans since 2019. Deputy Leader and Health spokesperson.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Daisy_Cooper" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4830/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/25895/daisy_cooper" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Daisy_Cooper"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4830/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/25895/daisy_cooper"
+        }
       ],
       "person_summary": "Cooper has championed landlord licensing and tabled the Lib Dem amendment to require a national register, while also pressing for NHS waiting-time targets.",
       "citations": [
-        { "quote": "A national register of landlords is the floor, not the ceiling.", "source": "Hansard, 02 Feb 2026" }
+        {
+          "quote": "A national register of landlords is the floor, not the ceiling.",
+          "source": "Hansard, 02 Feb 2026"
+        }
       ]
     },
     "keir-starmer": {
       "id": "keir-starmer",
       "name": "Keir Starmer",
-      "aliases": ["starmer", "keir starmer", "keir starmer mp", "sir keir starmer"],
+      "aliases": [
+        "starmer",
+        "keir starmer",
+        "keir starmer mp",
+        "sir keir starmer"
+      ],
       "party_id": "labour",
       "constituency": "Holborn and St Pancras",
       "role": "Prime Minister",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Official_portrait_of_Keir_Starmer_MP.jpg/220px-Official_portrait_of_Keir_Starmer_MP.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Prime_Minister_Keir_Starmer_Portrait_%28cropped%29.jpg/500px-Prime_Minister_Keir_Starmer_Portrait_%28cropped%29.jpg",
       "bio": "Labour MP for Holborn and St Pancras since 2015. Prime Minister of the United Kingdom since July 2024. Former Director of Public Prosecutions and Leader of the Labour Party from 2020.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Keir_Starmer" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4514/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/25353/keir_starmer" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Keir_Starmer"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4514/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/25353/keir_starmer"
+        }
       ],
       "person_summary": "Starmer's government has framed its first term around 'national renewal' — NHS reform, planning-system overhaul, and a return to fiscal rules. His public appearances emphasise stability and long-term delivery over short-term announcements.",
       "citations": []
@@ -79,16 +140,29 @@
     "rishi-sunak": {
       "id": "rishi-sunak",
       "name": "Rishi Sunak",
-      "aliases": ["sunak", "rishi sunak", "rishi sunak mp"],
+      "aliases": [
+        "sunak",
+        "rishi sunak",
+        "rishi sunak mp"
+      ],
       "party_id": "conservative",
       "constituency": "Richmond and Northallerton",
       "role": "Backbench MP, former Prime Minister",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Official_portrait_of_Rishi_Sunak_crop_2_%28cropped%29.jpg/220px-Official_portrait_of_Rishi_Sunak_crop_2_%28cropped%29.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Portrait_of_Prime_Minister_Rishi_Sunak_%28cropped%29.jpg/500px-Portrait_of_Prime_Minister_Rishi_Sunak_%28cropped%29.jpg",
       "bio": "Conservative MP for Richmond and Northallerton since 2024 (previously Richmond, Yorkshire from 2015). Prime Minister 2022 to 2024 and Chancellor of the Exchequer 2020 to 2022. Now serves as a backbench MP.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Rishi_Sunak" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4483/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/25428/rishi_sunak" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rishi_Sunak"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4483/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/25428/rishi_sunak"
+        }
       ],
       "person_summary": "Sunak's premiership focused on inflation control, national insurance cuts, and tighter migration policy. His more recent backbench statements continue to emphasise fiscal restraint and a slower pace on net-zero deadlines.",
       "citations": []
@@ -96,16 +170,29 @@
     "kemi-badenoch": {
       "id": "kemi-badenoch",
       "name": "Kemi Badenoch",
-      "aliases": ["badenoch", "kemi badenoch", "kemi badenoch mp"],
+      "aliases": [
+        "badenoch",
+        "kemi badenoch",
+        "kemi badenoch mp"
+      ],
       "party_id": "conservative",
       "constituency": "North West Essex",
       "role": "Leader of the Opposition",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Official_portrait_of_Kemi_Badenoch_MP%2C_2024_%283x4_cropped%29.jpg/220px-Official_portrait_of_Kemi_Badenoch_MP%2C_2024_%283x4_cropped%29.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Official_portrait_of_Kemi_Badenoch_MP%2C_2024_%283x4_cropped%29.jpg/500px-Official_portrait_of_Kemi_Badenoch_MP%2C_2024_%283x4_cropped%29.jpg",
       "bio": "Conservative MP for North West Essex since 2024 (previously Saffron Walden from 2017). Leader of the Conservative Party and Leader of the Opposition since November 2024. Former Secretary of State for Business and Trade.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Kemi_Badenoch" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4597/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/25693/kemi_badenoch" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Kemi_Badenoch"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4597/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/25693/kemi_badenoch"
+        }
       ],
       "person_summary": "Badenoch leads Conservative opposition with a focus on planning reform, energy costs, and identity politics. She has positioned the party against major elements of Labour's housing and net-zero agenda.",
       "citations": []
@@ -113,16 +200,30 @@
     "ed-davey": {
       "id": "ed-davey",
       "name": "Ed Davey",
-      "aliases": ["davey", "ed davey", "ed davey mp", "sir ed davey"],
+      "aliases": [
+        "davey",
+        "ed davey",
+        "ed davey mp",
+        "sir ed davey"
+      ],
       "party_id": "libdem",
       "constituency": "Kingston and Surbiton",
       "role": "Leader of the Liberal Democrats",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Official_portrait_of_Ed_Davey_MP_crop_2%2C_2024.jpg/220px-Official_portrait_of_Ed_Davey_MP_crop_2%2C_2024.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Official_portrait_of_Ed_Davey_MP_crop_2%2C_2024.jpg/500px-Official_portrait_of_Ed_Davey_MP_crop_2%2C_2024.jpg",
       "bio": "Liberal Democrat MP for Kingston and Surbiton since 2017, and previously from 1997 to 2015. Leader of the Liberal Democrats since August 2020. Former Secretary of State for Energy and Climate Change in the Coalition government.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Ed_Davey" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/188/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/12717/ed_davey" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ed_Davey"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/188/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/12717/ed_davey"
+        }
       ],
       "person_summary": "Davey has anchored Lib Dem opposition on sewage regulation, NHS waiting times, and unpaid carer support. The party under his leadership has concentrated on suburban and rural constituencies, particularly in southern England.",
       "citations": []
@@ -130,16 +231,29 @@
     "rachel-reeves": {
       "id": "rachel-reeves",
       "name": "Rachel Reeves",
-      "aliases": ["reeves", "rachel reeves", "rachel reeves mp"],
+      "aliases": [
+        "reeves",
+        "rachel reeves",
+        "rachel reeves mp"
+      ],
       "party_id": "labour",
       "constituency": "Leeds West and Pudsey",
       "role": "Chancellor of the Exchequer",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Official_portrait_of_Rachel_Reeves_MP.jpg/220px-Official_portrait_of_Rachel_Reeves_MP.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Rachel_Reeves_Official_Cabinet_Portrait%2C_July_2024_%28cropped_2%29_%28cropped%29.jpg/500px-Rachel_Reeves_Official_Cabinet_Portrait%2C_July_2024_%28cropped_2%29_%28cropped%29.jpg",
       "bio": "Labour MP for Leeds West and Pudsey since 2024 (previously Leeds West from 2010). Chancellor of the Exchequer since July 2024, the first woman to hold the office. Former economist at the Bank of England and HBOS.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Rachel_Reeves" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4031/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/24851/rachel_reeves" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rachel_Reeves"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4031/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/24851/rachel_reeves"
+        }
       ],
       "person_summary": "Reeves has anchored her chancellorship in self-imposed fiscal rules, public investment in green infrastructure, and capital-gains and inheritance-tax reform. Her opening Budget restored departmental capital spending while raising employer national insurance to fund public services.",
       "citations": []
@@ -147,16 +261,29 @@
     "yvette-cooper": {
       "id": "yvette-cooper",
       "name": "Yvette Cooper",
-      "aliases": ["yvette cooper", "yvette", "yvette cooper mp"],
+      "aliases": [
+        "yvette cooper",
+        "yvette",
+        "yvette cooper mp"
+      ],
       "party_id": "labour",
       "constituency": "Pontefract, Castleford and Knottingley",
       "role": "Foreign Secretary",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Yvette_Cooper_Official_Cabinet_Portrait%2C_September_2025_%28cropped%29.jpg/220px-Yvette_Cooper_Official_Cabinet_Portrait%2C_September_2025_%28cropped%29.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Yvette_Cooper_Official_Cabinet_Portrait%2C_September_2025_%28cropped%29.jpg/500px-Yvette_Cooper_Official_Cabinet_Portrait%2C_September_2025_%28cropped%29.jpg",
       "bio": "Labour MP for Pontefract, Castleford and Knottingley since 2024 (previously Pontefract and Castleford from 1997). Foreign Secretary since September 2025, having served as Home Secretary from July 2024. Former Chief Secretary to the Treasury and one of Labour's longest-serving frontbenchers.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Yvette_Cooper" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/420/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/10131/yvette_cooper" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Yvette_Cooper"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/420/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/10131/yvette_cooper"
+        }
       ],
       "person_summary": "Cooper has shifted from domestic security to foreign affairs, having previously led on irregular migration and policing reform at the Home Office. Her recent priorities span Ukraine support, Middle East policy, and the integrated review of foreign, defence and development strategy.",
       "citations": []
@@ -164,16 +291,29 @@
     "wes-streeting": {
       "id": "wes-streeting",
       "name": "Wes Streeting",
-      "aliases": ["streeting", "wes streeting", "wes streeting mp"],
+      "aliases": [
+        "streeting",
+        "wes streeting",
+        "wes streeting mp"
+      ],
       "party_id": "labour",
       "constituency": "Ilford North",
       "role": "Secretary of State for Health and Social Care",
-      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Official_portrait_of_Wes_Streeting_MP_crop_2.jpg/220px-Official_portrait_of_Wes_Streeting_MP_crop_2.jpg",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Wes_Streeting_Official_Cabinet_Portrait%2C_July_2024_%28cropped%29_2.jpg/500px-Wes_Streeting_Official_Cabinet_Portrait%2C_July_2024_%28cropped%29_2.jpg",
       "bio": "Labour MP for Ilford North since 2015. Secretary of State for Health and Social Care since July 2024. Former president of the National Union of Students and Shadow Health Secretary from 2021.",
       "links": [
-        { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Wes_Streeting" },
-        { "label": "Parliament profile", "url": "https://members.parliament.uk/member/4504/contact" },
-        { "label": "TheyWorkForYou", "url": "https://www.theyworkforyou.com/mp/25320/wes_streeting" }
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wes_Streeting"
+        },
+        {
+          "label": "Parliament profile",
+          "url": "https://members.parliament.uk/member/4504/contact"
+        },
+        {
+          "label": "TheyWorkForYou",
+          "url": "https://www.theyworkforyou.com/mp/25320/wes_streeting"
+        }
       ],
       "person_summary": "Streeting's NHS strategy combines longer GP hours, more diagnostic capacity, and the use of independent-sector providers to cut waiting lists. He has pushed structural reform of NHS England alongside workforce expansion.",
       "citations": []

@@ -6,11 +6,15 @@
       "id": "labour",
       "name": "Labour",
       "colour": "#E4003B",
-      "summary": "Labour acknowledges the current higher education funding settlement does not work for taxpayers, universities, staff, or students, and commits to acting to create a secure future for higher education, working with universities to deliver for students and the economy.",
+      "summary": "Labour proposes to end the VAT exemption and business rates relief for private schools in order to invest the proceeds in state schools, and commits to protecting and improving school funding including recruiting additional teachers and providing free breakfast clubs in every primary school.",
       "citations": [
         {
-          "quote": "The current higher education funding settlement does not work for the taxpayer, universities, staff, in expanding access to sport. or students. Labour will act to create a secure future for higher education    Labour will improve access and the opportunities it creates across the UK. We will work with universities to deliver for students    and galleries to increase the loans and our economy.",
-          "source": "Labour Manifesto 2024, p.84"
+          "quote": "Labour will end the VAT exemption and business rates relief for private schools to invest in our state schools.",
+          "source": "Labour Manifesto 2024, p.80"
+        },
+        {
+          "quote": "Labour will recruit an additional 6,500 new expert teachers.",
+          "source": "Labour Manifesto 2024, p.80"
         }
       ],
       "results": [
@@ -34,15 +38,15 @@
       "id": "conservative",
       "name": "Conservative",
       "colour": "#0087DC",
-      "summary": "The Conservatives propose to fund 100,000 additional apprenticeships by reducing funding for poor-quality university degrees with poor graduate outcomes, and commit to closing university courses with excessive drop-out rates or poor graduate earnings, while ensuring students are not charged more than they borrowed in real terms.",
+      "summary": "The Conservatives commit to protecting day-to-day schools spending in real terms per pupil, building on record school funding levels, and propose funding 100,000 high-quality apprenticeships by curbing poor-quality university degrees.",
       "citations": [
         {
-          "quote": "We will fund this by changing the law to close university courses in England with the worst outcomes for their students. Courses that have excessive drop-out rates or leave students worse off than had they not gone to university will be prevented from recruiting students by the universities regulator.",
-          "source": "Conservative Manifesto 2024, p.28"
+          "quote": "School funding is at its highest ever level in real terms per pupil and there are record numbers of teachers, 27,000 more than 2010.",
+          "source": "Conservative Manifesto 2024, p.26"
         },
         {
-          "quote": "we have already reformed student loans to make them fairer, meaning no one will pay back more than what they borrowed in real terms.",
-          "source": "Conservative Manifesto 2024, p.28"
+          "quote": "we will build on this progress in the next Parliament by protecting day-to-day schools spending in real terms per pupil.",
+          "source": "Conservative Manifesto 2024, p.26"
         }
       ],
       "results": [
@@ -73,15 +77,11 @@
       "id": "libdem",
       "name": "Liberal Democrats",
       "colour": "#FAA61A",
-      "summary": "The Liberal Democrats propose to reinstate maintenance grants for disadvantaged students immediately and establish a review of higher education finance to consider reforms, explicitly ruling out retrospective raising of rates or selling loans to private companies.",
+      "summary": "The Liberal Democrats pledge to increase school and college funding per pupil above the rate of inflation every year and to invest in clearing the backlog of crumbling school and college building repairs.",
       "citations": [
         {
-          "quote": "Reinstate maintenance grants for disadvantaged students immediately to make sure that living costs are not a barrier to studying at university.",
+          "quote": "Increase school and college funding per pupil above the rate of inflation every year, and end the scandal of crumbling school and college buildings by investing in new buildings and clearing the backlog of repairs.",
           "source": "Liberal Democrat Election Manifesto 2024, p.41"
-        },
-        {
-          "quote": "Establishing a review of higher education finance in the next Parliament to consider any necessary reforms in the light of the latest evidence of the impact of the existing financing system on access, participation and quality, and make sure there are no more retrospective raising of rates or selling-off of loans to private companies.",
-          "source": "Liberal Democrat Election Manifesto 2024, p.45"
         }
       ],
       "results": [

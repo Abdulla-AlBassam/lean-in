@@ -6,7 +6,7 @@ import urllib.parse
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from .models import HealthResponse, PersonResponse, Nation
+from .models import HealthResponse, PersonResponse
 from .search import search as run_search, PARTY_META, NATION_PARTIES
 from .classify import load_axes, classify
 from .data import load_people, load_results, resolve_person, lookup_unbaked_mp
@@ -30,7 +30,12 @@ def health():
 
 
 @app.get("/api/search")
-def search(q: str = Query(..., min_length=1, max_length=200), nation: Nation = "UK"):
+def search(q: str = Query(..., min_length=1, max_length=200), nation: str = "UK"):
+    q = q.strip()
+    if not q:
+        raise HTTPException(400, detail="Empty query")
+    if nation not in {"UK", "ENG", "SCO", "WAL", "NIR"}:
+        raise HTTPException(400, detail=f"Unknown nation '{nation}'. Valid: UK, ENG, SCO, WAL")
     if nation == "NIR":
         raise HTTPException(400, detail="Northern Ireland uses a different party system; not supported in v1")
 
@@ -74,7 +79,7 @@ def search(q: str = Query(..., min_length=1, max_length=200), nation: Nation = "
             "party_id": pid,
             "constituency": mp["name"],
             "role": "Member of Parliament",
-            "photo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Portcullis.svg?width=220",
+            "photo_url": "",
             "bio": f"{meta['name']} MP for {mp['name']}, elected July 2024 with a majority of {mp['majority']:,}.",
             "links": [
                 {"label": "Wikipedia search", "url": f"https://en.wikipedia.org/wiki/Special:Search?search={urllib.parse.quote_plus(mp['mp'])}"},

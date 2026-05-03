@@ -1,0 +1,73 @@
+{
+  "axisId": "education",
+  "axisLabel": "Education & Universities",
+  "parties": [
+    {
+      "id": "labour",
+      "name": "Labour",
+      "colour": "#E4003B",
+      "summary": "Labour proposes to end the VAT exemption and business rates relief for private schools, with the revenue raised directed toward investment in state schools.",
+      "citations": [
+        {
+          "quote": "Labour will end the VAT exemption and business rates relief for private schools to invest in our state schools.",
+          "source": "Labour Manifesto 2024, p.80"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-13",
+          "headline": "Labour pledges 6,500 new expert teachers in key subjects",
+          "quote": "Labour will recruit an additional 6,500 new expert teachers.",
+          "source_label": "Labour Manifesto 2024, p.73",
+          "source_url": "https://labour.org.uk/wp-content/uploads/2024/06/Labour-Party-manifesto-2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Labour MP challenges Conservatives on tuition fee legacy",
+          "quote": "Given that plan 2 tuition fees were introduced by the Conservatives in 2012, that they froze the repayment thresholds in 2016 and that they abolished the maintenance grants, was that fair then?",
+          "source_label": "Hansard, 18 Mar 2026 — Mr Jonathan Brash (Labour)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative",
+      "colour": "#0087DC",
+      "summary": "The Conservatives oppose taxing private schools and commit to protecting parental choice, including preserving the rights of independent and grammar schools, while also proposing to lift the cap on faith schools.",
+      "citations": [
+        {
+          "quote": "We will further protect parents' choice on where to send their child to school, including preserving the rights of independent and grammar schools.",
+          "source": "Conservative Manifesto 2024, p.27"
+        },
+        {
+          "quote": "Instead of penalising right of parents to choose the best education for their child.",
+          "source": "Conservative Manifesto 2024, p.27"
+        }
+      ],
+      "results": [
+        {
+          "date": "2024-06-11",
+          "headline": "Conservatives claim children are best readers in the West",
+          "quote": "We recruited record numbers of teachers to help our children become the best readers in the West.",
+          "source_label": "Conservative Manifesto 2024, p.3",
+          "source_url": "https://public.conservatives.com/static/documents/GE2024/Conservative-Manifesto-GE2024.pdf"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour first introduced tuition fees",
+          "quote": "I must be suffering from some sort of political amnesia, because I was absolutely convinced that it was a Labour Government that introduced tuition fees in the first place. Maybe the Minister will correct me.",
+          "source_label": "Hansard, 18 Mar 2026 — Simon Hoare (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        },
+        {
+          "date": "2026-03-18",
+          "headline": "Conservative MP: Labour has now admitted student loans system is broken",
+          "quote": "In January, the Chancellor was saying that the student loans system was 'fair and reasonable'. She now admits 'as of yesterday' that it is broken. In one sense, we have won this debate even before it started.",
+          "source_label": "Hansard, 18 Mar 2026 — Neil O'Brien (Conservative)",
+          "source_url": "https://hansard.parliament.uk/search/Contributions?searchTerm=student+loans&startDate=2026-03-18&endDate=2026-03-18"
+        }
+      ]
+    }
+  ]
+}
