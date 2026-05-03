@@ -2,7 +2,7 @@
 // the official party SVGs from Wikimedia are all wide wordmarks (4:1+ ratios)
 // that don't fit a uniform card badge, and several use dark grey fills that
 // don't show on the glass background.
-const EMBLEMS = {
+export const EMBLEMS = {
   labour: (
     // Rose — five petals + dark centre
     <g fill="#E4003B">

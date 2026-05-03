@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { PartyEmblem } from "./PartyEmblem.jsx";
 import { PersonProfile } from "./PersonProfile.jsx";
 import { ConsistencyGauge } from "./ConsistencyGauge.jsx";
-import { getPartyMps, getMp, getMpTopicPositions, getArticles, getMpScores } from "./api.js";
+import { getPartyMps, getMp, getMpTopicPositions, getArticles, getMpScores, getPersonArticles } from "./api.js";
 
 const TYPE_LABEL = {
   manifesto: "Manifesto",
@@ -67,7 +67,7 @@ export function DetailPanel({ open, mode, party, person, topic, axisId, results,
 }
 
 function PartyView({ party, axisId, topic, tab, setTab, onMpClick, onClose }) {
-  const manifestoEntries = (party.results || []).filter((r) => r.type === "manifesto");
+  const manifestoEntries = party.results || [];
   const articles = getArticles(axisId, party.id);
   const mps = getPartyMps(party.id);
 
@@ -100,6 +100,8 @@ function PartyView({ party, axisId, topic, tab, setTab, onMpClick, onClose }) {
 }
 
 function PersonView({ person, onClose }) {
+  const personArticles = getPersonArticles(person.id);
+  const scores = getMpScores(person.id);
   return (
     <>
       <header className="detail-panel__header">
@@ -114,8 +116,52 @@ function PersonView({ person, onClose }) {
       </header>
       <div className="detail-panel__body">
         <PersonProfile person={person} />
+        <AccountabilitySection scores={scores} />
+        {personArticles.length > 0 && (
+          <>
+            <p className="section-eyebrow">Recent policies</p>
+            <ArticlesList articles={personArticles} />
+          </>
+        )}
         <Timeline entries={person.results || []} emptyText="No additional results yet." />
       </div>
+    </>
+  );
+}
+
+function AccountabilitySection({ scores }) {
+  if (!scores) return null;
+  return (
+    <>
+      <p className="section-eyebrow">Accountability</p>
+      <div className="score-cards">
+        <ScoreCard
+          value={scores.consistency.value}
+          label="Manifesto Consistency"
+          lines={[
+            `${scores.consistency.statements_aligned} of ${scores.consistency.statements_total} recent statements aligned with party manifesto`,
+            `${scores.consistency.votes_aligned} of ${scores.consistency.votes_total} votes aligned with manifesto pledges`,
+          ]}
+        />
+        <ScoreCard
+          value={scores.voting.value}
+          label="Voting Alignment"
+          lines={[
+            `${scores.voting.with_party} of ${scores.voting.total} votes cast with party whip`,
+            `Last broke whip: ${formatDate(scores.voting.last_against)}`,
+          ]}
+        />
+        <ScoreCard
+          value={scores.record.value}
+          label="Public Record Density"
+          lines={[
+            `${scores.record.statements} statements, ${scores.record.votes} recorded votes, ${scores.record.press} press releases on file`,
+          ]}
+        />
+      </div>
+      <p className="score-footnote">
+        Demo data. Production version computes consistency from sentence-embedding similarity against Hansard, voting alignment from the public division record, and record density from primary-source coverage.
+      </p>
     </>
   );
 }
@@ -139,39 +185,7 @@ function MpDetail({ mp: mpId, axisId, topic, onBack, onClose }) {
       <div className="detail-panel__body">
         <PersonProfile person={mp} />
 
-        {scores && (
-          <>
-            <p className="section-eyebrow">Accountability</p>
-            <div className="score-cards">
-              <ScoreCard
-                value={scores.consistency.value}
-                label="Manifesto Consistency"
-                lines={[
-                  `${scores.consistency.statements_aligned} of ${scores.consistency.statements_total} recent statements aligned with party manifesto`,
-                  `${scores.consistency.votes_aligned} of ${scores.consistency.votes_total} votes aligned with manifesto pledges`,
-                ]}
-              />
-              <ScoreCard
-                value={scores.voting.value}
-                label="Voting Alignment"
-                lines={[
-                  `${scores.voting.with_party} of ${scores.voting.total} votes cast with party whip`,
-                  `Last broke whip: ${formatDate(scores.voting.last_against)}`,
-                ]}
-              />
-              <ScoreCard
-                value={scores.record.value}
-                label="Public Record Density"
-                lines={[
-                  `${scores.record.statements} statements, ${scores.record.votes} recorded votes, ${scores.record.press} press releases on file`,
-                ]}
-              />
-            </div>
-            <p className="score-footnote">
-              Demo data. Production version computes consistency from sentence-embedding similarity against Hansard, voting alignment from the public division record, and record density from primary-source coverage.
-            </p>
-          </>
-        )}
+        <AccountabilitySection scores={scores} />
 
         <p className="section-eyebrow">{mp.name.split(" ")[0]}'s positions on {topic}</p>
         <Timeline entries={positions} emptyText={`No public record from ${mp.name} on this topic yet.`} />

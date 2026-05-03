@@ -2,17 +2,17 @@
 html, body, #root { margin: 0; padding: 0; height: 100%; }
 body {
   background:
-    /* Warm taupe glow, top-left */
+    /* Cool gray glow, top-left */
     radial-gradient(ellipse 65% 55% at 5% 0%,
-      rgba(182, 174, 159, 0.16),
+      rgba(170, 175, 185, 0.16),
       transparent 60%),
-    /* Pale cream glow, top-right */
+    /* Pale gray glow, top-right */
     radial-gradient(ellipse 60% 50% at 95% 5%,
-      rgba(251, 243, 209, 0.10),
+      rgba(210, 215, 222, 0.10),
       transparent 60%),
-    /* Faint sage wash at the bottom */
+    /* Faint gray wash at the bottom */
     radial-gradient(ellipse 100% 50% at 50% 105%,
-      rgba(197, 199, 188, 0.05),
+      rgba(180, 185, 190, 0.05),
       transparent 70%),
     #0a0908;
   color: #f5f5f5;
@@ -44,9 +44,10 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 620px;
+  max-width: 720px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .stage {
@@ -288,6 +289,7 @@ body {
   user-select: none;
   opacity: 0.78;
   transition: opacity 250ms ease, transform 250ms ease;
+  flex-shrink: 0;
 }
 .logo:hover {
   opacity: 1;
@@ -295,9 +297,13 @@ body {
 }
 .logo-figure {
   display: block;
-  width: 78px;
-  height: 78px;
+  width: 56px;
+  height: 56px;
   overflow: visible;
+  /* Forward bow — top edge tipping toward viewer, hinged at bottom edge,
+     so the logo "leans in" matching the project name. */
+  transform: perspective(220px) rotateX(18deg);
+  transform-origin: 50% 100%;
 }
 .logo-paper {
   transform-origin: 16px 11px;
@@ -902,4 +908,99 @@ a.timeline-source:hover {
   height: auto;
   display: block;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─── Back-to-UK chip (top-left of the map when zoomed into a nation) ─── */
+
+.back-to-uk-chip {
+  position: fixed;
+  top: 28px;
+  left: 24px;
+  z-index: 25;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px 11px 15px;
+  background: rgba(28, 26, 24, 0.78);
+  border: 1px solid rgba(245, 240, 220, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  font-size: 13.5px;
+  font-family: inherit;
+  color: rgba(245, 240, 220, 0.92);
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.back-to-uk-chip:hover {
+  background: rgba(40, 38, 36, 0.92);
+  color: #fff;
+  border-color: rgba(245, 240, 220, 0.55);
+}
+
+/* ─── Constituency breadcrumb chip ───────────────────────── */
+
+.constituency-chip {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 18;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 8px 14px;
+  background: rgba(28, 26, 24, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  font-size: 12.5px;
+  color: rgba(245, 245, 245, 0.92);
+  max-width: calc(100% - 48px);
+}
+.constituency-chip__eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.55);
+}
+.constituency-chip__name {
+  font-weight: 600;
+}
+.constituency-chip__sep {
+  color: rgba(245, 245, 245, 0.35);
+}
+.constituency-chip__mp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(245, 245, 245, 0.75);
+}
+.constituency-chip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.constituency-chip__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: 4px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: rgba(245, 245, 245, 0.7);
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease;
+}
+.constituency-chip__close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(245, 245, 245, 0.95);
 }

@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react";
+import { EMBLEMS } from "./PartyEmblem.jsx";
 
 const BACKEND_URL = "http://localhost:8000";
-
-const SHORT_LABEL = {
-  labour: "L",
-  conservative: "C",
-  libdem: "LD",
-  snp: "SNP",
-  plaid: "PC",
-};
-
-// Party fills that are too pale for white text — use dark instead.
-const PALE_DOTS = new Set(["snp"]);
 
 export function SpectrumChart({ axisId, parties }) {
   const [axes, setAxes] = useState(null);
@@ -49,11 +39,12 @@ export function SpectrumChart({ axisId, parties }) {
         <text x="-1.06" y="1.06"  fontSize="0.085" fill="rgba(245,245,245,0.34)" textAnchor="start">Left · Auth</text>
         <text x="1.06"  y="1.06"  fontSize="0.085" fill="rgba(245,245,245,0.34)" textAnchor="end">Right · Auth</text>
         {dots.map((d) => (
-          <g key={d.id}>
-            <circle cx={d.x} cy={d.y} r="0.10" fill={d.colour} stroke="rgba(255,255,255,0.75)" strokeWidth="0.014" />
-            <text x={d.x} y={d.y} fontSize="0.085" fontWeight="700" fill={PALE_DOTS.has(d.id) ? "#1a1a1a" : "#ffffff"} textAnchor="middle" dominantBaseline="central" pointerEvents="none">
-              {SHORT_LABEL[d.id] || d.id.slice(0, 2).toUpperCase()}
-            </text>
+          <g key={d.id} transform={`translate(${d.x} ${d.y})`}>
+            <title>{d.name}</title>
+            <circle cx="0" cy="0" r="0.15" fill="rgba(15,17,22,0.85)" stroke="rgba(255,255,255,0.32)" strokeWidth="0.012" />
+            {EMBLEMS[d.id] && (
+              <g transform="scale(0.0085) translate(-16 -16)">{EMBLEMS[d.id]}</g>
+            )}
           </g>
         ))}
       </svg>

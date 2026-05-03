@@ -5,7 +5,12 @@ export function PersonProfile({ person }) {
         {person.photo_url ? (
           <img className="person-photo" src={person.photo_url} alt={person.name} loading="lazy" />
         ) : (
-          <div className="person-photo person-photo--placeholder" aria-hidden="true">{initials(person.name)}</div>
+          <div className="person-photo person-photo--placeholder" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+              <circle cx="32" cy="25" r="8.5" fill="currentColor" />
+              <path d="M 18 52 C 18 42, 24 36, 32 36 C 40 36, 46 42, 46 52 Z" fill="currentColor" />
+            </svg>
+          </div>
         )}
       </div>
       <div className="person-meta">

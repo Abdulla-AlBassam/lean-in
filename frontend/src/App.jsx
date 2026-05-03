@@ -15,6 +15,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [errorState, setErrorState] = useState(null);
   const [selectedParty, setSelectedParty] = useState(null);
+  const [constituency, setConstituency] = useState(null);
 
   async function runSearch(q, n) {
     if (!q.trim()) return;
@@ -24,6 +25,10 @@ export default function App() {
     try {
       const data = await search(q, n);
       setResults(data);
+      if (data.query_type === "person") {
+        const matched = data.parties?.find((p) => !p.empty);
+        if (matched) setSelectedParty(matched);
+      }
     } catch (e) {
       setResults(null);
       const m = ((e && e.message) || "").match(/API error (\d+)/);
@@ -37,7 +42,14 @@ export default function App() {
 
   function handleNationSelect(n) {
     setNation(n);
+    setConstituency(null);
     if (results && query) runSearch(query, n);
+  }
+
+  function handleConstituencyClick(info) {
+    setConstituency(info);
+    setQuery(info.mp);
+    runSearch(info.mp, nation);
   }
 
   function handleCardClick(party) {
@@ -63,8 +75,8 @@ export default function App() {
   return (
     <div className="app">
       <header className="topbar">
-        <Logo />
         <div className="topbar__search">
+          <Logo />
           <SearchBar
             query={query}
             onChange={setQuery}
@@ -73,8 +85,8 @@ export default function App() {
         </div>
       </header>
 
-      <div className={`stage ${(results || errorState) ? "stage--with-rail" : ""} ${selectedParty ? "stage--with-panel" : ""}`}>
-        <aside className="cards-rail" aria-hidden={!results && !errorState}>
+      <div className={`stage ${(results || loading || errorState) ? "stage--with-rail" : ""} ${selectedParty ? "stage--with-panel" : ""}`}>
+        <aside className="cards-rail" aria-hidden={!results && !loading && !errorState}>
           <div className="cards-rail__inner">
             {loading && <LoadingSkeleton />}
             {!loading && errorState && <EmptyState kind={errorState} />}
@@ -109,8 +121,42 @@ export default function App() {
         </aside>
 
         <div className="map-region">
-          <Map nation={nation} onSelect={handleNationSelect} />
+          <Map nation={nation} onSelect={handleNationSelect} onConstituencyClick={handleConstituencyClick} selectedConstituencyCode={constituency?.code} />
         </div>
+
+        {nation !== "UK" && nation !== "NIR" && (
+          <button
+            className="back-to-uk-chip"
+            onClick={() => { setNation("UK"); setConstituency(null); }}
+            aria-label="Back to UK overview"
+          >
+            <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true">
+              <path d="M10 3l-5 5 5 5" stroke="currentColor" strokeWidth="1.7" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span>Back to UK</span>
+          </button>
+        )}
+
+        {constituency && (
+          <div className="constituency-chip" role="status">
+            <span className="constituency-chip__eyebrow" aria-hidden="true">Constituency</span>
+            <span className="constituency-chip__name">{constituency.name}</span>
+            <span className="constituency-chip__sep" aria-hidden="true">·</span>
+            <span className="constituency-chip__mp">
+              <span className="constituency-chip__dot" style={{ background: constituency.colour }} aria-hidden="true" />
+              {constituency.mp}
+            </span>
+            <button
+              className="constituency-chip__close"
+              onClick={() => setConstituency(null)}
+              aria-label="Clear constituency selection"
+            >
+              <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true">
+                <path d="M4 4l8 8 M12 4l-8 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
+        )}
 
         <DetailPanel
           open={!!selectedParty}
