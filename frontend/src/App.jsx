@@ -13,19 +13,23 @@ export default function App() {
   const [nation, setNation] = useState("UK");
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [errorState, setErrorState] = useState(null);
   const [selectedParty, setSelectedParty] = useState(null);
 
   async function runSearch(q, n) {
     if (!q.trim()) return;
     setLoading(true);
-    setError(null);
+    setErrorState(null);
     setSelectedParty(null);
     try {
       const data = await search(q, n);
       setResults(data);
     } catch (e) {
-      setError(e.message);
+      setResults(null);
+      const m = ((e && e.message) || "").match(/API error (\d+)/);
+      if (m && m[1] === "400") setErrorState("off-topic");
+      else if (m) setErrorState("api-error");
+      else setErrorState("offline");
     } finally {
       setLoading(false);
     }
@@ -44,7 +48,7 @@ export default function App() {
     setResults(null);
     setQuery("");
     setSelectedParty(null);
-    setError(null);
+    setErrorState(null);
   }
 
   const isPerson = results?.query_type === "person";
@@ -69,12 +73,12 @@ export default function App() {
         </div>
       </header>
 
-      <div className={`stage ${results ? "stage--with-rail" : ""} ${selectedParty ? "stage--with-panel" : ""}`}>
-        <aside className="cards-rail" aria-hidden={!results}>
+      <div className={`stage ${(results || errorState) ? "stage--with-rail" : ""} ${selectedParty ? "stage--with-panel" : ""}`}>
+        <aside className="cards-rail" aria-hidden={!results && !errorState}>
           <div className="cards-rail__inner">
-            {error && <div className="rail-status rail-status--error">{error}</div>}
             {loading && <LoadingSkeleton />}
-            {results && !loading && (
+            {!loading && errorState && <EmptyState kind={errorState} />}
+            {!loading && !errorState && results && (
               <>
                 <div className="rail-header">
                   <span className="rail-eyebrow">
@@ -119,6 +123,33 @@ export default function App() {
           onClose={() => setSelectedParty(null)}
         />
       </div>
+    </div>
+  );
+}
+
+function EmptyState({ kind }) {
+  if (kind === "offline") {
+    return (
+      <div className="empty-state">
+        <p className="empty-state__title">Lean In can't reach the backend.</p>
+        <p className="empty-state__hint">Make sure the server is running on :8000.</p>
+      </div>
+    );
+  }
+  if (kind === "api-error") {
+    return (
+      <div className="empty-state">
+        <p className="empty-state__title">Something went wrong.</p>
+        <p className="empty-state__hint">Try a different query or refresh the page.</p>
+      </div>
+    );
+  }
+  return (
+    <div className="empty-state">
+      <p className="empty-state__title">We don't have party positions on that.</p>
+      <p className="empty-state__hint">
+        Try: NHS · housing · immigration · climate · education · the economy
+      </p>
     </div>
   );
 }
