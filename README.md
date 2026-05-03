@@ -1,8 +1,8 @@
 # Lean In
 
-> UK politics, plainly. Search any policy topic — see where every major party stands, backed by verbatim quotes from their own manifestos.
+> UK politics for the modern audience. 
 
-Built at a hackathon in 48 hours. Designed to cut through political spin so voters can make informed decisions.
+Built at a the Claude Hackathon at Northumbria University. Designed to cut through political nonsense so voters can make more informed decisions.
 
 ---
 
@@ -11,35 +11,6 @@ Built at a hackathon in 48 hours. Designed to cut through political spin so vote
 Open the map. Pick a nation. Type any policy topic — *renters rights*, *NHS waiting times*, *tuition fees*. Every major party's position appears as a card, each claim a direct quote from that party's 2024 General Election manifesto with a page number you can verify.
 
 Search an MP's name instead and you get their profile: role, constituency, voting record, and where their party stands.
-
----
-
-## Why this is not just an LLM wrapper
-
-Three layers, only one of which is an LLM:
-
-**1. Real structured data**
-Five party manifestos (Labour, Conservative, Lib Dem, SNP, Plaid Cymru) versioned as plain text in the repo. Hand-coded political axis positions in `backend/data/axes.json` with verbatim quotes and page citations. MP profiles from Democracy Club (CC BY 4.0).
-
-**2. Deterministic classifier**
-`backend/app/classify.py` does keyword matching against `axes.json` to pick a topic axis. Pure string match. No LLM call. Fast, free, and auditable.
-
-**3. The LLM, used surgically**
-One narrow job: given the topic and the relevant manifesto pages in context, produce a short summary per party with 1–2 verbatim quotes and page citations. Strict pydantic-validated output schema. Manifesto context is prompt-cached so repeat queries cost ~10% of a fresh call.
-
-When a judge asks "how do you know it didn't make that up?" — the answer is: the model only sees the manifesto text we give it. Every quote is a verbatim substring of a file in this repo.
-
----
-
-## Demo
-
-| Step | Action | What you see |
-|------|--------|--------------|
-| 1 | Page loads | UK 4-nation map, animated search bar |
-| 2 | Type `renters rights` | Labour, Conservative, Lib Dem cards — each with a quoted pledge and page number |
-| 3 | Click Scotland | SNP card joins; their position on devolved housing policy |
-| 4 | Type `lisa nandy` | Person mode — her card, party context, voting timeline |
-| 5 | Click any card | Detail panel: full timeline, photo, bio, links |
 
 ---
 
@@ -166,7 +137,7 @@ Every quote shown in the UI is a verbatim substring of the manifesto file in thi
 | Builder | Role |
 |---------|------|
 | Saliha ([@saliha006](https://github.com/saliha006)) | Backend — FastAPI, LLM integration, demo cache |
-| Abdulla ([@Abdulla-AlBassam](https://github.com/Abdulla-AlBassam)) | Frontend — React, Leaflet map, UI |
+| Abdulla ([@Abdulla-AlBassam](https://github.com/Abdulla-AlBassam)) | Database & Frontend — JavaScript (React), Leaflet, UI, prompt engineering |
 | Elya ([@ElyaRaza](https://github.com/ElyaRaza)) | LLM prompts — citation quality, extraction, prompt caching |
 | Maks ([@maksymkhomitskyi](https://github.com/maksymkhomitskyi)) | Data — manifestos, axes, MP profiles, demo script |
-| Aws ([@awszaman](https://github.com/awszaman)) | Floater — paired across all lanes |
+| Aws ([@awszaman](https://github.com/awszaman)) | Joker — paired across all lanes |
