@@ -1,6 +1,6 @@
 # Lean In
 
-> UK politics for the modern audience. 
+UK politics for the modern audience. 
 
 Built at a the Claude Hackathon at Northumbria University. Designed to cut through political nonsense so voters can make more informed decisions.
 
