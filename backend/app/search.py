@@ -13,6 +13,12 @@ from .data import load_results
 
 NIM_MODEL = "meta/llama-3.3-70b-instruct"
 
+# Process-local cache keyed on (nation, axisId). Llama-70b takes ~15s on 30KB of
+# manifesto context; the cron pings /api/health every 5 min so the function
+# instance stays warm and this dict survives between requests. Max 4 nations x
+# ~8 axes = bounded; no eviction needed.
+_TOPIC_CACHE: dict[tuple[str, str], "SearchResponse"] = {}
+
 logger = logging.getLogger(__name__)
 
 MANIFESTO_DIR = Path(__file__).parent.parent / "data" / "manifestos"
@@ -70,7 +76,7 @@ def _normalise(text: str) -> str:
     return "\n\n".join(" ".join(p.splitlines()) for p in paragraphs)
 
 
-def _extract_section(text: str, keywords: list[str], top_k: int = 6) -> str:
+def _extract_section(text: str, keywords: list[str], top_k: int = 3) -> str:
     # Rank each page by keyword density and return the top_k most relevant pages.
     # Page-level ranking beats paragraph-level for manifesto PDFs — policy sections
     # cluster on whole pages so we capture both the claim and its surrounding context.
@@ -111,6 +117,10 @@ def search(query: str, nation: str) -> SearchResponse:
         return load_demo_cached(query, nation)
 
     axis_id, axis_label, keywords = classify(query)
+    cache_key = (nation, axis_id)
+    if cache_key in _TOPIC_CACHE:
+        return _TOPIC_CACHE[cache_key]
+
     party_ids = NATION_PARTIES.get(nation, [])
     manifestos = load_manifestos(party_ids, keywords)
 
@@ -155,6 +165,7 @@ def search(query: str, nation: str) -> SearchResponse:
         ))
 
     response = SearchResponse(axisId=axis_id, axisLabel=axis_label, parties=parties)
+    _TOPIC_CACHE[cache_key] = response
     save_demo_cache(query, nation, response)
     return response
 
