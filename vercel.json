@@ -10,5 +10,8 @@
     "api/index.py": {
       "includeFiles": "backend/**"
     }
-  }
+  },
+  "crons": [
+    { "path": "/api/health", "schedule": "*/5 * * * *" }
+  ]
 }
