@@ -8,7 +8,7 @@
   ],
   "functions": {
     "api/index.py": {
-      "includeFiles": "{backend/**,frontend/public/uk-constituency-results.json}"
+      "includeFiles": "backend/**"
     }
   }
 }

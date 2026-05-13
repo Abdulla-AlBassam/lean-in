@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 
 _DATA = Path(__file__).parent.parent / "data"
-_FRONTEND_PUBLIC = Path(__file__).parent.parent.parent / "frontend" / "public"
 _people = None
 _results = None
 _mp_index = None
@@ -37,7 +36,7 @@ def load_mp_index() -> dict:
     # (UK Parliament Open Parliament Licence, GE July 2024 winners).
     global _mp_index
     if _mp_index is None:
-        path = _FRONTEND_PUBLIC / "uk-constituency-results.json"
+        path = _DATA / "uk-constituency-results.json"
         results = json.loads(path.read_text(encoding="utf-8"))["results"]
         baked_names = {p["name"].lower() for p in load_people().values()}
         _mp_index = {}
