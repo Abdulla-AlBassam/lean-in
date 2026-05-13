@@ -2,16 +2,16 @@ import json
 import logging
 import os
 import re
-import time
 from pathlib import Path
 
-import anthropic
 from fastapi import HTTPException
 
 from .llm import client
 from .models import SearchResponse, PartyPOV, Citation
 from .classify import classify
 from .data import load_results
+
+NIM_MODEL = "meta/llama-3.3-70b-instruct"
 
 logger = logging.getLogger(__name__)
 
@@ -114,34 +114,24 @@ def search(query: str, nation: str) -> SearchResponse:
     party_ids = NATION_PARTIES.get(nation, [])
     manifestos = load_manifestos(party_ids, keywords)
 
-    system_blocks = [{"type": "text", "text": SYSTEM_PROMPT}]
+    parts = [SYSTEM_PROMPT]
     for m in manifestos:
-        system_blocks.append({
-            "type": "text",
-            "text": f"=== {PARTY_META[m['id']]['name']} Manifesto (relevant sections) ===\n\n{m['text']}",
-            "cache_control": {"type": "ephemeral"},
-        })
+        parts.append(f"=== {PARTY_META[m['id']]['name']} Manifesto (relevant sections) ===\n\n{m['text']}")
+    system_text = "\n\n".join(parts)
 
     user_msg = f"Topic: {query}\nParties: {', '.join(party_ids)}"
 
-    try:
-        msg = client().messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=1500,
-            system=system_blocks,
-            messages=[{"role": "user", "content": user_msg}],
-        )
-    except anthropic.RateLimitError:
-        logger.warning("rate limit hit, waiting 65s then retrying")
-        time.sleep(65)
-        msg = client().messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=1500,
-            system=system_blocks,
-            messages=[{"role": "user", "content": user_msg}],
-        )
+    msg = client().chat.completions.create(
+        model=NIM_MODEL,
+        max_tokens=1500,
+        response_format={"type": "json_object"},
+        messages=[
+            {"role": "system", "content": system_text},
+            {"role": "user", "content": user_msg},
+        ],
+    )
 
-    raw = msg.content[0].text.strip()
+    raw = msg.choices[0].message.content.strip()
     if raw.startswith("```"):
         raw = raw.split("```")[1].lstrip("json").strip()
     start = raw.find("{")
@@ -175,8 +165,13 @@ def cache_path(query: str, nation: str) -> Path:
 
 
 def save_demo_cache(query: str, nation: str, response: SearchResponse) -> None:
-    DEMO_CACHE.mkdir(exist_ok=True)
-    cache_path(query, nation).write_text(response.model_dump_json(indent=2))
+    # Vercel serverless mounts the function bundle read-only; demo_cache writes
+    # silently no-op there. Local dev still cache-warms as before.
+    try:
+        DEMO_CACHE.mkdir(exist_ok=True)
+        cache_path(query, nation).write_text(response.model_dump_json(indent=2))
+    except OSError:
+        pass
 
 
 def load_demo_cached(query: str, nation: str) -> SearchResponse:

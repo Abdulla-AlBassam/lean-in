@@ -1,22 +1,14 @@
 import os
-import random
-from anthropic import Anthropic
+from openai import OpenAI
 
-# Round-robin across whatever ANTHROPIC_API_KEY_* vars are set in the env.
-# Each call bills to one teammate; spreads cost and rate limits.
-_KEYS: list[str] = []
-
-
-def _keys() -> list[str]:
-    global _KEYS
-    if _KEYS:
-        return _KEYS
-    # Only accept keys long enough to be real — filters out placeholder "sk-ant-..." values
-    _KEYS = [v for k, v in os.environ.items() if k.startswith("ANTHROPIC_API_KEY") and len(v) > 20]
-    if not _KEYS:
-        raise RuntimeError("No ANTHROPIC_API_KEY_* env vars found")
-    return _KEYS
+# NVIDIA NIM exposes an OpenAI-compatible /v1 endpoint. Free tier covers the
+# instruction-tuned Llama models we use for citation extraction. We use the
+# OpenAI SDK with base_url overridden rather than importing anthropic.
+NIM_BASE_URL = "https://integrate.api.nvidia.com/v1"
 
 
-def client() -> Anthropic:
-    return Anthropic(api_key=random.choice(_keys()))
+def client() -> OpenAI:
+    key = os.environ.get("NVIDIA_NIM_API_KEY")
+    if not key:
+        raise RuntimeError("NVIDIA_NIM_API_KEY not set")
+    return OpenAI(base_url=NIM_BASE_URL, api_key=key)

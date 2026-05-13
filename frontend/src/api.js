@@ -1,5 +1,7 @@
 const MOCK = false;
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+// Production: backend lives on the same Vercel project at /api/*, so an empty
+// base URL gives relative requests. Dev: uvicorn runs on :8000.
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL ?? (import.meta.env.DEV ? "http://localhost:8000" : "");
 
 export async function search(query, nation) {
   if (MOCK) {
