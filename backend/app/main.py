@@ -106,7 +106,7 @@ def search(q: str = Query(..., min_length=1, max_length=200), nation: str = "UK"
 
     axis_id, _, _ = classify(q)
     if axis_id == "unknown":
-        raise HTTPException(400, detail="Query doesn't match any policy topic we cover. Try: NHS, housing, immigration, climate, education, or the economy.")
+        raise HTTPException(400, detail="Query doesn't match any policy topic we cover. Try: NHS, housing, crime, immigration, climate, education, transport, welfare, defence, or the economy.")
     logger.info("search q=%r nation=%s axis=%s", q, nation, axis_id)
     result = run_search(q, nation)
     return {**result.model_dump(), "query_type": "topic"}

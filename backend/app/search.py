@@ -198,7 +198,7 @@ def load_demo_cached(query: str, nation: str) -> SearchResponse:
     # whose response is on the same axis.
     axis_id, axis_label, _ = classify(query)
     if axis_id == "unknown":
-        raise HTTPException(400, detail="Query doesn't match any policy topic we cover. Try: NHS, housing, immigration, climate, education, or the economy.")
+        raise HTTPException(400, detail="Query doesn't match any policy topic we cover. Try: NHS, housing, crime, immigration, climate, education, transport, welfare, defence, or the economy.")
     for nat in (nation, "UK"):
         for p in sorted(DEMO_CACHE.glob(f"{nat}__*.json")):
             try:

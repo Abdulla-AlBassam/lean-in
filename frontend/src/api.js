@@ -12,7 +12,7 @@ export async function search(query, nation) {
   }
   const url = `${BACKEND_URL}/api/search?q=${encodeURIComponent(query)}&nation=${nation}`;
   const r = await fetch(url);
-  if (!r.ok) throw new Error(await friendlyError(r));
+  if (!r.ok) throw await apiError(r);
   return r.json();
 }
 
@@ -24,16 +24,21 @@ export async function getPerson(id) {
     return { person, results: person.results };
   }
   const r = await fetch(`${BACKEND_URL}/api/person/${encodeURIComponent(id)}`);
-  if (!r.ok) throw new Error(await friendlyError(r));
+  if (!r.ok) throw await apiError(r);
   return r.json();
 }
 
-async function friendlyError(r) {
+// App.jsx needs the HTTP status to pick the empty-state copy. Returning the
+// message alone made every error look like a network failure.
+async function apiError(r) {
+  let msg = `API error ${r.status}`;
   try {
     const body = await r.json();
-    if (body.detail) return body.detail;
+    if (body.detail) msg = body.detail;
   } catch {}
-  return `API error ${r.status}`;
+  const err = new Error(msg);
+  err.status = r.status;
+  return err;
 }
 
 export function getPartyMps(partyId) {

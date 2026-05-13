@@ -31,9 +31,8 @@ export default function App() {
       }
     } catch (e) {
       setResults(null);
-      const m = ((e && e.message) || "").match(/API error (\d+)/);
-      if (m && m[1] === "400") setErrorState("off-topic");
-      else if (m) setErrorState("api-error");
+      if (e?.status === 400) setErrorState("off-topic");
+      else if (e?.status) setErrorState("api-error");
       else setErrorState("offline");
     } finally {
       setLoading(false);
@@ -194,7 +193,7 @@ function EmptyState({ kind }) {
     <div className="empty-state">
       <p className="empty-state__title">We don't have party positions on that.</p>
       <p className="empty-state__hint">
-        Try: NHS · housing · immigration · climate · education · the economy
+        Try: NHS · housing · crime · immigration · climate · education · transport · welfare · defence · the economy
       </p>
     </div>
   );
